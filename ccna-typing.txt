@@ -1,0 +1,126 @@
+https://www.netcamp.in/application/assets/img/CCNA-Exam-Prep-Guide.pdf
+[89 / 864] - [99 / 864]
+
+chapter two physical layer networking concepts
+objectives
+this chapter covers the following Cisco-specified objective for the "Planning and Designing" section of the CCNA exam:
+Design a simple LAN using Cisco technology
+Various network designs or layouts are commonly used to setup a LAN. To pass the CCNA exam, you need to familiarize yourself with four prevalent network topologies. Chapter 5, "Introduction to Cisco Routers and Switches, "reviews specific Cisco devices that can be used as part of new LAN network implementation.
+Outline
+Introduction
+Network Topologies
+The Bus Topology
+The Ring Topology
+The Star Topology
+The Mesh Topology
+Cabling
+Coaxial Cable
+Twisted-Pair Cable
+Straight-Through Cable
+Cross-Over Cable
+Rolled Cable
+Fiber-Optic Cable
+Wireless
+Wireless Fidelity (Wi-Fi)
+Infrared
+Bluetooth
+Physical Layer Devices
+Repeaters
+Hubs
+Network Interfaces
+Chapter Summary
+Apply Your Knowledge
+Study Strategies
+Identify the four physical network topologies discussed in this chapter.
+Know the different types of network cables and the characteristics that differentiate them from one another.
+Review the wireless technology standards.
+Be able to identify devices that are used at the Physical layer.
+Introduction
+Chapter 1, "Standard Internetworking Models," went over the layers of the OSI and TCP/IP models. This chapter goes into more detail regarding the Physical layer. Remember that electrical, mechanical, prodecural, and functional requirements are defined at this layer. Such requirements provide assistance with the activation, maintenance, and deactivation of physical connectiivyt between devices.
+Concepts covered include the topologies, cabling, and devices that are relevant at the physical level and important to understand when studying for the CCNA exam. Also, because wireless communications are constantly evolving and are flourishing in today's marketplace, severla significant wireless technologies are covered as well.
+Network topologies
+Objective:
+Design a simple LAN, using Cisco technology
+Topology can be defined as either the physical or logical layout of a network. Typically, a physical topology is documented with a network diagram, such as Visio diagram. Diagrams can prove to be extremely helpful when troubleshooting a network issue. Most companies keep a database with copies of their entire network as well as individual site connections. If you work in a sales capacity, diagrams are drawn up to plan out the network setup and to ensure that all bases are covered to meet customer expectations.
+Just as you might imagine, a physical topology consists of the cables, workstations, and other peripheral devices that comprise the network. A logical topology refers to how the network actually communicates. This may differ from the physical topology; therefore, this section covers the four most common physical network topologies and what the associated logical network topology is for the physical star network.
+The Bus Topology
+A bus network topology may also be referred to as linear bus topology. This topology is set up so that the network nodes are connected via a single cable (also referred to as trunk or a backbone). Electrical signals are sent from one end of the cable to the other. When this occurs, all connected devices receive that electrical signal transmission. Network devices are connected directly to the trunk with a T connector. Both ends of the trunk use a terminator to stop the electrical signal from echoing back down the cable.
+Because the bus topology use a single cable, it is low-cost option that is easily implemented. The downside of this setup is the lack of redundancy. If the cable breaks, the entire network goes down.
+The Ring Topology
+A ring network topology is set up so that one device is directly connected to two other devices on the same network. When a device emits a data signal transmission, the transmission is sent in a single direction to the next connected device. The transmission continues to pass along each device successively until it arrives back at the original transmitting device. This method creates a ring or a loop.
+With this topology, a single ring configuration lacks a failover solution. If there is a break anywhere on the ring, it brings down the entire network. This was the same situation with the bus network topology. For this reason, you may also configure a dual ring topology. If there is a failure on one physical ring, the other physical ring passes data transmissions to ensure network operability.
+The Star Topology
+The star network topology is the most commonly implemented network design. With this topology, there is a central device with separate connections to each end node. Each connection uses a separate cable, which adds to the cost of implementation. When hubs are used in a star topology, a logical bus is created. This type of network star is called a hub-and-spoke topology.
+NOTE
+Although the star topology is a physical star, it also can be referred to as a logical bus topology because hubs are used to control communication.
+Because there are separate connections between end nodes and the central device, this topology enables the network administrator to add or remove end nodes without affecting service to all other nodes on that network. This is also possible with the token ring topology, which enables you to add multi-station access units (MAUs) to the network without disrupting service. The same cannot be said for the physical bus network topologies.
+The Mesh Topology
+The full mesh network topology is set up so that each device is directly connected to every other device on the network. This connection method has built-in redundancy. If one link goes down, the device transmits via another link.
+A partial mesh network topology has direct connectivity between some of the network devices, but not all of them, as the full mesh topology does.
+Overall, mesh topologies are much more expensive to implement. However, the cost may be acceptable given the reliability of this design.
+Cabling
+This section reviews the types of media or cable that are used for LAN connectivity. The primary media types include coaxial, twisted-pair, and fiber-optic cables. Cable media offer physical connectivity to network devices. Cables may consist of metal, glass or plastic. Copper is the most popular metal cable. Fiber-optic uses glass or plastic cabling.
+Before you look at each medium in greater detail, it's good idea to discuss several important terms related to data transmission that are directly affected by what type of cable media is used on a network.
+Review the following terminology:
+Bandwidth--The total amount of information that can traverse a communications medium, measured in bits per second. Measurement of bandwidth is helpful for network performance analysis. Also, availability is increasing but limited
+EXAM ALERT
+For the exam, remember that bandwidth is used to analyze network performance and that although availability is increasing, it is also limited.
+Attenuation--Occurs over long distances as a signal loses strength.
+Electromagnetic Interference (EMI)--Interference or noise caused by electromagnetic signals, which can decrease data integrity.
+Crosstalk--An electrical or magnetic field originating from one communications signal that can affect the signal in a nearby circuit.
+Near-end Crosstalk (NEXT)--Crosstalk measured at the transmitting end of a cable.
+Far-end Crosstalk (FEXT)--Crosstalk measured at the far end of the cable from where the transmission was sent.
+EXAM ALERT
+Know the terms NEXT and FEXT and what they represent for the CCNA exam.
+Coaxial Cable
+Coaxial cables for data consist of a single copper wire surrounded by a plastic insulation cover and a braided copper shield. Primarily, two types of coaxial cables are used in conjunction with Ethernet LAN networks. They are called thin and thick coax.
+Thin coax has the following characteristics:
+Also called thinnet
+.25 inches in diameter
+Maximum cable length = 185 meters
+Uses Bayonet Neill Concelman connectors (BNCs)
+10BASE-2 ethernet standard
+NOTE
+The Institute for Electrical and Electronics Engineers (IEEE) ethernet standards are reviewed in Chapter 3, "Data Link Networking Concepts."
+Thick coax has the following characteristics:
+Also called thicknet
+Maximum cable length = 500 meters
+Uses vampire taps (where the tap goes through the shield to touch the copper wire)
+Uses attachment unit interface (AUI) adapters
+10BASE-5 ethernet standard
+The coaxial cable media is not nearly as popular as twisted pair or fiber optic. It is not as flexible or cost-effective as other options. You may see this cable implemented on an older network.
+Twisted-Pair Cable
+Just as the name indicates, twisted-pair cables twist two wires together to form a pair. This solution helps to reduce interference and attenuation. There are two types of twisted-pair cabling defined by the Telecommunications Information Association (TIA). Those types are unshielded twisted pari (UTP) and shielded twisted pair (STP). UTP is the more common and cost-effective solution. STP has an additional shield, which provides additional reduction of interference and attenuation, but also makes it the more expensive solution. For the exam, UTP is reviewed in greater detail.
+UTP key characteristics include the following:
+Eight color-coded wires
+Four pairs
+Use an RJ-45 connector
+Vulnerable to EMI
+Maximum, practical length is 100 meters
+10BASE-T, 100BaseT, and 1000BaseT ethernet standards
+TIP
+When reviewing for the exam, note that UTP is vulnerable to EMI and uses an RJ-4 connector.
+EXAM ALERT
+Because attenuation causes a signal to lose strength as the length of a cable increases, the maximum, practical length of a UTP cable is 100 meters.
+UTP can be broken down into six more categories. You my have heard someone talk about a Cat5 cable. They are referring to a Category 5 UTP cable. Each category has different characteristics:
+Category 1--Telephone cable that is not used for data transmission.
+Category 2--Data cable that can handle speeds up to 4Mbps. This is no longer fast enough for networks today.
+Category 3--Data cable that can handle speeds up to 10 Mbps. It is faster than the Cat2 cable, and this was quite popular until network speeds surpassed the 10Mbps threshold.
+Category 4--Data cable that can handle speeds up to 16 Mbps. Meant to be used with token ring.
+Category 5--Data cable that can handle speeds up to 100 Mbps. This is currently the most popular cable selection.
+Category 5e--Data cable that can handle speeds up to 1 Gbps. This is a popular choice for Gigabit Ethernet networks.
+Category 6--This cable was created to exceed speeds of 1 Gbps.
+It is also important to know the pinouts for twisted-pair cables. The term pinout is used in the electronic industry to describe the purpose of each pin in a connector. When choosing your cable, you need to know which pinout is appropriate to connect the devices on your network. The following sections cover the straight-through and cross-over cables.
+Straight-Through Cable
+Straight-through cables use four wires and pins 1, 2, 3, and 6. Given those pins, pin 1 is connected on one end of the cable to pin 1 on the opposite end of the cable. Pin 2 at one end is connected to pin 2 on the far end, and so on.
+These cables are meant only for interface to interface connections on ethernet networks, so you cannot use them with token ring, ISDN, and so on.
+
+https://en.wikipedia.org/wiki/ISDN
+
+Integrated Services Digital Network (ISDN) is a set of communication standards for simultaneous digital transmission of voice, video, data, and other network services over the digitalized circuits of the public switched telephone network. Work on the standard began in 1980 at Bell Labs and was formally standardized in 1988 in the CCITT "Red Book". By the time the standard was released, newer networking systems with much greater speeds were available, and ISDN saw relatively little uptake in the wider market. One estimate suggests ISDN use peaked at a worldwide total of 25 million subscribers at a time when 1.3 billion analog lines were in use. ISDN has largely been replaced with digital subscriber line (DSL) systems of much higher performance.
+Prior to ISDN, the telephone system consisted of digital links like T1/E1 on the long-distance lines between telephone company offices and analog signals on copper telephone wires to the customers, the "last mile". At the time, the network was viewed as a way to transport voice, with some special services available for data using additional equipment like moderns or by providing a T1 on the customer's location. What became ISDN started as an effort to digitalize the last mile, originally under the name "Public Switched Digital Capacity" (PSDC). This would allow call routing to be completed in an all-digital system, while also offering a separate data line. The Basic Rate Interface, or BRI, is the standard last-mile connection in the ISDN system, offering two 64 kbit/s "bearer" lines and a single 16 kbit/s "data" channel for commands and data.
+Although ISDN was successful in a few countries such as Germany, on a global scale the system was largely ignored and garnered the industry nickname "innovation(s) subscribers didn't need." It found a use for a time for small-office digital connection, using the voice lines for data at 64 kbit/s, sometimes "bounded" to 128 kbit/s, but the introduction of 56 kbit/s modems undercut its value in many roles. It also found use in videoconference systems, where the direct end-to-end connection was desirable. The H.320 standard was designed around its 64 kbit/s data rate. The underlying ISDN concepts found wider use as a replacement for the T1/E1 lines it was originally intended to extend, roughly doubling the performance of those lines.
+History Digital lines
+Since its introduction in 1881, the twisted pair copper line has been installed for telephone use worldwide, with well over a billion individual connections installed by the year 2000. Over the first half of the 20th century, the connection of these lines to form calls was increasingly automated, culminating in the crossbar switches that had largely replaced earlier concepts by the 1950s.
+As telephone use surged in the post-WWII era, the problem of connecting the massive number of lines became an area of significant study. Bell Lab's seminal work on digital encoding of voice led to the use of 64 kbit/s as a standard for voice lines (or 56 kbit/s in some systems). In 1962, Robert Aaron of Bell introduced the T1 system, which carried 1.544 Mbit/s of data on a pair of twisted pair lines over a distance of about one mile. This was used in the Bell network to carry traffic between local switch offices, with 24 voice lines at 64 kbit/s and a separate 8 kbit/s line for signaling commands like connecting or hanging up a call. This could be extended over long distances using repeaters in the lines. T1 used a very simple encoding scheme, alternate mark inversion (AMI), which reached only a few percent of the theoretical capacity of the line but was appropriate for 1960s electronics.
+By the late 1970s, T1 lines and their faster counterparts, along with all-digital switching systems, had replaced the earlier analog systems for most of the western world, leaving only the customer's equipment and their local end office using analog systems for most of the western world, leaving only the customer's equipment and their local end office using analog systems. Digitizing this "last mile" was increasingly seen as the next problem that needed to be solved. However, these connections now represented over 99% of the total telephony
