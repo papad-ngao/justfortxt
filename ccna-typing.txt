@@ -36,7 +36,7 @@ Know the different types of network cables and the characteristics that differen
 Review the wireless technology standards.
 Be able to identify devices that are used at the Physical layer.
 Introduction
-Chapter 1, "Standard Internetworking Models," went over the layers of the OSI and TCP/IP models. This chapter goes into more detail regarding the Physical layer. Remember that electrical, mechanical, prodecural, and functional requirements are defined at this layer. Such requirements provide assistance with the activation, maintenance, and deactivation of physical connectiivyt between devices.
+Chapter 1, "Standard Internetworking Models," went over the layers of the OSI and TCP/IP models. This chapter goes into more detail regarding the Physical layer. Remember that electrical, mechanical, prodecural, and functional requirements are defined at this layer. Such requirements provide assistance with the activation, maintenance, and deactivation of physical connectivity between devices.
 Concepts covered include the topologies, cabling, and devices that are relevant at the physical level and important to understand when studying for the CCNA exam. Also, because wireless communications are constantly evolving and are flourishing in today's marketplace, severla significant wireless technologies are covered as well.
 Network topologies
 Objective:
@@ -90,21 +90,21 @@ Uses attachment unit interface (AUI) adapters
 10BASE-5 ethernet standard
 The coaxial cable media is not nearly as popular as twisted pair or fiber optic. It is not as flexible or cost-effective as other options. You may see this cable implemented on an older network.
 Twisted-Pair Cable
-Just as the name indicates, twisted-pair cables twist two wires together to form a pair. This solution helps to reduce interference and attenuation. There are two types of twisted-pair cabling defined by the Telecommunications Information Association (TIA). Those types are unshielded twisted pari (UTP) and shielded twisted pair (STP). UTP is the more common and cost-effective solution. STP has an additional shield, which provides additional reduction of interference and attenuation, but also makes it the more expensive solution. For the exam, UTP is reviewed in greater detail.
+Just as the name indicates, twisted-pair cables twist two wires together to form a pair. This solution helps to reduce interference and attenuation. There are two types of twisted-pair cabling defined by the Telecommunications Information Association (TIA). Those types are unshielded twisted pair (UTP) and shielded twisted pair (STP). UTP is the more common and cost-effective solution. STP has an additional shield, which provides additional reduction of interference and attenuation, but also makes it the more expensive solution. For the exam, UTP is reviewed in greater detail.
 UTP key characteristics include the following:
 Eight color-coded wires
 Four pairs
 Use an RJ-45 connector
 Vulnerable to EMI
 Maximum, practical length is 100 meters
-10BASE-T, 100BaseT, and 1000BaseT ethernet standards
+10Base-T, 100BaseT, and 1000BaseT ethernet standards
 TIP
 When reviewing for the exam, note that UTP is vulnerable to EMI and uses an RJ-4 connector.
 EXAM ALERT
 Because attenuation causes a signal to lose strength as the length of a cable increases, the maximum, practical length of a UTP cable is 100 meters.
 UTP can be broken down into six more categories. You my have heard someone talk about a Cat5 cable. They are referring to a Category 5 UTP cable. Each category has different characteristics:
 Category 1--Telephone cable that is not used for data transmission.
-Category 2--Data cable that can handle speeds up to 4Mbps. This is no longer fast enough for networks today.
+Category 2--Data cable that can handle speeds up to 4 Mbps. This is no longer fast enough for networks today.
 Category 3--Data cable that can handle speeds up to 10 Mbps. It is faster than the Cat2 cable, and this was quite popular until network speeds surpassed the 10Mbps threshold.
 Category 4--Data cable that can handle speeds up to 16 Mbps. Meant to be used with token ring.
 Category 5--Data cable that can handle speeds up to 100 Mbps. This is currently the most popular cable selection.
