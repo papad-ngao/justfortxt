@@ -1,0 +1,147 @@
+The system crystal determines the speed at which a CPU and the rest of the PC operate. The system crystal is usually a quartz oscillator, very similar to the one in a wristwatch, soldered to the motherboard.
+NOTE
+CPU makers sell the exact make and model of CPU at a number of different speeds. All of these CPUs come off of the same assembly lines, so why do they have different speeds? Every CPU comes with subtle differences--flaws, really--in the silicon that makes one CPU run faster than another.
+The speed difference comes from testing each CPU to see what speed it can handle.
+The quartz oscillator sends out an electric pulse at a certain speed, many millions of times per second. This signal goes first to a clock chip that adjusts the pulse, usually increasing the pulse sent by the crystal by some large multiple. (The folks who make motherboards could connect the crystal directly to the CPU's clock wire, but then if you wanted to replace your CPU with a CPU with different clock speed, you'd need to replace the crystal too.) As long as the computer is turned on, the quartz oscillator, through the clock chip, fires a charge on the CLK wire, in essence pushing the system along.
+Visualize the system crystal as a metronome for the CPU. The quartz oscillator repeatedly fires a charge on the CLK wire, setting the beat, if you will, for the CPU's activities. If the system crystal sets a beat slower than the CPU's clock speed, the CPU will work just fine, though at the slower speed of the system crystal. If the system crystal forces the CPU to run faster than its clock speed, it can overheat and stop working. Before you install a CPU into a system, you must make sure that the crystal and clock chip send out the correct clock pulse for that particular CPU. In the old days, this required very careful adjustments. With today's systems, the motherboard talks to the CPU. The CPU tells the motherboard the clock speed it needs, and the clock chip automatically adjusts for the CPU, making this process now invisible.
+NOTE
+Aggressive users sometimes intentionally overclock CPUs by telling the clock chip to multiply the pulse faster than the CPU's designed speed. They do this to make slower (cheaper) CUPs run faster and to get more performance in demanding programs. "Overclocking" section later in this chapter.
+Back to the External Data Bus
+One more reality check. We've been talking about tables with racks of light bulbs, but of course real CPU registers don't use light bulbs to represent on/1 and off/0. Registers are tiny storage areas on the CPU made up of microscopic semiconductor circuits that hold charges. It's just easier to imagine a light bulb lit up to represent a circuit holding a charge; when the light bulb is off, there is no charge.
+In an 8088 CPU, there's wires that comprise the external data bus and the single clock wire, and the registers are inside the CPU, so you wouldn't see them from outside.
+Now that you have learned what components are involved in the process, try the following simple exercise to see how the process works. In this example, you tell the CPU to add 2 + 3. To do this, you must send a series of commands to the CPU; the CPU will act on each command, eventually giving you an answer. Refer toe the code book to translate the instructions you're giving the Man in the Box into binary commands.
+the codebook:
+8088 External Data Bus Codebook
+LIGHTS | MEANING
+10000000 | The next line is a number; put it in the AX register
+10001000 | The next line is a number; put it in the BX register
+10110000 | Add AX to BX and put the result in the AX
+11000000 | Put the value of AX on the External Data Bus
+00000000 | The number 0
+00000001 | The number 1
+00000010 | The number 2
+00000011 | The number 3
+00000100 | The number 4
+00000101 | The number 5
+1. Place 10000000 on the external data bus (EDB).
+2. Place 00000010 on the EDB
+3. Place 10010000 on the EDB
+4. Place 00000011 on the EDB
+5. Place 10110000 on the EDB
+6. Place 11000000 on the EDB
+When you finish step 6, the value on the EDB will be 00000101, the decimal number 5 written in binary.
+Congrats! You just added 2 + 3 by using individual commands from the codebook. This sets of commands is known as a program, which is a series of commands sent to a CPU in a specific order for the CPU to perform work. Each discrete setting of the EDB is a line of code. This program, therefore, has six lines of code.
+Memory
+Now that you've seen how the CPU executes program code, let's work backward in the process for a moment and think about how the program code gets to the external data bus. The program itself is stored on the hard drive. In theory, you could build the computer that sends data from the hard drive directly to the CPU, but there's a problem--the hard drive is too slow. Even the ancient 8088, with its clock speed of 4.77 MHz, could conceivably process several millions lines of code every second. Modern CPUs crank out billions of lines every second. Hard drives simply can't give the data to the CPU at a fast enough speed.
+Computers need some other device that takes copies of a programs from the hard drive and then sends them, one line at a time, to the CPU quickly enough to keep up with its demands. Because each line of code is nothing more than a pattern of eight ones and zeros, any device that can store ones and zeros eight-across will do. Device that in any way hold ones and zeros that the CPU accesses are known generically as memory.
+Many types of devices store ones and zeros perfectly well--technically even a piece of paper counts as memory--but computers need memory that does more than just store group of eight ones and zeros. Consider this pretend program:
+1. Put 2 in the AX register.
+2. Put 5 in the BX register.
+3. If AX is greater than BX, run line 4; otherwise, go to line 6.
+4. Add 1 to the value in AX.
+5. Go back to line 1.
+6. Put the value of AX on the EDB.
+This program has an IF statement, also called a branch by CPU makers.
+The CPU needs a way to address each line of this memory--a way for the CPU to say to the memory, "Give me the next line of code" or "Give me line 6." Addressing memory takes care of another problem: the memory must store not only programs but also the result of the programs. If the CPU adds 2 + 3 and gets 5, the memory needs to store that 5 in such a way that other programs may later read that 5, or possibly even store that 5 on a hard drive. By addressing each line of memory, other programs will know where to find the data.
+Memory and RAM
+Memory must store not only programs, but also data. The CPU needs to be able to read and write to this storage medium. Additionally, this system must enable the CPU to jump to any line of stored code as easily as to any other line of code. All of this must be done at or at least near the clock speed of the CPU. Fortunately,  this magical device has existed for many years: random access memory (RAM). "RAM" can be view as an electronic spreadsheet, like one you can generate in Microsoft Excel. Each cell in this spreadsheet can store only a one or a zero. Each cell is called a bit. Each row in the spreadsheet is 8 bits across to match the EDB of the 8088. Each row of 8 bits is called a byte. In PCs, RAM transfers and stores data to and from the CPU in byte-sized chunks. RAM is therefore arranged in byte-sized rows. Here are the terms used to talk about quantities of bits:
+- Any individual 1 or 0 = a bit
+- 4 bits = a nibble
+- 8 bits = a byte
+- 16 bits = a word
+- 32 bits = a double word
+- 64 bits = a paragraph or quad word
+The number of bytes of RAM varies from PC to PC. In earlier PCs, from around 1980 to 1990, the typical system would have only a few hundred thousand bytes of RAM. Today's systems often have billions of bytes of RAM.
+Let's stop here for a quick reality check. Electronically, RAM looks like a spreadsheet, but real RAM is made of groups of semiconductor chips soldered onto small cards that snap into your computer. these groups of chips actually make themselves look like a spreadsheet. But for now, don't worry about real RAM and just stick with the spreadsheet idea.
+The CPU accesses any one row of RAM as easily and as fast as any other row, which explains the "random access" part of RAM. Not only is RAM randomly accessible, it's also fast. By storing programs on RAM, the CPU can access and run them very quickly. RAM also stores any data that the CPU actively uses.
+Computers us dynamic RAM (DRAM) for the main system memory. DRAM needs both a constant electrical charge and a periodic refresh of the circuits; otherwise, it loses data--that's what makes it dynamic rather than static in content. The refresh can cause some delays, because the CPU has to wait for the refresh to happen, but modern CPU manufacturers have clever ways to get by this issue, as you'll see later in "modern processor technology" in this chapter.
+Don't confuse RAM with mass storage devices such as hard drives and flash drives. You use hard drives and flash drives to store programs and data permanently. (as known as "permanent" storage")
+Address Bus
+So far, the entire PC consists of only a CPU and RAM. But the CPU and the RAM need some connection so they can talk to each other. To do so, extend the external data bus from the CPU so it can talk to the RAM
+Wait a minute. This is not a matter of just plugging the RAM into the EDB wires! RAM is a spreadsheet with thousands and thousands of discrete rows, and you need to look at the contents of only one row of spreadsheet at a time, right? So how do you connect the RAM to the EDB in such a way that the CPU can see any one given row but still give the CPU the capability to look at any row in RAM?
+We need some type of chip between the RAM and the CPU to make the connection. The CPU needs to be able to say which row of RAM it wants, and the chip should handle the mechanics of retrieving that row of data from the RAM and putting it on the EDB. This chip comes with many names, but for right now just call it the memory controller chip (MCC).
+The MCC contains special circuitry so it can grab the contents of any line of RAM and place that data or command on the EDB. This in turn enables the CPU to act on that code.
+Once the MCC is in place to grab any discrete byte of RAM, the CPU needs to able to tell the MCC which line of code it needs. The CPU therefore gains a second set of wires, called the address bus, with which it can communicate with the MCC. Different CPUs have different numbers of wires (which, you will soon see, is very significant). The 8088 had 20 wires in its address bus.
+By turning the address bus wires on and off in different patterns, the CPU tells the MOC which line of RAM it wants at any given moment. Every different pattern of ones and zeros on these 20 wires points to one byte of RAM. There are two big questions here. First, how many different patterns of on-and-off wires can exist with 20 wires? And second, which pattern goes to which row of RAM?
+How Many Patterns?
+Mathematics can answer the first question. Each wire in the address bus exists in only one of two states: on and off. If the address bus consisted of only one wire, that wire would at any given moment be either on or off. Mathematically, that gives you (pull out your old pre-algebra books) 2^1 = 2 different combinations. If you have two address bus wires, the address bus wires create 2^2 = 4 different combinations. If you have 20 wires, you would have 2^20 (or 1,048,576) combinations. Because each pattern points to one line of code and each line of RAM is one byte, if you know the number of wires in the CPU's address bus, you know the maximum amount of RAM that a particular CPU can handle.
+Because the 8088 had 20-wire address bus, the most RAM it could handle was 2^20 or 1,048,576 bytes. The 8088, therefore, had an address space of 1,048,576 bytes. This is not to say that every computer with an 8088 CPU had 1,048,576 bytes of RAM. Far from it! The original IBM PC only had a measly 65,536 bytes--but that was considered plenty back in the Dark Ages of Computing in the early 1980s.
+Okay, so you know that the 8088 had 20 address wires and a total address space of 1,048,576 bytes. Although this is accurate, no one uses such an exact term to discuss the address space of the 8088. Instead you say that the 8088 had one megabyte (1 MB) of address space.
+What's "mega"? Well, let's get some terminology down. Dealing with computers means constantly dealing with the number of patterns a set of wires can handle. Certain powers of 2 have names used a lot in computing. The following list explains.
+1 kilo = 2^10 = 1024 (abbreviated as "K")
+1 kilobyte = 1024 bytes (abbreviated as "KB)
+1 mega = 2^20 = 1,048,576 (abbreviated as "M")
+1 megabyte = 1,048,576 bytes (abbreviated as "MB")
+1 giga = 2^30 = 1,073,741,824 (abbreviated as "G")
+1 gigabyte = 1,073,741,824 (abbreviated as "GB)
+1 tera = 2^40 = 1,099,511,627,776 (abbreviated as "T")
+1 terabyte = 1,099,511,627,776 (abbreviated as "TB")
+Metric System and Computer Memory
+There's a problem with that list you just read. If you asked a metric system expert for explanation, she would say that a kilo is equal to exactly 1000, not 1024! Am I lying to you?
+Well, yes, I am, but not out of malice. I'm just the messenger of yet another weird aspect to computing. Here's what happened, a long time ago. In the early days computing there arose a need to talk about large values, but the words hadn't been invented. In one case, the memory address folks were trying to describe permutations. They used values based on powers of two as just described. No one has ever invented terms for 1024 or 1,048,576, so they used kilo and mega, as 1000 was close enough to 1024 and 1,000,000 was close enough to 1,048,576.
+In the meantime, computer people measuring quantities such as CPU speeds and hard drive capacities didn't count with powers of two. They just needed regular 1000 for kilo and 1,000,000 for mega.
+From the early 1980s until around 1990, nobody cared about this weird thing where one word could mean two values. Everything was fine until the math nerds and the attorneys started making trouble. To fix this, in 1998 the International Electrotechnical committee (IEC) invented special prefixes for binary values I call the ibis (pronounced eee-bees)
+1 kibi = 2^10 = 1024 (abbreviated as "Ki")
+1 mebi = 2^20 = 1,048,576 (abbreviated as "Mi")
+1 gibi = 2^30 = 1,073,741,824 (abbreviated as "Gi")
+1 tebi = 2^40 = 1,099,511,627,776 (abbreviated as "Ti")
+To follow this revised naming convention, you should say, "the 8088 processor could address one mebibyte (MiB) of memory." The problem is that no one but math nerds use these ibis. If you buy RAM, the manufacturers use the term gigabyte even though technically they should use gibibyte. Welcome to the weird world of counting in IT. Let's get back to memory.
+NOTE
+The jury is still count on correct pronunciation of the ibis. You will find ardent supporters of "keebeebyte" and equally passionate supporters of "kehbeebyte". It doesn't really matter, because the rest of us just say "kilobyte".
+Which pattern Goes to Which Row?
+The second question is a little harder: "which pattern goes to which row of RAM?" TO understand this, let's take a moment to discuss binary counting. In binary, only two numbers exist, 0 and 1, which makes binary a handy way to work with wires that turn on and off. Let's try to count in binary: 0, 1... what's next? It's not 2-- you can only use zeros and ones. The next number after 1 is 10! Now let's count in binary to 1000: 0, 1, 10, 11, 100, 101, 110, 111, 1000. Try counting to 10000. Don't worry; it hardly takes any time at all.
+Super; you now count in binary as well as any math professor. Let's add to the concept. Stop thinking about binary for just a moment and think about good old base 10 (regular numbers). If you have the number 365, can you put zeros in front of the 365, like this: 000365? Sure you can--it doesn't change the value at all. The same thing is true in binary. Putting zeros in front of a value doesn't change a thing! Let's count again to 1000 in binary. In this case, add enough zeros to make 20 places:
+00000000000000000000
+00000000000000000001
+00000000000000000010
+00000000000000000001
+00000000000000000100
+00000000000000000101
+00000000000000000110
+00000000000000000111
+00000000000000001000
+Hey, wouldn't this be a great way to represent each line of RAM on the address bus? The CPU identifies the first byte of RAM on the address bus with 00000000000000000000. The CPU identifies the last RAM row with 11111111111111111111. When the CPU turns off all the address bus wires, it wants the first line of RAM; when it turns on all the wires, it wants the 1,048,576th line of RAM. Obviously, the address bus also addresses all the rows of RAM in between. So, by lighting up different patterns of ones and zeros on the address bus, the CPU can access any row of RAM it needs.
+NOTE
+Bits and bytes are abbreviated differently. Bits get a lowercase b, whereas bytes get a capital B. So for example, 4 Kb is 4 kilobits, but 4 KB is 4 kilobytes. The big-B little-b standard applies all the way up the food chain, so 2 Mb = 2 megabits; 2 MB = 2 megabytes; 4 Gb = 4 gigabits; 4 GB = 4 gigabytes; and so on.
+[1001]
+Modern CPUs
+CPU manufacturers have achieved stunning progress with microprocessors since the days of Intel 8088, and the rate of change doesn't show any signs of slowing. At the core, though, today's CPU's function similarly to the processors of your forefathers. The arithmetic logic unit (ALU)--that's the Man in the Box--still crunches numbers many billions of times per second. CPUs rely on memory to feed them lines of programming as quicly as possible.
+This section brings the CPU into the present. We'll first look at the models you can buy today, and then we'll turn to essential improvements in technology you should understand.
+Developers
+When IBM awarded Intel the contract to provide the CPUs for its new IBM PC back in 1980, it established for Intel a virtual monopoly on all PC CPUs. The ohter home-computer CPU makes of the time faded away: MOS Technology, Zilog, Motoloa--no one could compete directly with Intel. Over time, other competitors have risen to challenge Intel's market-segment share dominance. A company called Advaned Micro Devices (AMD) began to make clones of Intel CPUs, creating an interesting and rather cutthroad competition with Intel that lasts to this day.
+NOTE
+The ever-growing selection of mobile devices, such as Apple iPhone and iPad and most Android devices, use a CPU architecture develoepd by ARM holdings, called ARM. ARM-based processors use a simpler, more energy-efficient design, the reduced instruction set computing (RISC) architecture. They can't match the raw power of Intel and AMD complex instruction set computing (CISC) chips, but the savings in cost and battery life make ARM-based processors ideal for mobile devices. (Note that the clear distinction between RISC and CISC processors has blurred. Each design today borrows features of the other design to increase efficiency.)
+ARM Holdings designs ARM CPUs, but doesn't manufacture them. Many other companies--most notably, Qualcomm--license the design and manufacture their own versions.
+Intel
+Intel Corporation thoroughly dominates the personal market with its CPUs and motherboard support chips. At nearly every step in the evolution of PC, Intel has led the way with technological advances and surprising flexibility for such a huge corporation. Intel CPUs--and more specifically, their instruction sets--define the personal computer. Intel currently proces a dozen or so models of CPU for both desktop and portable computers. Most of Intel's desktop and laptop processors are sold under the Core, Pentium, and Celeron brands. Their high-end server chips are called Xeon.
+AMD
+AMD makes superb CPUs for the PC market and provides competition that keeps Intel on its toes. Like Intel, AMD doesn't just make CPUs, but their CPU business is certainly the part that the public notices. AMD has made CPUs that clond the function of Intel CPus. If Intel invented teh CPU used in the original IBM PC, how could AMD make clone of CPUs without getting sued? Chipmakers have a habit of exchanging technologies through cross-licensed agreement, giving AMD the right to copy certain types of CPUs.
+The trouble started with the Intel 8088. Intel needed AMD's help to supply enough CPUs to satisfy IBM's demands. But after a few years, Intel had grown tremendously and no longer wanted AMD to make CPUs. AMD said, "Too bad. See this agreement you signed?" Throughout the 1980s and into 1990s, AMD made pin-for-pin identical CPUs that matched the intel lines of CPUs. You could yank an intel CPU out of a system and snap in an AMD CPU--no problem!
+In January 1995, after many years of legal wrangling, Intel and AMD settled and decided to end the licensing agreements. As a result of this settlement, AMD chips are no longer compatible with sockets or motherboards made for Intel CPUs--even though in some cases the chips look similar. Today, if you want to use an AMD CPU, you must purchase as motherboard designed for AMD CPUs. If you want to use an Intel CPU, you must purchase a motherboard designed for Intel CPUs. You have a choice: Intel or AMD.
+Model Names
+Intel and AMD differentiate producte lines by using different product names, and these names have changed over the years. For a long time, Intel used Pentium for its flagship model, just adding model numbers to show successive generations--Pentium, Pentium II, Pentium III, and so on. AMD used the Athlon brand in similar fashion.
+Most discussion on PC CPUs focus on four end-product lines: desktop PC, budget PC, portable PC, and server computers. Below displays many of the current Intel and AMD product lines and names:
+- Market: Enthusiast	Intel: Core i7/i9	AMD: Ryzen, Ryzen Threadripper
+- Market: Mainstream desktop	Intel: Core i7/i5/i3	AMD: A-Series Pro, Ryzen
+- Market: Budget desktop	Intel: Pentium, Celeron	AMD: A-Series, FX
+- Market: Portable/Mobile	Intel: Core i7/i5/i3 (mobile), Mobile Celeron	AMD: A-Series
+- Market: Server	Intel: Xeon	AMD: Opteron, EPYC
+- Market: Workstation	Intel: Xeon	AMD: Ryzen Pro, Ryzen Threadripper
+Microarchitecture
+Intel and AMD continually develop faster, smarter, and generally more capable CPUs. In general, each company comes with a major new design, called a microarchitecture, about every three years. They try to minimize the number of model names in use, however, most likely for marketing purposes. This means that they release CPUs labeled as the same model, but the CPUs inside can be very different from earlier versions of that model. Both companies used code names to keep track of different variations within models. As a tech, you need to know both the models and code names to be able to make proper recommendations for your clients. One example illustrates the need: the Intel Core i7, where ones code name is "Sandy Bridge", and another, which is also Core i7, but its code name is "Coffee Lake", which is newer and better.
+Intel released the first Core i7 in the summer of 2008. By spring of 2012, the original microarchitecture--code named Nahalem--had gone through five variations, none of which worked on motherboards designed for one of the other variations. Plus, in 2011, Intel introduced the Sandy Bridge version of the Core i7 that eventually had two desktop versions and a mobile version, all of which used still other sockets. Just about every year since then has been a new Core i7 based on improved architectures with different code names such as Ivy Bridge, Haswell, Broadwell, and so on. (And I'm simplifying the variations here.)
+NOTE
+The processor numbers helps a lot when comparing processor once you decode the meanings. We need to cover more about modern processors before introducing processor numbers. Look for more information in the upcoming section, "Deciphering Processor Numbers."
+At this point, a lot of new techs throw their hands in the air, How do you keep up? How do you know which CPU will give your customer the best value for his or her money and provide the right computing firepower for his or her needs? Simply put, you need to research efficiently.
+Your first stop should be the manufacturers' websites. Both companies put out a lot of information on their products.
+- www.intel.com
+- www.amd.com
+You can also find many high-quality tech Web sites devoted to reporting on the latest CPUs. When a client needs an upgrade, surf the Web for recent articles and make comparisons. Because you'll understand the underlying technology from your CompTIA A+ studies, you'll be able to follow the conversations with confidence. Here's a list of some of the sites I use:
+- https://arstechnica.com
+- www.anandtech.com
+- www.tomshardware.com
+- www.bit-tech.net
+Finally, you can find great, exhaustive articles on all things tech at Wikipedia:
+- www.wikipedia.org
+NOTE
+Wikipedia is a user-generated, self-regulated resource. I've found it to be accurate on technical issues the majority of the time, but you should always check other references as well. Nicely, most article authors on the side provide their sources through footnotes. You can often use the Wikipedia articles as jumping-off points for deeper searches.
