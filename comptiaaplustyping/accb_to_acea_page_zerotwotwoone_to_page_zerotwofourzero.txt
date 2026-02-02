@@ -1,0 +1,90 @@
+Everybody calls the NX bit technology something different (but you don't need to memorize any of this for the exams):
+- Intel: XD bit (eXecute Disable)
+- AMD: Enhanced Virus Protection
+- ARM: XN (eXecute Never)
+Selecting and Installing CPUs
+Now that you know how CPUs work, it's time to get practical. This last section discusses selecting the proper CPU, installing several types of processors, and troubleshooting the few problems techs face with CPUS.
+Selecting a CPU
+When selecting a CPU, you need to make certain you get one that the motherboard can accommodate. Or, if you're buying a motherboard along with the CPU, then get the right CPU for the intended purpose. In future topic "Building a PC" will discusses computer roles and helps you select the proper components for each role. You need to have a lot more knowledge of all the pieces around the CPU to get the full picture, so we'll wait until then to discuss the "why" of specific processors. Instead, this section assumes you're placing a new CPU in an already-acquired motherboard. You need to address two key points in selecting a CPU that will work. First, does the motherboard support Intel CPUs or AMD CPUs? Second, what socket does the motherboard have?
+To find answers to both those questions, you have two sources: the motherboard book or manual, and the manufacturer's Web site.
+Like in a manual for an ASUS motherboard that can reveal the supported processors and the socket type: "...This motherboard supports the Intel second generation Core i7 / Core i5 / Core i3 processors in LGA1155 package with memory and PCI Express controllers integrated to support 2-channel (4 DIMMs) DDR3 memory and 16 PCI Express 2.0 lanes. This provides great graphic performance. Intel second generation Core i7 / Core i5 / Core i3 processors are among the most powerful and energy efficient CPU in the world..."
+Just as Intel and AMD make many types of CPUs, motherboards are manufactured with various different types of sockets. There have been hundreds of sockets developed over the years. The list below charts a few of the most popular ones in production today. CompTIA has traditionally tested on both the socket number/name and the alternative name, in the case of Intel sockets. I've included the most recent socket names and alternative names here.
+- Socket: LGA 1150	Alternative Name: H3	Platform: Intel	CPU: Core i3/i5/i7, Pentium, Celeron, Xeon
+- Socket: LGA1151	Alternative Name: H4	Platform: Intel	CPU: Core i3/i5/i7, Pentium, Celeron, Xeon
+- Socket: LGA 2011	Alternative Name: R or R3	Platform: Intel	CPU: Core i7, Core i7 Extreme Edition, Xeon
+- Socket: LGA 2066	Alternative Name: R4	Platform: Intel	CPU: Core i5/i7/i9, Xeon
+- Socket: FM2+	Alternative Name: n/a	Platform: AMD	CPU: A-Series
+- Socket: AM3+	Alternative Name: n/a	Platform: AMD	CPU: FX, Opteron
+- Socket: AM4	Alternative Name: n/a	Platform: AMD	CPU: Ryzen, A-Series
+- Socket: TR4	Alternative: n/a	Platform: AMD	CPU: Ryzen Threadripper
+EXAM TIP
+The CompTIA A+ 1001 objectives do not list any specific processor sockets, but previous versions frequently included questions about them. Hopefully you won't run into one of these questions, but it's not a bad idea to know the sockets just in case. Beyond the exam, just make sure that you understand that every CPU has a specific socket into which it fits and make sure a client's motherboard has the socket that works with a suggested CPU.
+Deciphering Processor Numbers
+Intel and AMD use different processor numbering schemes that help you compare multiple CPUs with similar names, such as Core i5. AMD and Intel both have fairly similar numbering schemes. Here's the scoop on both.
+Intel processor numbers follow a very clear pattern. An Intel Core i7 7500 U processor, for example, maps out like this:
+- Intel Core = brand
+- i7 = brand modifier
+- 7 = generation
+- 500 = SKU numbers
+- U = alpha suffix (U indicates that it's a desktop processor using ultra-low power)
+Contrast the previous processor with an Intel Core i7 8650 U, where the numbers map like this:
+- Intel Core = brand
+- i7 = brand modifier
+- 8 = generation
+- 650 = SKU numbers
+- U = alpha suffix (U indicates that it's a desktop processor using ultra-low power)
+AMD processor nomenclature is similar. Here's the breakdown for an AMD Ryzen 7 2700X:
+- AMD Ryzen = brand
+- 7 = market segment
+- 2 = generation
+- 7 = performance level
+- 00 = model number
+- X = power suffix (X indicates high-performance)
+*Try This!* Processor Research
+Both Intel and AMD maintain accessible Web sites with exhaustive information about their recent CPUs. All three Web sites listed here provide details you can use for client support and for recommendations when dealing with specific sockets for upgrades. Try this! Put one or more of the following links into a Web browser and explore the CPUs. Then tuck the URLs into your tech toolkit for later reference when needed.
+- https://ark.intel.com
+- www.amd.com/en/products/processors/desktop/ryzen.html
+- www.amd.com/en/products/processors/laptop/ryzen.html
+Installation Issues
+When Installing a CPU, you need to use caution with the tiny pins on the CPU or the socket. Plus, you must make certain that the power supply can supply enough electricity for the processor to function along with all the other components on the computer. Third, you must provide adequate cooling. Finally, you can decide whether to leave the CPU at stock settings or overclock it.
+Socket Types
+When installing a CPU, you need to exercise caution not to bend any of the tiny pins. The location of the pins differs between Intel and AMD. With Intel-based motherboards, the sockets have hundreds of tiny pins that line up with contacts on the bottom of the CPU. Intel CPUs use a land grid array (LGA) package for socketed CPUs, where the underside of the CPU has hundreds of contact points that line up with the socket pins.
+AMD CPUs have the pins; the sockets have holes. The pins on the AMD pin grid array (PGA) CPUs align with the holes in the sockets.
+All CPUs and sockets are keyed so you can't (easily) insert them incorrectly. If you look at the underside of the CPU on the left side, note that the pins do not make a perfect square, because a few are missing. And if you look at the top of the CPU on the right side, you would see the little mark at the corner, because the socket also has tiny markings so you can line the CPU up properly with the socket.
+In both socket styles, you release the retaining mechanism by pushing the little lever down slightly and then away from the socket. You next raise the arm fully, and then move the retaining bracket.
+Align the processor with the socket and gently drop the processor into place. If it doesn't go in easily, check the orientation and try again. These sockets are generically zero insertion force (ZIF) sockets, which means you never have to use any force at all.
+Cooling
+CPUs work very hard and thus require power to function. In electrical terms, CPU consume wattage or watts, a unit of electrical power, just like 100-watt light bulb consumes power whenever it's on. (Later chapter in "Power Supplies" for more details about electricity). Have you ever touched a light bulb after it's been on for a while? Ouch! CPUs heat up, too.
+To increase the capability of the CPUs to handle complex code, CPU manufacturers have added a lot of microscopic transistors over the years. The more transistors the CPU has, the more power they need and thus the hotter they get. CPUs don't tolerate heat well, and modern processors need active cooling solutions just to function at all. Almost every CPU uses a combination of a heat sink and fan assembly to wick heat away from the CPU.
+EXAM TIP
+A heat sink by itself (no fan) on a chip provides passive cooling. A heat sink and fan combination provides active cooling. You'll sometimes hear the latter described as an active heat sink.
+A heat sink is a copper or other metal device designed to dissipate heat from whatever it touches. Here are some cooling options:
+- OEM CPU coolers: Original equipment manufacturer (OEM) heat-sink and fan assemblies are included with most Intel and AMD retail-boxed CPUs. OEM in this case means that Intel makes the heat-sink/fan assemblies. Rather confusingly, you'll see the term "OEM CPUs" used to mean CPUs you buy in bulk or not in the retail packaging. These are still made by Intel or AMD and are functionally identical to the retail versions. They don't come bundled with CPU coolers. Crazy, isn't it? OEM CPU coolers have one big advantage: you know absolutely they will work with your CPU.
+- Specialized CPU coolers: Many companies sell third-party heat-sink and fan assemblies for a variety of CPUs. These usually exceed the OEM heat sinks in the amount of heat they dissipate. These CPU coolers invariably come with eye-catching designs to look really cool inside your system--some are even lighted.
+The last choice is the most impressive of all: liquid cooling! Liquid cooling works by running some liquid--usually water--through a metal block that sits on top of your CPU, absorbing heat. The liquid gets heated by the blocks, runs out of the block and into something that cools the liquid, and is then pumped through the block again. Any liquid-cooling system consists of three main parts:
+- A hollow metal block that sits on the CPU
+- A pump to move the liquid around
+- Some device to cool the liquid
+And of course, you need plenty of hosing to hook them all together.
+Several companies sell liquid-based cooling systems. Although they look impressive and certainly cool your CPU, unless you're overclocking or want a silent system, a good fan will more than suffice.
+EXAM TIP
+In some instances, you can create a system that has no fan for the CPU, what's called fanless cooling. Aside from mobile devices (like an Apple iPad) that have no fans, the term can be very misleading. The Xeon CPUs powering the servers in my office, for example, only have heat sinks with no fans. On the other hand, they have ducts directly to the case fans, which serve the same function as an active CPU fan. So, go figure.
+*Beyond A+* - interesting passive cooling developments.
+Intel Core M
+The Intel Core M runs cool and sips juice for incredibly long battery life in mobile devices. The official TDP is just 4.5 watts--compared to a mobile version of a Core i7 that demands 57 watts. The trade-off Intel makes with the Core M is in raw processing power. It's a little less powerful than a mobile Core i3--enough to get the job done, but not enough to run a serious game or other demanding application. On the other hand, the incredibly low electricity use means manufacturers can skip the fan and make super-skinny devices.
+Once you have a heat-sink and fan assembly sorted out, you need to connect it to the motherboard. To determine the orientation of the heat-sink and fan assembly, check the power cable from the fan. Make sure it can easily reach the three- or four-wire standout on the motherboard (see Figure 3-42). If it can't, rotate the heat sink until it can. (Check the motherboard manual if you have trouble locating the CPU fan power standout).
+Next, before inserting the heat sink, you need to add a small amount of thermal paste (also called thermal compound, heat dope, or nasty silver goo). Many heat sinks come with some thermal paste already on them; the thermal paste on these pre-doped heat sinks is covered by a small square of tape--take the tape off before you snap it to the CPU. If you need to put thermal paste on from a tube, know that you need to use only a tiny amount of this compound. Spread it on as thinly, completely, and evenly as you can. Unlike so many other things in life, you can have too much thermal paste!
+You secure heat sinks in various ways, depending on the manufacturer. Stock Intel heat sinks have four plungers that you simply push until they click into place in corresponding holes in the motherboard. AMD stock head sinks generally have a bracket that you secure to two points on the outside of the CPU socket and a latch that you swivel to lock it down.
+Finally, you can secure many aftermarket heat-sink and fan assemblies by screwing them down from the underside of the motherboard. You have to remove the motherboard from the case or install the heat sink before you put the motherboard in the case.
+For the final step, plug the fan power connector into the motherboard standout. It won't work if you don't
+Overclocking
+For the CPU to work, the motherboard speed, multiplier, and voltage must be set properly. In most modern systems, the motherboard uses the CPUID functions to set these options automatically. Some motherboards enable you to adjust these settings manually by moving a jumper, changing a CMOS setting, or using software; many enthusiasts deliberately change these settings to enhance performance.
+NOTE
+in future topic, "Firmware", goes into gory detail about the system setup utility and the area in which it stores important data (called CMOS), but invariably students want to experiment at this point, so I'll give you some information now. You can access the system setup utility by pressing some key as the computer starts up. This is during the text phase, well before it ever says anything about starting Windows. Most systems require you to press the DELETE key, but read the screen for details. Just be careful once you get into the system setup utility not to change anything you don't understand.
+Starting way back in the days of the Intel 80486 CPU, people intentionally ran their systems at clock speeds higher than the CPU was rated, a process called overclocking, and it worked. Well, sometimes the systems worked, and sometimes they didn't. Intel and AMD have  reason for marketing a CPU at a specific clock speed--that's the highest speed they guarantee will work.
+Before I say anything else, I must warn you that intentional overclocking of a CPU immediately voids most warranties. Overclocking has been known to destroy CPUs. Overclocking might make your system unstable and prone to system lockups, reboots, and unexpected shutdowns. I neither applaud nor decry the practice of overclocking. My goal here is simply to inform you of the practice. You make your own decisions. If a client wants to overclock, explain the potential consequences.
+CPU makers do not encourage overclocking. Why would you pay for a faster processor when you can take a cheaper, slower CPU and just make it run faster: Bowing to enthusiast market pressure, however, both Intel and AMD make utilities that help you overclock their respective CPUs.
+- Intel Extreme Tuning Utility (Intel XTU): Don't skip the additional Performance Tuning Protection Plan if you go this route.
+- AMD Overdrive Utility: No extra warranty is provided here; you're on your own.
+Most people make a couple of adjustments to overclock successfully. First, through jumpers, CMOS settings, or software configuration, you would increase the bus speed for the system. Second, you often have to increase the voltage going into the CPU by just a little to provide stability. You do that by changing a jumper or CMOS setting.
+Overriding the defaults can completely lock up your system, to the point where even removing and reinstalling the CPU doesn't bring the motherboard back to life. (There's also a slight risk of toasting the processor, although all modern processors have circuitry that shuts them down quickly before they overheat.) Most motherboards have a jumper setting or a button called CMOS clear or CLRTC that makes the CMOS go back to default settings. Before you try overclocking on a modern system, find the CMOS-clear jumper or button and make sure you know how to use it! Hint: Look in the motherboard manual.
