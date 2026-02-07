@@ -1,0 +1,47 @@
+CHAPTER 4
+RAM
+In this chapter, you will learn how to:
+- Identify the different types of DRAM packaging
+- Explain the varieties of RAM
+- Select and install RAM
+- Perform basic RAM troubleshooting
+Whenever people come up to me and start professing their computer savvy, I ask them a few questions to see how much they really know. In case you and I ever meet and you decide you want to "talk tech" with me, I'll tell you my first two questions now so you'll be ready. Both involve random access memory (RAM), the working memory of the CPU.
+1. "How much RAM is in your computer?"
+2. "What is RAM and why is it so important that every PC has enough?"
+Can you answer either of these questions? Don't fret if you can't--you'll know how to answer both before you finish this chapter. Let's start by reviewing what you know about RAM thus far.
+When not in use, programs and data are held in a mass storage device such as a solid-state drive (SSD), USB thumb drive, optical drive, or some other device that can hold data while the computer is off. When you load a program in Windows, your PC copies the program from the mass storage device to RAM and then runs it.
+As mentioned in the chapter about 'CPUs', in which the CPU uses dynamic random access memory (DRAM) as RAM for all PCs. Just like CPUs, DRAM has gone through evolutionary changes over the years, resulting in improved DRAM technologies such as SDRAM, RDRAM, and DDR RAM. This chapter starts by explaining how DRAM works, and then discusses the types of DRAM used over the past several years and how they improve on the original DRAM. The third section, "Working with RAM", goes into the details of finding and installing RAM. The chapter finishes with troubleshooting RAM problems.
+*Historical/Conceptual*
+Understanding DRAM
+DRAM functions like an electronic spreadsheet, with numbered rows containing cells and each cell holding a one or a zero. Now let's look at what's physically happening. Each spreadsheet cell is a special type of semiconductor that can hold a single bit--one or zero--by using microscopic capacitors and transistors. DRAM makers put these semiconductors into chips that can hold a certain number of bits. The bits inside the chips are organized in a rectangular fashion, using rows and columns.
+Each chip has a limit on the number of lines of code it can contains. Think of each line of code as one of the rows on the electronic spreadsheet; one chip might be able to store a million rows of code while another chip might be able to store over a billion lines. Each chip also has a limit on the width of the lines of code it can handle. One chip might handle 8-bit-wide data while another might handle 16-bit-wide data. Techs describe chips by bits rather than bytes, so they refer to x8 and x16, respectively. Just as you could describe a spreadsheet by the number of rows and columns--John's accounting spreadsheet is huge, 48 rows x 12 columns--memory makers describe RAM chips the same way. An individual DRAM chip that holds 1,048,576 rows and 8 columns, for example, would be a 1Mx8 chip, with "M" as shorthand for "mega", just like in megabytes (2^20 bytes). It is difficult, if not impossible to tell the size of a DRAM chip just by looking at it--only the DRAM makers know the meaning of the tiny numbers on the chips, although sometimes you can make a good guess.
+NOTE
+Serious RAM enthusiasts can enjoy chip specifics available at memory-maker Web sites. Check out the charts at Micron, for example:
+www.micron.com/products/dram/ddr4-sdram/part-catalog
+Organizing DRAM
+Because of its low cost, high speed, and capability to contain a lot of data in a relatively small package, DRAM has been the standard RAM used in all computers--not just PCs--since the mid-1970s. DRAM can be found in just about everything, from automobiles to automatic bread makers.
+The PC has very specific requirements for DRAM. The original 8088 processor had an 8-bit frontside bus. Commands given to an 8088 processor were in discrete 8-bit chunks. You needed RAM that could store data in 8-bit (1-byte) chunks, so that each time the CPU asked for a line of code, the memory controller chip (MCC) could put an 8-bit chunk on the data bus. This optimized the flow of data into (and out from) the CPU. Although today's DRAM chips may have widths greater than 1 bit, all DRAM chips back then were 1 bit wide, meaning only sizes such as 64 K x 1 or 256 K x 1 existed--always 1 bit wide. So how was 1-bit-wide DRAM turned into 8-bit wide memory? The solution was quite simple: just eight 1-bit wide chips and use the MCC to organize them electronically to be eight wide.
+Practical DRAM
+Okay, before you learn more about DRAM, I need to clarify a critical point. When you first saw the 8088's machine language, all the examples in the "codebook" were exactly 1-byte commands. The codebook as shown below--see how all commands are 1 byte?
+8088 External Data Bus Codebook
+LIGHTS | MEANING
+10000000 | The next line is a number; put it in the AX register
+10001000 | The next line is a number; put it in the BX register
+10110000 | Add AX to BX and put the result in the AX
+11000000 | Put the value of AX on the External Data Bus
+00000000 | The number 0
+00000001 | The number 1
+00000010 | The number 2
+00000011 | The number 3
+00000100 | The number 4
+00000101 | The number 5
+00000110 | The number 6
+00000111 | The number 7
+00001000 | The number 8
+00001001 | The number 9
+Well, the reality is slightly different. Most of the 8088 machine language commands are 1 byte, but more-complex commands need 2 bytes. For example, the following command tells the CPU to move 163 bytes "up the RAM spreadsheet" and run whatever command is there. Cool, eh?
+`1110100110100011`
+The problem here is that the command is 2 bytes wide, not 1 byte. So how did the 8088 handle this? Simple--it just took the command 1 byte at a time. It took twice as long to handle the command because the MCC had to go to RAM twice, but it worked.
+So if some of the commands are more than 1 byte wide, why didn't Intel make the 8088 with a 16-bit frontside bus? Wouldn't that have been better?
+Well, Intel did. Intel invented a CPU called the 8086. The 8086 predates the 8088 and was absolutely identical to the 8088 except for one small detail: it had a 16-bit frontside bus. IBM could have used the 8086 instead of the 8088 and used 2-byte-wide RAM instead of 1-byte-wide RAM. Of course, they would have needed to invent an MCC that could handle that kind of RAM.
+Why did Intel sell the 8088 to IBM instead of 8086? There were two reasons. Nobody had invented an affordable MCC or RAM that handled 2 bytes at a time. Sure, chips had been invented, but they were expensive, and IBM didn't think anyone would want to pay $12,000 for a personal computer. So IBM bought the Intel 8088, not the Intel 8086, and all our RAM came But as you might imagine, it didn't stay that way for long.
