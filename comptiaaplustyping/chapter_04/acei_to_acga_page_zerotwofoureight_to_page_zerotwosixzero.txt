@@ -1,0 +1,75 @@
+CHAPTER 4
+RAM
+In this chapter, you will learn how to:
+- Identify the different types of DRAM packaging
+- Explain the varieties of RAM
+- Select and install RAM
+- Perform basic RAM troubleshooting
+Whenever people come up to me and start professing their computer savvy, I ask them a few questions to see how much they really know. In case you and I ever meet and you decide you want to "talk tech" with me, I'll tell you my first two questions now so you'll be ready. Both involve random access memory (RAM), the working memory of the CPU.
+1. "How much RAM is in your computer?"
+2. "What is RAM and why is it so important that every PC has enough?"
+Can you answer either of these questions? Don't fret if you can't--you'll know how to answer both before you finish this chapter. Let's start by reviewing what you know about RAM thus far.
+When not in use, programs and data are held in a mass storage device such as a solid-state drive (SSD), USB thumb drive, optical drive, or some other device that can hold data while the computer is off. When you load a program in Windows, your PC copies the program from the mass storage device to RAM and then runs it.
+As mentioned in the chapter about 'CPUs', in which the CPU uses dynamic random access memory (DRAM) as RAM for all PCs. Just like CPUs, DRAM has gone through evolutionary changes over the years, resulting in improved DRAM technologies such as SDRAM, RDRAM, and DDR RAM. This chapter starts by explaining how DRAM works, and then discusses the types of DRAM used over the past several years and how they improve on the original DRAM. The third section, "Working with RAM", goes into the details of finding and installing RAM. The chapter finishes with troubleshooting RAM problems.
+*Historical/Conceptual*
+Understanding DRAM
+DRAM functions like an electronic spreadsheet, with numbered rows containing cells and each cell holding a one or a zero. Now let's look at what's physically happening. Each spreadsheet cell is a special type of semiconductor that can hold a single bit--one or zero--by using microscopic capacitors and transistors. DRAM makers put these semiconductors into chips that can hold a certain number of bits. The bits inside the chips are organized in a rectangular fashion, using rows and columns.
+Each chip has a limit on the number of lines of code it can contains. Think of each line of code as one of the rows on the electronic spreadsheet; one chip might be able to store a million rows of code while another chip might be able to store over a billion lines. Each chip also has a limit on the width of the lines of code it can handle. One chip might handle 8-bit-wide data while another might handle 16-bit-wide data. Techs describe chips by bits rather than bytes, so they refer to x8 and x16, respectively. Just as you could describe a spreadsheet by the number of rows and columns--John's accounting spreadsheet is huge, 48 rows x 12 columns--memory makers describe RAM chips the same way. An individual DRAM chip that holds 1,048,576 rows and 8 columns, for example, would be a 1Mx8 chip, with "M" as shorthand for "mega", just like in megabytes (2^20 bytes). It is difficult, if not impossible to tell the size of a DRAM chip just by looking at it--only the DRAM makers know the meaning of the tiny numbers on the chips, although sometimes you can make a good guess.
+NOTE
+Serious RAM enthusiasts can enjoy chip specifics available at memory-maker Web sites. Check out the charts at Micron, for example:
+www.micron.com/products/dram/ddr4-sdram/part-catalog
+Organizing DRAM
+Because of its low cost, high speed, and capability to contain a lot of data in a relatively small package, DRAM has been the standard RAM used in all computers--not just PCs--since the mid-1970s. DRAM can be found in just about everything, from automobiles to automatic bread makers.
+The PC has very specific requirements for DRAM. The original 8088 processor had an 8-bit frontside bus. Commands given to an 8088 processor were in discrete 8-bit chunks. You needed RAM that could store data in 8-bit (1-byte) chunks, so that each time the CPU asked for a line of code, the memory controller chip (MCC) could put an 8-bit chunk on the data bus. This optimized the flow of data into (and out from) the CPU. Although today's DRAM chips may have widths greater than 1 bit, all DRAM chips back then were 1 bit wide, meaning only sizes such as 64 K x 1 or 256 K x 1 existed--always 1 bit wide. So how was 1-bit-wide DRAM turned into 8-bit wide memory? The solution was quite simple: just eight 1-bit wide chips and use the MCC to organize them electronically to be eight wide.
+Practical DRAM
+Okay, before you learn more about DRAM, I need to clarify a critical point. When you first saw the 8088's machine language, all the examples in the "codebook" were exactly 1-byte commands. The codebook as shown below--see how all commands are 1 byte?
+8088 External Data Bus Codebook
+LIGHTS | MEANING
+10000000 | The next line is a number; put it in the AX register
+10001000 | The next line is a number; put it in the BX register
+10110000 | Add AX to BX and put the result in the AX
+11000000 | Put the value of AX on the External Data Bus
+00000000 | The number 0
+00000001 | The number 1
+00000010 | The number 2
+00000011 | The number 3
+00000100 | The number 4
+00000101 | The number 5
+00000110 | The number 6
+00000111 | The number 7
+00001000 | The number 8
+00001001 | The number 9
+Well, the reality is slightly different. Most of the 8088 machine language commands are 1 byte, but more-complex commands need 2 bytes. For example, the following command tells the CPU to move 163 bytes "up the RAM spreadsheet" and run whatever command is there. Cool, eh?
+`1110100110100011`
+The problem here is that the command is 2 bytes wide, not 1 byte. So how did the 8088 handle this? Simple--it just took the command 1 byte at a time. It took twice as long to handle the command because the MCC had to go to RAM twice, but it worked.
+So if some of the commands are more than 1 byte wide, why didn't Intel make the 8088 with a 16-bit frontside bus? Wouldn't that have been better?
+Well, Intel did. Intel invented a CPU called the 8086. The 8086 predates the 8088 and was absolutely identical to the 8088 except for one small detail: it had a 16-bit frontside bus. IBM could have used the 8086 instead of the 8088 and used 2-byte-wide RAM instead of 1-byte-wide RAM. Of course, they would have needed to invent an MCC that could handle that kind of RAM.
+Why did Intel sell the 8088 to IBM instead of 8086? There were two reasons. Nobody had invented an affordable MCC or RAM that handled 2 bytes at a time. Sure, chips had been invented, but they were expensive, and IBM didn't think anyone would want to pay $12,000 for a personal computer. So IBM bought the Intel 8088, not the Intel 8086, and all our RAM came But as you might imagine, it didn't stay that way for long.
+DRAM sticks
+As CPU data bus sizes increased, so too did the need for RAM wide enough to fill the bus. The Intel 80386 CPU, for example, had a 32-bit data bus and thus the need for 32-bit-wide DRAM. Imagine having to line up 32 one-bit-wide DRAM chips on a motherboard. Talk about a waste of space! And RAM could definitely rrun amuck on a motherboard.
+DRAM manufacturers responded by creating wider DRAM chips, such as x4, x8, and x16, and putting multiples of them on a small circuit board called a stick module. An early stick is called a single inline memory module (SIMM), with eight DRAM chips. To add RAM to a modern machine, you need to get the right stick or sticks for the particular motherboard. Your motherboard manual tells you precisely what sort of module you need and how much RAM you can install.
+Modern CPUs are a lot smarter than the old Intel 8088. Their machine languages have some commands that are up to 64 bits. (8 bytes) wide. They also have at least a 64-bit frontside bus that can handle more than just 8 bits. They don't want RAM to give them a puny 8 bits at a time! To optimize the flow of data into and out of the CPU, the modern MCC provides provides at least 64 bits of data every time the CPU requests information from RAM.
+*Try This!* Dealing with Old RAM
+Often in the PC world, old technology and ways of doing things are reimplemented with some newer technology. A tech who knows these ancient ways will have extra opportunities. Many thousands of companies--including hospitals, auto repair places, and more--use very old proprietary applications that keep track of medical records, inventory, and so on. If you're called to work on one of these ancient systems, you need to know how to work with old parts, so try this.
+Obtain an old computer. Ask your uncle, cousin, or Great Aunt Edna if they have a PC collecting dust in a closet that you can use. Failing that, go to a secondhand store or a market and buy one for a few dollars.
+Open up the system and check out the RAM. Remove the RAM from the motherboard and then replace it to familiarize yourself with the internals. You never know when some critical system will go down and need repair immediately--and you're the one to do it!
+Modern DRAM sticks come in 32-bit- and 64-bit-wide data form factors with a varying number of chips. Many techs describe these memory modules by their width, so we call them x32 and x64. Note that this number does not describe the width of the individual DRAM chips on the module. When you read or hear about by whatever memory, you need to know whether that person is talking about DRAM width or the module width. When the CPU needs certain bytes of data, it requests those bytes via the address bus. The CPU does not know the physical location of the RAM that stores that data, nor the physical makeup of the RAM--such as how many DRAM chips work together to provide the 64-bit-wide memory rows. The MCC keeps track of this and just gives the CPU whichever bytes it requests.
+Consumer RAM
+If modern DRAM modules come in sizes much wider than a byte, why do people still use the word "byte" to describe how much DRAM they have? Convention. Habit, Rather than using a label that describes the electronic structure of RAM, common usage describes the total capacity of RAM on a stick in bytes. John has a single 8-GB stick of RAM on his motherboard, for example, and Sally has two 4-GB sticks. Both systems have a total of 8 GB of system RAM. That's what your clients care about. Having enough RAM makes their systems snappy and stable; not enough RAM means their systems run poorly. As a tech, you need to know more, of course, to pick the right RAM for many different types of computers.
+Types of RAM
+Development of newer, wider, and faster CPUs and MCCs motivates DRAM manufacturers to invent new DRAM technologies that deliver enough data at a single pop to optimize the flow of data into and out of the CPU.
+SDRAM
+Most modern systems use some form of synchronous DRAM (SDRAM). SDRAM is still DRAM, but is synchronous--tied to the system clock, just like the CPU and MCC, so the MCC knows when data is ready to be grabbed from SDRAM. This results in little wasted time.
+SDRAM made is debut in 1996 on stick called a dual inline memory module (DIMM). The early SDRAM DIMMs came in a wide variety of pin sizes. The most common pin sizes found on desktops were the 168-pin variety. Laptop DIMMs came in 68-pin, 144-pin, or 172-pin micro-DIMM packages; and the 72-pin, 144-pin, or 200-pin small outline DIMM (SO-DIMM) form factors. With the exception of the 32-bit 72-pin SO-DIMM, all these DIMM varieties delivered 64-bit-wide data to match the 64-bit data bus of every CPU since the original Pentium.
+EXAM TIP
+Some manufacturers (and CompTIA) drop the hyphen: SODIMM. You might see the RAM package spelled as SO-DIMM, SODIMM, or even SoDIMM.
+To take advantage of SDRAM, you needed a PC designed to use SDRAM. If you had a system with slots for 168-pin DIMMs, for example, your system used SDRAM. A DIMM in any one of the DIMM slots could fill the 64-bit bus, so each slot was called a bank. You could install one, two, or more sticks and the system would work. Note that on laptops that used the 72-pin SO-DIMM, you needed to install two sticks of RAM to make a full bank, because each stick only provided half the bus width.
+SDRAM was tied to the system clock, so its clock matched the frontside bus. Five clock speeds were commonly used on the early SDRAM systems: 66, 75, 83, 100, and 133 MHz. The RAM speed had to match or exceed the system speed, or the  computer would be unstable or wouldn't work at all. These speeds were prefixed with a "PC" in the front, based on a standard forwarded by Intel, so SDRAM speeds were PC66 through PC133. For a Penium III computer with a 100-MHz frontside bus, you needed to buy SDRAM DIMMs rated to handle it, such as PC100 or PC133.
+RDRAM
+When Intel was developing the Penium 4, they knew that regular SDRAM just wasn't going to be fast enough to handle the quad-pumped 400-MHz frontside bus. Intel announced plans to replace SDRAM with a very fast, new type of RAM developed by Rambus, Inc. called Rambus DRAM, or simply RDRAM. Hailed by Intel as the next great leap in DRAM technology, RDRAM could handle speeds up to 800 MHz, which gave Intel plenty of room to improve the Pentium 4.
+RDRAM was greatly anticipated by the industry for years, but industry support for RDRAM proved less than enthusiastic due to significant delays in development and a price many times that of SDRAM. Despite the grudging support, almost all major PC makers sold systems that used RDRAM--for a while. From a tech's standpoint, RDRAM shared almost all of the characterstics of SDRAM. A stick of RDRAM was called RIMM. In this case, however, the letters didn't actually stand for anything; they just rhymed: SIMMs, DIMMs, and RIMMs, get it?
+NOTE The 400-MHz frontside bus speed wasn't achieved by making the system clock faster--it was done by making CPUs and MCCs capable of sencind 64 bits of data two or four times for every clock cycle, effectively doubling or quadrupling the system bus speed.
+*1001*
+DDR SDRAM
+AMD and many major system and memory makers threw their support behind an alternative to RDRAM, double data rate SDRAM (DDR SDRAM). DDR SDRAM basically copied Rambus, doubling the throughput of SDRAM by making two processes for every clock cycle. This synchronized (pardon the pun) nicely with the Athlon and later AMD processor's double-pumped frontside bus. DDR SDRAM could not run as fast as RDRAM--although relatively low frontside bus speeds made that a moot point--but only slightly more than regular SDRAM.
+DDR SDRAM for desktops comes in 184-pin DIMMs. These DIMMs match the 168-pin in physical size but not in pin compatibility. The slots for the two types of RAM appear similar as well but have different guide notches, so you can't insert either type of RAM into the other's slot. DDR SDRAM for laptops comes in either 200-pin SO-DIMMs or 172-in micro-DIMMs.
