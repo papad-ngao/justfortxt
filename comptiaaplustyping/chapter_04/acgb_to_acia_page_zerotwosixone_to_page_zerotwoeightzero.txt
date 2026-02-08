@@ -1,0 +1,128 @@
+NOTE
+Most techs drop some or all of the SDRAM part of DDR SDRAM when engaged in normal geek-speak. You'll hear the memory referred to as DDR, DDR RAM, and the weird hybrid, DDRAM.
+DDR sticks use a rather interesting naming convention based on the number of bytes per second of data throughput the RAM can handle. To determine the bytes per second, take the MHz speed and multiply by 8 bytes (the width of all DDR SDRAM sticks). So 400 MHz multiplied by 8 is 3200 megabytes per second (MBps). Put the abbreviation "PC" in  the front to make the new term: PC3200. Many techs also use the naming convention used for the individual DDR chips; for example, DDR400 refers to a 400-MHz DDR SDRAM chip running on a 200-MHz clock.
+Even though the term DDRxxx is really just for individual DDR chips and the term PCxxx is for DDR sticks, this tradition of two names for every speed of RAM is a bit of challenge because you'll often hear both terms used interchangeably. Table below shows all the speeds for DDR--not all of these are commonly used.
+DDR speeds table:
+| Clock Speed | DDR Speed Rating | PC Speed Rating |
+| ----------- | ---------------- | --------------- |
+| 100 MHz | DDR-200 | PC-1600 |
+| 133 MHz | DDR-266 | PC-2100 |
+| 166 MHz | DDR-333 | PC-2700 |
+| 200 MHz | DDR-400 | PC-3200 |
+| 217 MHz | DDR-433 | PC-3500 |
+| 233 MHz | DDR-466 | PC-3700 |
+| 250 MHz | DDR-500 | PC-4000 |
+| 275 MHz | DDR-550 | PC-4400 |
+| 300 MHz | DDR-600 | PC-4800 |
+Following  the lead of AMD and other manufacturers, the PC industry adopted DDR SDRAM as the standard system RAM. In the summer of 2003, Intel relented and stopped producing motherboards and memory controllers that required RDRAM.
+One thing is sure about PC technologies: any good idea that can be copied will be copied. One of Rambus' best concepts was the dual-channel architecture--using two sticks of RDRAM together to increase throughput.
+Manufacturers have released motherboards with MCCs that support dual-channel architecture using DDR SDRAM. Dual-channel DDR motherboards use regular DDR sticks, although manufacturers often sell RAM in matched pairs, branding them as dual-channel RAM.
+Dual-channel DDR requires two identical sticks of DDR and they must snap into two paired slots. Many motherboards offer four slots.
+DDR2
+DDRs is DDR RAM with some improvements in its electrical characteristics, enabling it to run even faster than DDR while using less power. The big speed increase from DDR2 comes by clock doubling the input/output circuits on the chips. This does not speed up the core RAM--the part that holds the data--but speeding up the input/output and adding special buffers (sort of like a cache) makes DDR2 run much faster than regular DDR. DDR2 uses a 240-pin DIMM that's not compatible with DDR. Likewise, the DDR2 200-pin SO-DIMM is incompatible with the DDR SO-DIMM.
+You'll find motherboards running both single-channel and dual-channel DDR2.
+NOTE DDR2 RAM sticks will not fit into DDR sockets, nor are they electronically compatible.
+Table below shows some of the common DDR2 speeds.
+DDR2 speeds table:
+| Core RAM Clock Speed | DDR I/O Speed | DDR2 Speed Rating | PC Speed Rating |
+| -------------------- | ------------- | ----------------- | --------------- |
+| 100 MHz | 200 MHz | DDR2-400 | PC2-3200 |
+| 133 MHz | 266 MHz | DDR2-533 | PC2-4200 |
+| 166 MHz | 333 MHz | DDR2-667 | PC2-5300 |
+| 200 MHz | 400 MHz | DDR2-800 | PC2-6400 |
+| 266 MHz | 533 MHz | DDR2-1066 | PC2-8500 |
+DDR3
+DDR3 boasts higher speeds, more efficient architecture, and around 30 percent lower power consumption than DDR2 RAM. Just like its predecessor, DDR3 uses a 240-pin DIMM, albeit one that is slotted differently to make it difficult for users to install the wrong RAM in their system without using a hammer.
+EXAM TIP
+The 220-1001 exam loves to test you on pin counts with RAM! It will challenge your knowledge of the various RAM types, including DDR2, DDR3, and DDR4. Make sure you know their individual characteristics and differences. DDR3 DIMMs have 240 pins, for example, and DDR3 SO-DIMMs have 204 pins.
+DDR3 doubles the buffer of DDR2 from 4 bits to 8 bits, giving it a huge boost in bandwidth over older RAM. Not only that, but some DDR3 (and later) modules also include a feature called XMP, or Extreme Memory Profile, that enables power users to overclock their RAM easily, boosting their already fast memory. DDR3 modules also use higher-density memory chips, up to 16-GB DDR3 modules. AMD's version of XMP is called AMP for AMD Memory Profile.
+Note
+Do not confuse DDRx with GDDRx; the latter is a type of memory used solely in video cards (e.g., GDDR5). in future topic "Display Technologies" includes the scoop on video-specific types of memory.
+Some motherboards that support DDR3 also support features called triple-channel architecture or quad-channel architecture, which work a lot like dual-channel, but with three or four sticks of RAM instead of two. More recently, Intel and AMD systems have switched back to dual-channel, although there's plenty of systems out there using triple- or quad-channel memory.
+EXAM TIP
+Be sure you are familiar with single-, dual-, triple, and quad- channel memory architectures.
+Table below shows common DDR3 speeds. Note how DDR3 I/O speeds are quadruple the clock speeds, whereas DDR2 I/O speeds are only double the clock. This speed increase is due to the increased buffer size, which enables DDR3 to grab twice as much data every clock cycle as DDR2 can.
+DDR3 speeds table:
+| Core RAM Clock Speed | DDR I/O Speed | DDR3 Speed Rating | PC Speed Rating |
+| -------------------- | ------------- | ----------------- | --------------- |
+| 100 MHz | 400 MHz | DDR3-800 | PC3-6400 |
+| 133 MHz | 533 MHz | DDR3-1066 | PC3-8500 |
+| 166 MHz | 667 MHz | DDR3-1333 | PC3-10667 |
+| 200 MHz | 800 MHz | DDR3-1600 | PC3-12800 |
+| 233 MHz | 933 MHz | DDR3-1866 | PC3-14900 |
+| 266 MHz | 1066 MHz | DDR3-2133 | PC3-17000 |
+| 300 MHz | 1200 MHz | DDR3-2400 | PC3-19200 |
+DDR3L/DDR3U
+Memory manufacturers offer a low-voltage version of DDR3, most commonly labeled DDR3L, that provides substantial cost savings when used in massive RAM applications. (Think big data centers, like the ones that power Google). DDR3L runs at 1.35 volts (V), compare to the 1.5 V or 1.65 V of regular DDR3, providing cost savings up to 15 percent--that adds up fast! The ultra-low-voltage version of DDR3, DDR3U, runs at a miserly 1.25 V.
+Lower voltage means less heat generated. In a server farm or data center, that can reduce the air conditioning bill by a lot. That's a good thing.
+The DIMM is slot-compatible with DDR3, although not necessarily a drama-free replacement on older motherboards. A motherboard pushing 1.5 V to the RAM slots and RAM only capable of running at 1.35 V would not results in happiness.
+For best results, check the manual that came with the motherboard in question or check the manufacturer's Web site for support. Also, many RAM manufacturers produce RAM modules capable of running at 1.35 V or 1.5 V; those will work in any motherboard that supports DDR3. Some modules can handle the full gamut, from 1.25 V to 1.65 V.
+DDR4
+DDR4 arrived on the scene in late 2014 with much fanfare and slow adoption, although it's the mainstream memory now. DDR4 offers higher density and lower voltages than DDR3, and can handle faster data transfer rates. In theory, manufacturers could create DDR4 DIMMs up to 512 GB. DIMMs running DDR4 top out at 64 GB, compare to the 16 GB max of DDR3, but run at only 1.2 V. (There's a performance versions that runs at 1.35 V and a low-voltage version at 1.05 V too).
+NOTE
+By the time you read this, the 64-GB limit on DDR4 might have been eclipsed. Check www.newegg.com for the latest.
+DDR4 uses a 288-pin DIMM, so they are not backwardly compatible with DDR3 slots. DDR4 SO-DIMMs have 260 pins that are not compatible with DDR3 204-pin SO-DIMM slots. Some motherboard manufacturers have released boards that offer for both DDR3 and DDR4, by providing both slot types.
+With DDR4, most techs have switched from bit rate to mega-transfers per second (MT/s), a way to describe the number of data transfer operations happening at any given second. For DDR4, the number is pretty huge. Table below shows some DDR4 speeds and labels.
+Standard DDR4 varieties table:
+| Clock Speed | Bandwidth | DDR4 Speed Rating | PC Speed Rating |
+| ----------- | --------- | ---------------- | --------------- |
+| 200 MHz | 1600 MT/s | DDR4-1600 | PC4-12800 |
+| 266 MHz | 2133 MT/s | DDR4-2133 | PC4-17000 |
+| 300 MHz | 2400 MT/s | DDR4-2400 | PC4-19200 |
+| 400 MHz | 3200 MT/s | DDR4-3200 | PC4-25600 |
+...Skipping a whole bunch here in the middle...
+| 563 MHz | 4500 MT/s | DDR4-4500 | PC4-36000 |
+| 575 MHz | 4600 MT/s | DDR4-4600 | PC4-36800 |
+| 588 MHz | 4700 MT/s | DDR4-4700 | PC4-37600 |
+EXAM TIP
+The CompTIA A+ 1001 exam covers DDR2, DDR3, and DDR4. You won't find DDR, DDR3L, or DDR3U on the exam.
+RAM variations
+Within each class of RAM, you'll find variations in packaging, speed, quality, and the capability to handle data with more or fewer errors. Higher-end systems often need higher-end RAM, so knowing these variations is of crucial importance to techs.
+Double-Sided DIMMs
+Every type of RAM stick comes in one of two types: single-sided RAM and double-sided RAM. As their name implies, single-sided sticks have chips on only one side of the stick. Double-sided sticks have chips on both sides. Double-sided sticks are basically two sticks of RAM soldered onto one board. There's nothing wrong with double-sided RAM sticks other than the fact that some motherboards either can't use them or can only use them in certain ways--for example, only if you use a single stick and it goes into a certain slot.
+Latency Different RAM responds to electrical signals at varying rates. When the memory controller starts to grab a line of memory, for example, a slight delay occurs; think of it as the RAM getting off the couch. After the RAM sends out the requested memory controller can ask for another line--the RAM sat back down. The delay in RAM's response time is called latency, but shorthand like CL17 or CL19 uses initials for the technical name; column array strobe (CAS) latency.
+If both have the same speed rating, RAM with a lower latency--such as CL17--is slightly faster than RAM with higher latency--such as CL19--because it responds more quickly. The CL refers to clock cycle delays. The 17 means that the memory delays 17 clock cycles before delivering the requested data; the 19 means a 19-cycle delay. Because it's measured in clock cycles, CL is relative to the clock speed of the RAM--a 19-cycle delay takes up more real-world time at a lower clock speed than it will at a higher clock speed.
+Back when DDR2 and DDR3 were the latest and greatest, these latency numbers were a big deal. Gamers and other PC enthusiasts paid a handsome premium for lower-latency RAM. When DDR4 debuted, its relatively high CL numbers made enthusiasts question the memory companies, afraid it would be too slow. In real-world tests, DDR4's higher clock speeds result in latencies in line with the older DDR3. It's still worth looking t latency when you go memory shopping. but it's a lot less important than it used to be.
+NOTE
+Latency numbers reflect how many clicks of the system clock it takes before the RAM responds. If you speed up the system clock--say, from from 200 MHz to 266 MHz--the same stick of RAM might take an extra click before it can respond. When you take RAM out of an older system and put it into a newer one, you might get a seemingly dead PC, even though the RAM fits in the DIMM slot. Many motherboards enable you to adjust the RAM timings manually. If your does so, try raising the latency to give the slower RAM time to respond. You can learn more about "Firmware" to better understand how you can make these adjustments (and how to recover if you make a mistake).
+From a tech's standpoint, you need to get the proper RAM for the system you're working on. If you put a high-latency stick in a motherboard set up for a low-latency stick, you'll get an unstable or completely dead PC. Check the motherboard manual or RAM manufacturer's Web site and get the quickest RAM the motherboard can handle, and you should be fine.
+Parity and ECC
+Given the high speeds and phenomenal amount of data moved by the typical DRAM chip, a RAM chip might occasionally give bad data to the memory controller. This doesn't necessarily mean that the RAM has gone bad. It could be a hiccup caused by some unknown event that makes s good DRAM chip say a bit is a zero when it's really a one. In most cases you won't even notice when such a rare event happens. In some environments, however, even these rare events are intolerable. A bank server handling thousands of online transaction per second, for example, can't risk even the smallest error. These important computers need a more robust, fault-resistant RAM.
+The first type of error-detecting RAM was known as parity RAM. Compared with non-parity RAM, parity RAM stored an extra bit of data (called the parity bit) that the MCC used to verify whether the data was correct. Parity wasn't perfect. It wouldn't always detect an error, and if the MCC did find an error, it couldn't correct the error. For years, parity was the only available way to tell if the RAM made a mistake.
+Today's PCs that need to watch for RAM errors use a special type of RAM called error correction code RAM (ECC RAM). ECC is a major advance in error checking on DRAM. ECC detects and corrects any time a single bit is flipped, on-the-fly. It can detect but not correct a double-bit error. The checking and fixing come at a price, however, as ECC RAM is always slower than non-ECC RAM.
+ECC DRAM comes in every DIMM package type and can lead to some odd-sounding numbers. You can find DDR2, DDR3, or DDR4 RAM sticks, for example, that come in 240-pin, 72-bit versions. Similarly, you'll see 200-pin, 72-bit SO-DIMM format. The extra 8 bits beyond the 64-bit data stream are for the ECC.
+You might be tempted to say "Gee, maybe I want to try this ECC RAM." Well, don't! To take advantage of ECC RAM, you need a motherboard designed to support ECC. Only expensive motherboards for high-end systems use ECC. The special-use-only nature of ECC makes it fairly rare in desktop systems. Plenty of techs with years of experience have never even seen ECC RAM.
+NOTE
+Some memory manufacturers call the technology error checking and correction (ECC). Don't thrown off if you see that phrase--it's the same thing, just a different marketing slant for error correction code.
+Registered and Buffered Memory
+When shopping for memory, especially for ECC memory, you are bound to come across the terms registered RAM or buffered RAM. Either term refers to a small register installed on some memory modules to act as a buffer between the DIMM and the memory controller. This little extra bit of circuitry helps compensate for electrical problems that crop up in systems with lots of memory modules, such as servers.
+The key thing to remember is that a motherboard will use either buffered or unbuffered RAM (that's typical consumer RAM), not both. If you insert the wrong module in a system you are upgrading, the worst that will happen is a blank screen and a lot of head scratching.
+Working with RAM
+Whenever people come up to me and ask what single hardware upgrade they can do to improve their system performance, I always tell them the same thing--add more RAM. Adding more RAM can improve overall system performance, processing speed, and instability--if you get it right. Botching the job can cause dramatic system instability, such as frequent, random crashes and reboots. Every tech needs to know how to install and upgrade system RAM of all types.
+To get the desired results from a RAM upgrade, you must first determine if insufficient RAM is the cause of system problems. Second, you need to pick the proper RAM for the system. Finally, you must use good installation  practices. Always store RAM sticks in anti-static packaging whenever they're not in use, and use strict ESD handling procedures. Like many other pieces of the PC, RAM is very sensitive to ESD and other technician abuse.
+Do You Need More RAM?
+Two symptoms point to the need for more RAM in a PC: general system sluggishness and excessive hard drive accessing. If programs take forever to load and running programs seem to stall and move more slowly than you would like, the problem could stem from insufficient RAM.
+A friend with an older Windows system complained that her PC seemed snappy when she first got it but now takes a long time eto do the things she wants to do with it, such as photograph retouching in Adobe Photoshop. Over the years, new applications and updates to her existing operating system and applications piled up until her system, with only 2 GB of RAM, was woefully insufficient for her tasks--she kept maxing out the RAM and thus the system slowed to a crawl. I replaced her single 2-GB stick with a pair of 4-GB sticks and suddenly she had the speedy workstation she desired.
+Excessive hard drive activity when you move between programs points to a need for more RAM. Every computer has the capability to make a portion of your hard drive look like RAM in case you run out of real RAM.
+Virtual Memory
+Computers use a portion of the hard drive (or solid-state drive) as an extension of system RAM called virtual memory. The operating system uses part of the available drive space to save a page file or swap file. When a computer starts running out of real RAM because you've loaded too many programs, the system swaps less-used programs from RAM to the page file, opening more space for programs currently active. All versions of Windows, MacOS, and Linux use virtual memory. Let's use a typical Windows PC as an example of how paging works.
+EXAM TIP
+The default and recommended page-file size in Windows is 1.5 times the amount of installed RAM on your computer.
+Let's assume you have a PC with 4 GB of RAM. As programs load, they take up RAM, and as more and more programs are loaded (let's say it's program A, B, and C), more RAM is used.
+At a certain point, you won't have enough RAM to run any more programs. Sure, you could close one or more programs to make room for yet another one, but you can't keep all of the programs running simultaneously. This is where virtual memory comes into play. (assuming you already have program A, B, and C running, and with 4 GB of RAM, there would be not enough RAM to also run program D if their combined RAM usage exceeds 4 GB)
+Windows' virtual memory starts by creating a page file that resides somewhere on your hard drive. The page file works like a temporary storage box. Windows removes running programs temporarily from RAM into the page file so other programs can load and run. If you have enough RAM to run all your programs, Windows does not need to use the page file--Windows brings the page file into play only when insufficient RAM is available to run all open programs.
+NOTE
+Virtual memory is a fully automated process and does not require any user intervention. This is true of virtual memory in Windows, MacOS, and Linux.
+To load, Program D needs a certain amount of free RAM. Clearly, this requires unloading some other program (or programs) from RAM without actually closing any programs. Windows looks at all running programs--in this case A, B, and C--and decides which program is the least used. That program is then cut out of or swapped from RAM and copied into the page file. In this case, Assuming Windows has chosen Program B because it is the least used. Unloading Program B from RAM provides enough RAM to load Program D.
+It is important to understand that none of this activity is visible on the screen. Program B's window is still visible, along with those of all the other running programs. Nothing tells the user that Program B is no longer in RAM.
+So what happens if you click on Program B's window to bring it to the front? The program can't actually run from the page file; it must be loaded back into RAM. First, Windows decides which program must be removed from RAM, and this time Windows chooses Program C. Then it loads Program B into RAM. (assuming Program C uses the second least amount of RAM)
+Swapping programs to and from the page file and RAM takes time. Although no visual clues suggest that swap is taking place, the machine slows down quite noticeably as Windows performs the swaps. Page files are a crucial aspect of Windows operation.
+Windows handles page files automatically, but occasionally you'll run into problems and need to change the size of the page or delete it and let Windows re-create it automatically. The page file or delete it and let Windows re-create it automatically. The page file is pagefile.sys. You can often find it in the root directory of the C: drive, but again, that can be changed. Wherever it is, the page file is a hidden system file, which means in practice that you'll have to play with your folder-viewing options to see it.
+If Windows needs to access the page file too frequently, you will notice the hard drive access LED going crazy as Windows rushes to move programs between RAM and the page file in a process called disk thrashing. Windows uses the page file all the time, but excessive disk thrashing suggests that you need more RAM.
+System RAM Recommendations.
+Microsoft sets very low the minimum RAM requirements listed for the various Windows operating systems to get the maximum number of users to upgrade or convert, and that's fine. Microsoft recommends a minimum system requirements of 1 GB of RAM for 32-bit versions of Windows and 2 GB of RAM for 64-bit versions. This applies to any versions of Windows. I think that results in dreadfully sluggish computers. Here are my recommendations:
+- 32-bit Windows: 2 GB to get by; 4 GB for best results
+- 64-bit Windows: 4 GB to get by; 8 GB for a solid machine; 16+ GB for any machine doing serious, processor-intensive work.
+The latest versions of MacOS require a minimum of 2 GB of RAM. Like Windows, however, the 64-bit-only OS does much better with a lot more RAM. I would go with 4 GB at a minimum, 8 GB for good performance, and more for peak performance.
+NOTE
+Beware sealed systems! Almost all smartphones and tablets are
