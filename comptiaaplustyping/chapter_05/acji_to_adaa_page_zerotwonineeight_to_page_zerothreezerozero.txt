@@ -1,0 +1,16 @@
+CHAPTER 5
+Firmware
+In this chapter, you will learn how to
+- Explain the function of BIOS
+- Distinguish among various CMOS setup utility options
+- Describe option ROM and device drivers
+- Troubleshoot the power-on self test (POST)
+- Maintain BIOS and CMOS properly
+In CPUs, the address bus and data bus connect RAM to the CPU via the memory controller to run programs and transfer data. Assuming you apply power in the right places, you don't need anything else to make a simple computer. The only problem with such a simple computer is that it would bore you to death--there's no way to do anything with it! A PC needs devices such as keyboards and mice to provide input, and output devices such as monitors and speakers to communicate the current state of the running programs to you. A computer also needs permanent storage devices, such as solid-state devices, to store programs and data when you turn off the computer.
+This chapter discusses in detail the software that controls a PC at its core. We'll start with a couple of sections on why and how it all works, and then we'll look at hardware and self-testing circuits. The chapter finishes with the finer points of maintaining this essential programming and hardware.
+*1001*
+We Need to Talk
+For a keyboard or a monitor or a hard drive to work with a CPU, they must communicate via some kind of physical connection. More than that, these peripherals (usually) can't connect directly to the CPU. This communication requires a controller, a chip that connects the device to the CPU.
+Getting a CPU to communicate with a controller starts with some kind of interconnection--a communication bus (that means wires) that enables the CPU to send commands to and from devices. To make this connection, let's extend the data bus and the address bus throughout the motherboard, connecting all of the computer's controllers to the CPU.
+Early motherboards were covered in controller chips, A very early motherboard could be absolutely covered in controller chips (as well as many other chips).
+Over time, chip manufacturers began to combine multiple controllers into specifically designed chipsets. Early chipsets such as the Intel 430VX consisted of two paired chips called the north bridge and southbridge.
