@@ -1,0 +1,132 @@
+sealed. Today many desktop and laptop systems--in the past easily upgraded by a good tech--are sealed, making upgrades impossible. if you get a sealed systems, don't scrimp on the RAM at the time of purchase!
+Linux RAM requirements and recommendations depend entirely on which distribution (distro) is being used. The mainstream distros, like Ubuntu, have requirements similar to Windows and MacOS. But many distros get by on very minimal system requirements.
+Determining Current RAM Capacity
+Before you go get RAM, you obviously need to know how much RAM you currently have in your PC. Windows displays this amount in the System Control Panel applet. You can also access the screen with the WINDOWS-PAUSE/BREAK keystroke combination on standard keyboards.
+Windows also includes the handy Performance tab in the Task Manager. The Performance tab includes a lot of information about the amount of RAM being used by your PC. Access the Task Manager by pressing CTRL-SHIFT-ESC and selecting the Performance tab.
+ReadyBoost
+Traditional (spinning) hard drives for virtual memory offer slow performance. High-speed flash drives offer much better virtual memory performance. Windows offers a feature called ReadyBoost that enables you to use flash media devices--removable USB thumb drives or memory cards--as super-fast, dedicated virtual memory. The performance gain over using only a traditional hard drive for virtual memory can be significant with ReadyBoost because read/write access times on flash memory blow away hard drive/write access times.
+Plug a ReadyBoost-approved device into a USB port or built-in flash memory card reader slot. Right-click the device in Computer and select Properties. Click the ReadyBoost tab and select the radio button next to either Dedicate this device to ReadyBoost or Use this device. Click Apply to enhance your system's performance.
+NOTE
+ReadyBoost isn't for every system. A modern system running SSDs won't see much benefit with ReadyBoost. Also, adding more RAM will always give a system a far better boost in performance than messing with ReadyBoost. Add RAM and blow off ReadyBoost. Just remember ReadyBoost for the exams.
+Getting the Right RAM
+To do the perfect RAM upgrade, determine the optimum capacity of RAM to install and then get the right RAM for the motherboard. Your first two stops toward these goals are the inside of the case and your motherboard manual.
+Open the case to see how many sticks of RAM you have installed currently and how many free slots you have open.
+Check the motherboard book or RAM manufacturer's Web site to determine the total capacity of RAM the system can handle and what specific technology works with your system.
+You can't put DDR4 into a system that can only handle DDR3 SDRAM, after all, and it won't do you much good to install a pair of 4-GB DIMMs when your system tops out at 4 GB. Details below show the RAM limits for an ASUS-brand motherboard.
+Details from the motherboard book showing how much RAM the motherboard will handle:
+ROG RAMPAGE VI EXTREME specifications summary
+=> "...Memory: 8 x DIMM, max. 128GB, DDR4 4200+(O.C)* / 4200+(O.C)* / 4000(O.C)* / 3866(O.C)* / 3600(O.C)* / 3333(O.C)* / 3300(O.C)* / 3200(O.C)* / 3000+(O.C)* / 2800(O.C)* / 2666(O.C)* / 2400(O.C)* / 2133 MHz, non-ECC, un-buffered memory; Quad channel memory architecture..."
+NOTE
+The freeware CPU-Z program tells you the total number of slots on your motherboard, the number of slots used, and the exact type of RAM in each slot--very handy. CPU-Z not only determines the latency of your RAM but also lists the latency at a variety of motherboard speeds. And you can download CPU-Z from www.cpuid.com.
+Mix and Match at your Peril
+All motherboards can handle different capacities of RAM. If you have three slots, you may put a 2-GB stick in one and a 4-GB stick in the other with a high chance of success. To ensure maximum stability in a system, however, shoot for as close as you can get to uniformity of RAM. Choose RAM sticks that match in technology, capacity, speed, and latency (CL).
+Mixing Speeds
+With so many different DRAM speeds available, you may often find yourself tempted to mix speeds of DRAM in the same system. Although you may get away with mixing speeds on a system, the safest, easiest rule to follow is to use the speed of DRAM specified in the motherboard book, and make sure that every piece of DRAM runs at that speed. In a worst-case scenario, mixing DRAM speeds can cause the system to lock up every few seconds or every few minutes. You might also get some data corruption. Mixing speeds sometimes works fine, but don't do your tax return on a machine with mixed DRAM speeds until the system has proven to be stable enough for a few days. The important thing to note is that you won't break anything, other than possibly data, by experimenting.
+Okay, I have mentioned enough disclaimers. Modern motherboards provide some flexibility regarding RAM speeds and mixing. First, you can use RAM that is faster than the motherboard specifies. For example, if the system needs PC-19200 DDR4, you may put in PC-25600 DDR4 and it should work fine. Faster DRAM is not going to make the system run any faster, however, so don't look for any system improvement.
+Second, you can sometimes get away with putting one speed of DRAM in one bank and another speed in another bank, as long as all the speeds are as fast or faster than the speed specified by the motherboard. Don't bother trying to put different-speed DRAM sticks in the same bank with a motherboard that uses dual-channel DDR.
+Installing DIMMs
+Installing DRAM is so easy that it's one of the very few jobs I recommend to non-techie folks. First, attach an anti-static wrist strap or touch some bare metal on the power supply to ground yourself and avoid ESD. Then swing the side tabs on the RAM slots down from the upright position. Pick up a stick of RAM--don't touch those contacts--and line up the notch or notches with a raised portion(s) of the DIMM socket. A good hard push down is usually all you need to ensure a solid connection. Make sure that the DIMM snaps into position to show it is completely seated. Also, notice that the one or two side tabs move in to reflect a tight connection.
+Your motherboard should detect and automatically set up any DIMM you install, assuming you have the right RAM for the system, using a technology called serial presence detect (SPD). RAM makers add a handy chip to modern sticks called the SPD chip. The SPD chip stores all the information about your DRAM, including size, speed, ECC or non-ECC, registered and unregistered, and other more technical bits of information.
+When a PC boots, it queries the SPD chip so that that MCC knows how much RAM is on the stick, how fast it runs, and other information. Any program can query the SPD chip, including the popular CPU-Z program that can show RAM information from the SPD chip.
+An example of RAM information shown in CPU-Z:
+[tab "SPD"]
+Memory Slot Selection:
+- Slot #2: DDR4
+- Modular Size: 8192 MBytes
+- Max Bandwidth: DDR4-2132 (1066 MHz)
+- Manufacturer: Patriot Memory
+- Ranks: Single
+- Part Number: 3200 C16 Series
+- SPD Ext.: XMP 2.0
+Timings Table:
+| | JEDEC #5 | JEDEC #6 | JEDEC #7 | XMP-3200 |
+| --- | -------- | -------- | -------- | -------- |
+| Frequency | 1037 MHz | 1066 MHz | 1066 MHz | 1600 MHz |
+| CAS# Latency | 14.0 | 15.0 | 16.0 | 16.0 |
+| RAS# to CAS# | 14 | 15 | 15 | 16 |
+| RAS# Precharge | 14 | 15 | 15 | 16 |
+| tRAS | 35 | 36 | 36 | 36 |
+| tRC | 49 | 50 | 50 | 64 |
+| Command Rate | | | |
+| Voltage | 1.20 V | 1.20 V | 1.20 V | 1.350 V |
+All new systems count on SPD to set the RAM timings properly for your system when it boots. If you add a RAM stick with a bad SPD chip, you'll get a POST error message and the system will not boot. You can't fix a broken SPD chip; you just buy a new stick of RAM.
+Installing SO-DIMMs in Laptops
+It wasn't that long ago that adding RAM to a laptop was either impossible or required you to send the system back to the manufacturer. Long ago, laptop makers used expensive, proprietary, custom-made RAM packages that were hard to handle. Wide acceptance of SO-DIMMs solved these problems for a time--until ultra-thin laptops started turning up with soldered-on RAM. most larger laptops still provide relatively convenient access to their SO-DIMMs, making it easy to add or replace RAM.
+Access to RAM usually requires removing a panel or lifting up the keyboard--the procedure varies among laptop manufacturers. In a typical laptop RAM access panel, you can side the panel off to reveal the SO-DIMMs. Slide the pins into position and snap the SO-DIMM down into the retaining clips.
+Before doing any work on a laptop, turn the system off, disconnect it from the AC wall socket, and remove all batteries. Use an anti-static wrist strap because laptops are fare more susceptible to ESD than desktop PCs.
+Troubleshooting RAM
+"Memory" errors show up in a variety of ways on modern systems, including system lockups, page faults, and other error screens. These errors can indicate bad RAM but often point to something completely unrelated. This is especially true with intermittent problems. Techs need to recognize these errors and determine which part of the system caused the memory error. Then they need to follow up with various testing methods.
+System lockups and page faults (they often go hand in hand) in Windows can indicate a problem with a RAM. A system lockup is when the computer stops functioning. A page fault is a milder error that can be caused by memory issues but not necessarily system RAM problems. Certainly page faults look like RAM issues because Windows generates frightening error messages filled with long strings of hexadecimal digits, such as "KRNL386 caused a page fault at 03F2:25A003BC". Just because the error message contains a memory address, however, does not mean that you have a problem with your RAM. Write down the address. If it repeats in later error messages, you probably have a bad RAM sticks. If windows displays different memory locations, you need to look elsewhere for the culprit.
+Every once in a while, something potentially catastrophic happens within the PC, some little electron hits the big red panic button, and the operating system has to shut down certain functions before it can save data. This panic button inside the PC is called a non-maskable interrupt (NMI), more simply defined as an interruption the CPU cannot ignore. AN NMI manifests as a proprietary crash screen. In Windows 7, for example, the crash screen is what techs call the Blue Screen of Death (BSoD)--a bright blue screen with a scary-sounding error message on it.
+Windows 8/8.1/10 display a blue screen with a sad face and the words to the effect of Windows has a problem. Restart the machine. A MacOS machine might display a spinning rainbow wheel sometimes called the Spinning Pinwheel of Death (SPoD), or more likely, will simply reboot.
+NOTE
+The CompTIA A+ objectives refer to the SPoD as the pin wheel of death.
+Bad RAM sometimes triggers an NMI, although often the culprit lies with buggy programming or clashing code. The BSoD/ SPoD varies across Windows versions and operating systems, and it would require a much lengthier tome than this one to cover all the variations. Suffice it to say that RAM could be the problem when that delightful blue screen or pinwheel appears.
+Finally, intermittent memory errors can come from a variety of sources, including a dying power supply, electrical interference, buggy applications, buggy hardware, and so on. These errors show up as lockups, general protection faults, and page faults, but they never have the same address or happen with the same applications. I always check the power supply first.
+Once you discover that you may have a RAM problem, you have a couple of options. First, several companies manufacture hardware RAM-testing devices. Second, you can use the method I use--replace and pray. Open the system case and replace each stick, one at a time, with a known good replacement stick. (You have one of those lying around, don't you?) This method, although potentially time-consuming, certainly works. With PC prices as low as they are now, you could simply replace the whole system for less than the price of a dedicated RAM tester.
+Third, you could run a software-based tester on the RAM. Because you have to load a software tester into the memory it's about to scan, there's always a small chance that simply starting the software RAM tester might cause an error. Still, you can find some pretty good free ones out there. Windows 7 and later include the Windows Memory Diagnostic tool, which can automatically scan your computer's RAM when you encounter a problem. If you're using another OS, my favorite tool is the open source Memtest86+ (memtest.org). The Memtest86+ software exhaustively checks your RAM and reports bad RAM when it finds it.
+NOTE
+A general protection fault (GPF) is an error that can cause an application to crash. Often GPFs are caused by programs stepping on each other's toes. In future topic "Troubleshooting Operating Systems" will go into more detail on GPFs and other Window errors.
+Chapter Review
+Questions
+1. Steve adds a second 8-GB 288-pin DIMM to his PC, which should bring the total RAM in the system up to 16 GB. The PC has an Intel Core i7 4-GHz processor and four 288-pin DIMM slots on the motherboard. When he turns on the PC, however, only 8 GB of RAM shows up in Windows Settings app. Which of the following is most likely to be the problem?
+A. Steve failed to seat the RAM properly.
+B. Steve put DDR4 in a DDR3 slot.
+C. The CPU cannot handle 16 GB of RAM.
+D. The motherboard can use only one RAM slot at a time.
+2. Scott wants to add 8 GB of PC3-12800 DDR3 to an aging but still useful desktop system. The system has a 200-MHz motherboard and currently has 4 GB of non-ECC DDR3 RAM in the system. What else does he need to know before installing?
+A. What speed of RAM he needs
+B. What type of RAM he needs
+C. How many pins the RAM has
+D. If the system can handle that much RAM.
+3. What is the primary reason that DDR4 RAM is faster than DDR3 RAM?
+A. The core speed of the DDR4 RAM chips is faster.
+B. The input/output speed of the DDR4 RAM is faster.
+C. DDR3 RAM is dual-channel and DDR4 RAM is quad-channel.
+D. DDR3 RAM uses 240-pin DIMMs and DDR4 uses 288-pin DIMMs.
+4. What is the term for the delay in the RAM's response to a request from the MCC?
+A. Variance
+B. MCC gap
+C. Latency
+D. Fetch interval
+5. How does an NMI manifest on a Windows system?
+A. Blue Screen of Death
+B. Spinning Pinwheel of Death.
+C. Interrupt of death.
+D. NMIs only happen on MacOS systems.
+6. Silas has an AMD-based motherboard with two sticks of DDR3 RAM installed in two of the three RAM slots, for a total of 8 GB of system memory. When he runs CPU-Z to test the system, he notices that the software claim he's running single-channel memory. What could be the problem? (Select the best answer).
+A. His motherboard only supports single-channel memory.
+B. His motherboard only supports dual-channel with DDR2 RAM, not DDR3.
+C. He needs to install a third RAM stick to enable dual-channel memory.
+D. He needs to move one of the installed sticks to a different slot to activate dual-channel memory.
+7. Which of the following Control Panel applets will display the amount of RAM in your PC?
+A. System
+B. Devices and Printers
+C. Device Manager
+D. Action Center
+8. What is the best way to determine the total capacity and specific type of RAM your system can handle?
+A. Check the motherboard book.
+B. Open the case and inspect the RAM.
+C. Check the Device Manager.
+D. Check the System utility in the Control Panel.
+9. Gregor installed a third stick of known good RAM into his Core i7 system, bringing the total amount of RAM up to 12 GB. Within a few days, though, he started having problem lockups and reboots, especially when doing memory-intensive tasks such as gaming. What is most likely the problem?
+A. Gregor installed DDR2 RAM into a DDR3 system.
+B. Gregor installed DDR3 RAM into a DDR4 system.
+C. Gregor installed RAM that didn't match the speed or quality of the RAM in the system.
+D. Gregor installed the RAM that exceed the speed of the RAM in the system.
+10. Cindy installs a second stick of DDR4 RAM into her Core i5 system, bringing the total system memory up to 16 GB. Within a short period of time, though, she begins experiencing Blue Screen of Death. What could the problem be?
+A. She installed a faulty RAM.
+B. The motherboard could only handle 12 GB of RAM.
+C. The motherboard needed dual-channel RAM.
+D. There is no problem. Windows always does this initially, but gets better after crashing a few times.
+Answers
+1. A. Steve failed to seat the RAM properly
+2. D. Scott needs to know if the system can handle that much RAM
+3. B. The input/output speed of DDR4 RAM is faster than that of DDR3 RAM (although the latency is higher).
+4. C. Latency is the term for the delay in the RAM's response to a request from the MCC.
+5. A. A non-maskable interrupt on a Windows system often results in the Blue Screen of Death.
+6. D. Motherboards can be tricky and require you to install RAM in the proper slots to enable dual-channel memory access. In this case, Silas should move one of the installed sticks to a different slot to activate dual-channel memory. (And he should check the motherboard manual for the proper slots).
+7. A. You can use the System applet to see how much RAM is currently in your PC.
+8. A. The best way to determine the total capacity and specific type of RAM your system can handle is to check the motherboard book.
+9. C. Most likely, Gregor installed RAM that didn't match the speed or quality of the RAM in the system.
+10. A. If you have no problems with a system and then experience problems after installing something new, chances are the something new is at fault.
