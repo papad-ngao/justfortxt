@@ -7,3 +7,30 @@ The perfect place to store the support programming is on the motherboard. That s
 ROM
 Motherboards store the keyboard controller support programming, among other programs, on a special type of device called a read-only memory (ROM) chip. A ROM chip stores programs, services, exactly like RAM. ROM differs from RAM in two important ways. First, ROM chips are nonvolatile, meaning that the information stored on ROM isn't erased when the computer is turned off. Second, traditional ROM chips are read-only, meaning that once you store a program on one, you can't change it. Motherboards use a type of ROM called flash ROM, the same stuff that stores your data in your smartphone or SSD. That is why we call updating the BIOS firmware. "flashing the BIOS", which we will cover later in this chapter.
 Every motherboard has a flash ROM chip, called the system ROM chip because it contains code that enables your CPU to talk to the basic hardware of your PC. As alluded to earlier, the system ROM holds BIOS for more than just the keyboard controller. It also stores programs for communicating with hard drives, optical drives, display devices, USB ports, and other basic devices on your motherboard.
+To talk to all of the hardware requires hundreds of little services (2 to 30 lines of code each). These hundreds of little programs stored on the system ROM chip on the motherboard are called, collectively, the system BIOS. Techs call programs stored on ROM chips of any sort firmware. You will commonly hear techs today refer to the system firmware--what CompTIA (and this book) calls system BIOS.
+EXAM TIP
+Programs stored on ROM chips--flash or any other kind of ROM chip--are known collectively as firmware, as opposed to programs stored on dynamic media, which are collectively called software.
+System BIOS support
+Every system BIOS has two types of hardware to support. First, the system BIOS supports all of the hardware that never changes, such as the keyboard.
+Another example of hardware that never changes is the PC speaker (the tiny one that beeps at you, not the ones that play music). The system ROM chip stores the BIOS for these and other devices that never change.
+Second, the system BIOS supports all of the hardware that might change from time to time. This includes RAM (you can add RAM) and hard drives (you can replace your hard disk drive [HDD] with a larger drive or a solid-state drive [SDD] or add a second drive of either type). The system ROM chip stores the BIOS for these devices, but the system needs another place to store information about the specific details of a piece of hardware. This enables the system to differentiate between a Western Digital Blue 4-TB HDD and a Samsung 860 EVO 2-TB SSD, and yet still support both drives right out of the box.
+UEFI
+Modern systems use firmware programming called the Unified Extensible Firmware Interface (UEFI). Here are a few advantages of UEFI over the original BIOS in PCs:
+- UEFI supports booting to partitions larger than 2.2 TB.
+- UEFI firmware is native 32- or 64-bit; this lets the manufacturers include lots of features for setup and diagnoses.
+- UEFI handles all boot-loading duties; no more jumping from boot sector to boot sector.
+- UEFI is portable to other chip types, not just 16-bit x86.
+All current systems uses UEFI. Many also provide legacy support for BIOS services in case you feel some retro gaming is in order But a zillion older systems use the older BIOS. Most techs continue to call the support software BIOS, even though technically the terms differ. There's no standardization on how to pronounce UEFI, by the way. Microsoft initializes it: "U-E-F-I". Other say "you-fee" or "you-fie". For a job interview, stick with initializing it. You can't go wrong that way.
+CMOS and RTC
+Because the BIOS firmware is stored in ROM, and ROM is read only, it needs a place to store all its settings so they don't have to be re-entered every time you boot your computer. That place is a tiny bit of RAM hooked up to a small battery to keep it working with the PC off. We call this memory the complementary metal-oxide semiconductor (CMOS) chip. In addition to storing all the various BIOS settings, the CMOS also handles the system's real-time clock (RTC) so you don't have to keep setting the time on every boot.
+The standalone CMOS chip has long since been incorporated into the main chipset. The information stored in CMOS is necessary for the PC to function.
+If the data stored in CMOS about a piece of hardware (or about its fancier features) is different from the specs of the actual hardware, the compuer cannot access that piece of hardware (or use its fancier features). It is crucial that this information be correct. If you change any of the previously mentioned hardware, you must update CMOS to reflect those changes. You need to know, therfore, how to change the data in CMOS.
+EXAM TIP
+All the details of UEFI and CMOS that you're going to spend many hours memorizing for the 1001 exam only apply to PCs and Linux machines. Apple computers have EFI and CMOS, but Apple designs their systems from the ground up as unified systems. Apple has done all the work for you and you simply use the MacOS machine.
+Every PC ships with a program built into the system ROM called the system setup utility that enables you to access and modify CMOS data. On a completely new system, with no operating system installed. After the OS is installed, these screens effectively disappear. I'll show you how to access them in a little bit.
+NOTE
+The terms CMOS setup program, CMOS, and system setup utility are functionally interchangeable today. You'll even hear the program referred to as the BIOS setup utility. UEFI/BIOS setup, or UEFI firmware settings.
+Typical System Setup Utility
+Every BIOS/UEFI maker's system setup utility looks a little different, but don't let that confuse you. They all contain basically the same settings; you just have to be comfortable poking around the different interfaces. To avoid doing something foolish, do not save anything unless you are sure you have it set correctly.
+
+-- 314 --
