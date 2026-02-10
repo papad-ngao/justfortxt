@@ -27,7 +27,16 @@ The standalone CMOS chip has long since been incorporated into the main chipset.
 If the data stored in CMOS about a piece of hardware (or about its fancier features) is different from the specs of the actual hardware, the compuer cannot access that piece of hardware (or use its fancier features). It is crucial that this information be correct. If you change any of the previously mentioned hardware, you must update CMOS to reflect those changes. You need to know, therfore, how to change the data in CMOS.
 EXAM TIP
 All the details of UEFI and CMOS that you're going to spend many hours memorizing for the 1001 exam only apply to PCs and Linux machines. Apple computers have EFI and CMOS, but Apple designs their systems from the ground up as unified systems. Apple has done all the work for you and you simply use the MacOS machine.
-Every PC ships with a program built into the system ROM called the system setup utility that enables you to access and modify CMOS data. On a completely new system, with no operating system installed. After the OS is installed, these screens effectively disappear. I'll show you how to access them in a little bit.
+Every PC ships with a program built into the system ROM called the system setup utility that enables you to access and modify CMOS data. On a completely new system, with no operating system installed, you'll see some information like as the detail shown below. After the OS is installed, these screens effectively disappear. I'll show you how to access them in a little bit.
+Some detail from Gigabyte system setup utility:
+> M.I.T. Current Status (Show all information about M.I.T. status)
+- BIOS Version: F2
+- BCLK: 99.97MHz
+- CPU Frequency: 3601.11MHz
+- Memory Frequency: 2132.82MHz
+- Total Memory Size: 32768MB
+- CUP Temperature: 38.0 degree C
+- Vcore: 1.116V
 NOTE
 The terms CMOS setup program, CMOS, and system setup utility are functionally interchangeable today. You'll even hear the program referred to as the BIOS setup utility. UEFI/BIOS setup, or UEFI firmware settings.
 Typical System Setup Utility
@@ -35,9 +44,82 @@ Every BIOS/UEFI maker's system setup utility looks a little different, but don't
 Several years ago, BIOS/UEFI manufacturers in the computer space migrated to graphical system setup utilities that enable you to use a mouse. You'll find plenty of examples in the field of the classic text-only system setup utilities. You need to know both, so this section will show you both styles. We'll run through a graphical version first, then skim through an older text-only version.
 Graphical UEFI System setup utility
 A typical, simple graphical setup screen for system setup utility has two modes: EZ and advanced. You can't do much in the first EZ Mode screen except view information about installed components, select one of three preset System Performance optimization options, and change the boot priority.
+Some detail from ASUS UEFI system setup utility:
+(UEFI BIOS Utility - EZ Mode)
+- Information:
+    - PRIME X370-PRO, BIOS Ver. 0502
+    - AMD Ryzen 7 1700 Eight-Core Processor
+    - Speed: 3000 MHz
+    - Memory: 32768 MB (DDR4 2400MHz)
+- CPU Temperature: 44 degree C
+- VDDCR CPU Voltage: 1.286 V
+- Motherboard Temperature: 35 degree C
+- DRAM Status:
+    - DIMM_A1: CRUCIAL 8192MB 2400MHz
+    - DIMM_A2: CRUCIAL 8192MB 2400MHz
+    - DIMM_B1: CRUCIAL 8192MB 2400MHz
+    - DIMM_B2: CRUCIAL 8192MB 2400MHz
+- SATA Information:
+    - SATA6G_1: WDC WD4003FZEX-00Z4SA0 (4000.7GB)
+    - SATA6G_2: N/A
+    - SATA6G_3: WDC WD1001FALS-00J7B0 (1000.2GB)
+    - SATA6G_4: N/A
+    - SATA6G_5: N/A
+    - SATA6G_6: N/A
+    - SATA6G_7: DRW-24B1ST gATAPI
+- D.O.C.P.: Disabled
+- FAN Profile
+    - CPU FAN: 1149 RPM
+    - CHA1 FAN: 868 RPM
+    - CHA2 FAN: 950 RPM
+    - CPU OPT: N/A
+    - WATER PUMP+: 1165 RPM
+    - AIO PUMP: N/A
+- Boot Priority:
+    #1: Windows Boot Manager (TOSHIBA-RD400)
+    #2: TOSHIBA-RD400
+    #3: SATA6G_7: DRW-24B1ST  g
+    #4: UEFI: STT EXPRESS ST1S 1100, Partition 1 (14729MB)
 Click the option to go in Advanced Mode and you'll get a much more versatile utility for changing the interface configurations. The Main tab offers some BIOS component information, such as surface details on amount of RAM and speed of CPU, plus a couple of options to modify the language and date and time. (Some utilities will show information about installed hard drives and optical drives; this UEFI firmware presents that information elsewhere).
-The Main tab also enables you to configure modest BIOS security by setting an administrator or user password. (The default for the pictured UEFI BIOS is Access Level: Administrator. Click the Security option to change access information. UEFI setup screens differ somewhat, but you'll find similar options in all of them).
+Some detail from ASUS UEFI system setup utility in Main tab:
+(UEFI BIOS Utility - Advanced Mode) [selected tab: "Main"]
+- BIOS Information:
+- BIOS Version: 0502 x64
+- Build Date: 02/17/2017
+- CPU Information: AMD Ryzen 7 1700 Eight-Core Processor
+- Speed: 3000 MHz
+- EC Version: MBEC-AM4-0310
+- Memory Information:
+- Total Memory: 32768 MB (DDR4)
+- Speed: 2400 MHz
+- System Language: English
+- Access Level: Administrator
+- Hardware Monitor:
+    - CPU:
+        - Frequency: 3000 MHz
+        - Temperature: 44 degree C
+        - APU Freq: 100.0 MHz
+        - Ratio: 30x
+        - Core Voltage: 1.297 V
+    - Memory:
+        - Frequency: 2400 MHz
+        - Voltage: 1.200 V
+        - Capacity: 32768 MB
+    - Voltage:
+        - +12V: 12.033 V
+        - +5V: 5.014 V
+        - +3.3V: 3.335 V
+
+The Main tab also enables you to configure modest BIOS security by setting an administrator or user password. (The default for the above UEFI BIOS is Access Level: Administrator. Click the Security option to change access information. UEFI setup screens differ somewhat, but you'll find similar options in all of them).
 An administrator password locks or unlocks access to the system setup utility. A user password locks or unlocks the computer booting to an operating system. Set a BIOS/UEFI password when you encounter a scenario like installing computer kiosks at a convention or installing systems in a public library. A BIOS/UEFI password stops casual miscreants from messing with your accessible systems.
 Things get far more interesting in the other tabs. Selecting the Ai Tweaker tab, for example, enables you to delve into the Dark Arts of overclocking both the CPU and RAM. You can change the clock multiplier, clock speeds, voltages, and more here. This is a great place to go fry a new CPU!
+The Advanced tab gives component information about CPUs, hard drives and optical drives, and all the built-in components, such as USB ports. In this tab, as you drill down to each subcategory, you can configure drive settings, enable and disable devices, and more.
+The Monitor tab shows monitoring information for CPU and motherboard temperatures, fan speeds, and voltages. You can modify the behavior of the chassis fans here too. All of this monitoring information is considered some of the built-in diagnotics for both the motherboard and the full system.
+NOTE
+Some systems refer to the Monitor display as PC Health.
+The Boot tab enables you to adjust boot settings. You can select devices to boot by priority, setting the boot sequence used by the motherboard. (See the "Boot Process" later in this chapter for more information). You can determine how the system will react/inform if booting fails, and more.
+The Tool tab also shows RAM information. That's the SPD option (for serial presence detect) You should recognize from past topic: "RAM".
+Text-Based UEFI Intel-Based Setup Utility
+In this second walkthrough, we'll switch to a UEFI motherboard on Intel-based portable computer. As we go through the screens, pay attention to the option listed on each
 
--- 314 --
+-- 317 --
