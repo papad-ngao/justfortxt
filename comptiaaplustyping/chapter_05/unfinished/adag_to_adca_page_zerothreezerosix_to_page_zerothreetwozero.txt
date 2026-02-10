@@ -80,6 +80,7 @@ Some detail from ASUS UEFI system setup utility:
     #2: TOSHIBA-RD400
     #3: SATA6G_7: DRW-24B1ST  g
     #4: UEFI: STT EXPRESS ST1S 1100, Partition 1 (14729MB)
+
 Click the option to go in Advanced Mode and you'll get a much more versatile utility for changing the interface configurations. The Main tab offers some BIOS component information, such as surface details on amount of RAM and speed of CPU, plus a couple of options to modify the language and date and time. (Some utilities will show information about installed hard drives and optical drives; this UEFI firmware presents that information elsewhere).
 Some detail from ASUS UEFI system setup utility in Main tab:
 (UEFI BIOS Utility - Advanced Mode) [selected tab: "Main"]
@@ -113,13 +114,81 @@ Some detail from ASUS UEFI system setup utility in Main tab:
 The Main tab also enables you to configure modest BIOS security by setting an administrator or user password. (The default for the above UEFI BIOS is Access Level: Administrator. Click the Security option to change access information. UEFI setup screens differ somewhat, but you'll find similar options in all of them).
 An administrator password locks or unlocks access to the system setup utility. A user password locks or unlocks the computer booting to an operating system. Set a BIOS/UEFI password when you encounter a scenario like installing computer kiosks at a convention or installing systems in a public library. A BIOS/UEFI password stops casual miscreants from messing with your accessible systems.
 Things get far more interesting in the other tabs. Selecting the Ai Tweaker tab, for example, enables you to delve into the Dark Arts of overclocking both the CPU and RAM. You can change the clock multiplier, clock speeds, voltages, and more here. This is a great place to go fry a new CPU!
+Some detail from ASUS UEFI system setup utility in Ai Tweaker tab:
+(UEFI BIOS Utility - Advanced Mode) [selected tab: "Ai Tweaker"]
+- Target CPU speed: 30000MHz
+- Target DRAM Frequency: 24000MHz
+- Ai Overclock Tuner: Auto
+- Memory Frequency: Auto
+- Custom CPU Core Ratio: Auto
+- > CPU Core Ratio: Auto
+- EPU Power Saving Mode: Disabled
+- TPU: Keep Current Settings
+- > DRAM Timing Control:
+- > DIGI+ VRM:
+- VDDCR CPU Voltage: 1.187V Auto
+- VDDCR SOC Voltage: 0.881V Auto
+
 The Advanced tab gives component information about CPUs, hard drives and optical drives, and all the built-in components, such as USB ports. In this tab, as you drill down to each subcategory, you can configure drive settings, enable and disable devices, and more.
+Some available configuration options from ASUS UEFI system setup utility in Advanced tab:
+(UEFI BIOS Utility - Advanced Mode) [selected tab: "Advanced"]
+- TPM Device Selection
+    - description:
+        - Select TPM device: Firmware TPM or Discrete TPM.
+            - Firmware TPM - Enables AMD CPU fTPM.
+            - Discrete TPM - Disables AMD CPU fTPM. Warning! fTPM/Discrete TPM will be disabled and all data saved on it will be lost.
+    - selected: "Discrete TPM"
+- CPU Configuration
+- SATA Configuration
+- Onboard devices Configuration
+- APM Configuration
+- Network Stack Configuration
+- HDD/SSD SMART Information
+- USB Configuration
+
 The Monitor tab shows monitoring information for CPU and motherboard temperatures, fan speeds, and voltages. You can modify the behavior of the chassis fans here too. All of this monitoring information is considered some of the built-in diagnotics for both the motherboard and the full system.
+Some detail from ASUS UEFI system setup utility in Monitor tab:
+(UEFI BIOS Utility - Advanced Mode) [selected tab: "Monitor"]
+- CPU Temperature: +43 degree C / +109 degree F
+- MotherBoard Temperature: +35 degree C / +95 degree F
+- PCH Temperature: +67 degree C / +152 degree F
+- T_Sensor Temperature: N/A
+- CPU Fan Speed: 1140 RPM
+- CPU Optional Fan Speed: N/A
+- Chassis Fan 1 Speed: 866 RPM
+- Chassis Fan 2 Speed: 946 RPM
+- W_PUMP+ Speed: 1163 RPM
+- AIO_PUMP Speed: N/A
+- VDDCR CPU Voltage: +1.286 V
+...
+
 NOTE
 Some systems refer to the Monitor display as PC Health.
 The Boot tab enables you to adjust boot settings. You can select devices to boot by priority, setting the boot sequence used by the motherboard. (See the "Boot Process" later in this chapter for more information). You can determine how the system will react/inform if booting fails, and more.
-The Tool tab also shows RAM information. That's the SPD option (for serial presence detect) You should recognize from past topic: "RAM".
-Text-Based UEFI Intel-Based Setup Utility
-In this second walkthrough, we'll switch to a UEFI motherboard on Intel-based portable computer. As we go through the screens, pay attention to the option listed on each
+Some available configuration options from ASUS UEFI system setup utility in Boot tab:
+(UEFI BIOS Utility - Advanced Mode) [selected tab: "Boot"]
+- Boot Configuration:
+    - Fast Boot (selected: "Disabled")
+- CSM (Compatibility Support Module)
+- Secure Boot
+    - Boot Option Priorities
+        - Boot Option #1: (selected: "Windows Boot Manager (TOSHIBA...)")
+        - Boot Option #2: (selected: "TOSHIBA-RD400")
+        - Boot Option #3: (selected: "SATA6G_7: DRW-24B1ST  g")
+        - Boot Option #4: (selected: "UEFI: STT EXPRESS ST1S 1100, P...")
+        - Boot Option #5: (selected: "STT EXPRESS ST1S 1100 (14729...)")
 
--- 317 --
+The Tool tab has a couple of very important features. The EZ Flash 3 utility enables you to update the motherboard firmware. See the "Flashing the ROM" section later in this chapter for more details.
+The Tool tab also shows RAM information. That's the SPD option (for serial presence detect) You should recognize from previous chapter "RAM".
+
+Some available configuration options from ASUS UEFI system setup utility in Tool tab:
+(UEFI BIOS Utility - Advanced Mode) [selected tab: "Tool"]
+- ASUS EZ Flash 3 Utility (Be used to update BIOS)
+    - Setup Animator (selected: "Disabled")
+- ASUS Overclocking Profile
+- ASUS SPD Information
+- Graphics Card Information
+
+Text-Based UEFI Intel-Based Setup Utility
+In this second walkthrough, we'll switch to a UEFI motherboard on Intel-based portable computer. As we go through the screens, pay attention to the option listed on each. I'll call out features that the graphical AMD-based UEFI didn't have.
+The Information tab offers straightforward information about the CPU and RAM amount, and cryptic information about the hard drive. Other tabs do more.
