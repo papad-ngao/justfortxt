@@ -14,8 +14,7 @@ Some detail from the Information tab of Text-Based UEFI on Lenovo IdeaPad Y410P:
 The Configuration tab shows a number of built-in devices that you configure or enable/disable here. Because this is a portable, it has an option to turn on/off wireless networking capabilities.
 Some available configuration options from the Configuration tab of Text-Based UEFI on Lenovo IdeaPad Y410P:
 (InsydeH20 Setup Utility, Rev. 3.7) [selected tab: "Configuration"]
-- System Time:
-- TPM Device Selection
+- System Time: "[12:23:19]"
     - hint (labeled as "Item Specific Help"):
         - Hour: Valid range is from 0 to 23.
         - Minute: Vali range is from 0 to 59.
@@ -36,4 +35,73 @@ A virtual machine is a powerful type of program that enables you to run a second
 To support this, CPU manufacturers have added hardware-assisted virtualization. Intel calls their version Intel Virtualization Technology (Intel VT for short), and AMD calls theirs AMD Virtualization (AMD-V) technology. This technology helps the virtual machines use your hardware more efficiently and is controlled by the BIOS. This feature is disabled by default in BIOS, so if your virtual machine requires hardware-assisted virtualiation, you'll need to enable it here.
 NOTE
 In future topic "Virtualization" will covers machines in gory detail. Stay tuned!
--- 323 --
+This particular laptop has built-in graphics courtesy of the Intel Core i7 processor, plus it has a dedicated add-on video card for gaming. The Graphic Device option, set here to Discrete, means to use the dedicated video card when possible. This uses more electricity than the graphics support using only the processor, but it makes for way possible gaming!
+NOTE
+In future topic "Display Technologies", goes into video options (and gaming) in modern systems.
+The Security tab offers a lot more options for configuring BIOS security than found on the Main tab of the of the AMD-based system. You see the Administrator Password and Use Password options, but there's also an option to set a couple of different hard drive passwords.
+Some available configuration options from the Security tab of Text-Based UEFI on Lenovo IdeaPad Y410P:
+(InsydeH20 Setup Utility, Rev. 3.7) [selected tab: "Security"]
+- Administrator Password, current value: "Not set"
+- User Password, current value: "Not set"
+- HDD Password, current value: "Not set"
+> Set Administrator Password
+    - hint (labeled as "Item Specific Help"):
+        - Set or Change the Administrator Password. Passwords must be at least one character in length
+        - Administrator Password must be set in order to set a Power on Password and User Password.
+- Set Hard Disk Passwords
+- Secure Boot, selected: "[Enabled]"
+- Secure Boot Status: Enabled
+- Platform Mode: User Mode
+- Secure Boot Mode: Standard
+- Reset to Setup Mode, selected: "[Enter]"
+- Restore Factory Keys, selected: "[Enter]"
+
+The Secure Boot feature you can see on the Security tab is a UEFI protocol that secures the boot process by requiring properly signed software. This includes boot software and software that supports specific, essential components. (See "Device Drivers" a littler later in this chapter.) Secure Boot requires an Intel CPU, a UEFI BIOS, and an operating system designed for it, such as Windows.
+NOTE
+Secure Boot is an example of a tool that uses drive encryption. Various types of encryption--essentially scrambling the information to make it inaccessible to bad guys--secure all sorts of processes and data in modern computing. In the future topic "Implementing Mass Storage" will discusses drive encryption specifically in more detail.
+The Boot tab enables you to set boot options to determine which bootable device gets priority. Here is where you provide support for booting a USB device as well. It looks a little different from the graphical example presented earlier. See "The Boot Process" later in this chapter for more explanation.
+Some available configuration options from the Boot tab of Text-Based UEFI on Lenovo IdeaPad Y410P:
+(InsydeH20 Setup Utility, Rev. 3.7) [selected tab: "Boot"]
+- Boot Mode, selected: "[UEFI]"
+    - hint (labeled as "Item Specific Help"):
+        - [UEFI]: For OS need pure UEFI.
+        - [Legacy Support]: For OS need legacy support.
+- USB Boot, selected: "[Enabled]"
+- EFI:
+    - Windows Boot Manager (ST1000LM024 HN-M101MBB)
+    - EFI Network 0 for IPv4 (28-D2-44-34-16-48)
+    - EFI Network 0 for IPv6 (28-D2-44-34-16-48)
+
+Other BIOS Security Settings
+Motherboard manufacturers, BIOS/UEFI writers, programmers, have implemented all kinds of security features over the years. This section mentions a couple you might run into on various motherboard (or on a certain exam in your near future).
+Chassis Intrusion Detection/Notification
+Many motherboards support the chassis intrusion detection/notification feature provided by the computer case, or chassis. Compabible cases contain a switch that trips when someone open the case. With motherboard support and a proper connection between the motherboard and the case, the CMOS logs whether the case has been opened and, if it has, posts a notification to the screen on the subsequent boot. How cool is that?
+LoJack
+Some PC manufacturers include LoJack security features in their firmware--this way, if your PC is stolen, you can track its location, install a keylogger, or even remotely shut down your computer.
+Trusted Platform Module
+The Trusted Platform Module (TPM) acts as a secure cryptoprocessor, which is to say that it is a hardware platform for the acceleration of cryptographic functions and the secure storage of associated information. The specification for the TPM is published by the Trusted Computing Group, an organization whose corporate members include Intel, Microsoft, AMD, IBM, Lenovo, Dell, Hewlett-Packard, and many others.
+The TPM can be a small circuit board plugged into the motherboard, or it can be built directly into the chipset. The CMOS setup program usually contains settings that can turn the TPM on or off and enable or disable it.
+TPMs can be used in a wide array of cryptographic operations, but one of the most common uses of TPMs is a hard disk encryption. For example, the BitLocker Drive Encryption feature of Microsoft Windows can be accelerated by a TPM, which is more secure because the encryption key is stored in the tamper-resistant TPM hardware rather than on an external flash drive. Other possible uses of TPMs include digital rights management (DRM), network access control, application exection control, and password protection.
+EXAM TIP
+BIOS security-related options can include TPM, passwords, Secure Boot, intrusion detection/notification, and drive encryption.
+Exiting and Saving Settings
+Of course, all system utilities provide some method to Save, Exit Saving Changes, or Exit Discarding Changes. Use these as needed for your situation. Exit Discarding Changes is particularly nice for those folks who want to poke around the CMOS setup utility but don't want to mess anything up. Use it!
+
+Some available configuration options from the Exit tab of Text-Based UEFI on Lenovo IdeaPad Y410P:
+(InsydeH20 Setup Utility, Rev. 3.7) [selected tab: "Exit"]
+> Exit Saving Changes
+    - hint (labeled as "Item Specific Help"):
+        - Exit Setup and save your changes.
+- Exit Discarding Changes
+- Discard Changes
+- Save Changes
+- Load Default Settings
+- OS Optimized Defaults, current value: "[Win8 64bit]"
+
+The CMOS setup utility would meet all the needs of a modern system for BIOS if manufacturers would just stop creating new devices. That's not going to happen, of course, so let's turn now to devices that need to have BIOS loaded from elsewhere.
+NOTE
+People serious about tweaking UEFI settings for maximum performance (overclocking) or minimum energy use (underclocking) can use a feature in some system setup utilities to save customized settings. Various utilities call them presets or profiles--essentially it's a "save these settings as" option. If something isn't quite right with the changes, go back into setup, make some changes, and try again. If you're fiddling for the day and want to play with a stable machine, pick the profile you created that is a stable machine. See "Care and Feeding of BIOS/UEFI and CMOS" later in this chapter for the ultimate undo features.
+Option ROM and Device Drivers
+Every piece of hardware in your computer needs some kind of programming that tells the CPU how to talk to that device. When IBM invented the PC decades ago, they couldn't possibly have included all of the necessary BIOS routines for every conceivable piece of hardware on the system ROM chip. How could they? Most of the devices in use today didn't exist on the first PCs. When programmers wrote the first BIOS, for example, network cards, mice, and sound cards did not exist. Early PC designers at IBM understood that they could not anticipate every new type of hardware, so they gave us a few ways to add programming other than on the BIOS. I call this BYOB--Bring Your Own BIOS. You can BYOB in two ways: option ROM and device drivers. Let's look at both.
+
+-- 328 --
