@@ -1,0 +1,39 @@
+Some detail from the Information tab of Text-Based UEFI on Lenovo IdeaPad Y410P:
+(InsydeH20 Setup Utility, Rev. 3.7) [selected tab: "Information"]
+- Product Name: Lenovo IdeaPad Y410P
+- BIOS Version: 74CN44WW (V3.05)
+- EC Version: 74CN44WW (V3.05)
+- Lenovo SN: YB01243150
+- UUID Number: 36268652-3D1B-11E3-A394-28D244341648
+- CPU: Intel(R) Core(TM) i7-4700MQ CPU @ 2.40GHz
+- System Memory: 8192 MB
+- Hard Disk: ST1000LM024 HN-M101MBB
+- ODD: HL-DT-ST DVDRAM GU70N
+- Windows license: STD
+
+The Configuration tab shows a number of built-in devices that you configure or enable/disable here. Because this is a portable, it has an option to turn on/off wireless networking capabilities.
+Some available configuration options from the Configuration tab of Text-Based UEFI on Lenovo IdeaPad Y410P:
+(InsydeH20 Setup Utility, Rev. 3.7) [selected tab: "Configuration"]
+- System Time:
+- TPM Device Selection
+    - hint (labeled as "Item Specific Help"):
+        - Hour: Valid range is from 0 to 23.
+        - Minute: Vali range is from 0 to 59.
+        - Second: Vali range is from 0 to 59.
+        - Increase/Reduce: F6/F5
+    - value: "[12:23:19]"
+- System Date, current value: "[07/17/2015]"
+- Wireless, selected: "[Enabled]"
+- SATA Controller Mode, selected: "[AHCI]"
+- Power Beep, selected: "[Disabled]"
+- Always on USB, selected: "[Disabled]"
+- Intel Virtual Technology, selected: "[Disabled]"
+- BIOS Back Flash, selected: "[Disabled]"
+- Deep S3 Function, selected: "[Disabled]"
+- Graphic Device, selected: "[Discrete]"
+There are two interesting options here that are covered in detail in other chapters but warrant a brief discussion now. The Intel Virtual Technology option enables or disables virtualization support for virtual machines.
+A virtual machine is a powerful type of program that enables you to run a second (or third to fourth), software-based machine inside your physical PC. It re-creates the motherboard, hard drives, RAM, network adapters, and more, and is just as powerful as a real PC. To run these virtual machines, however, you'll need a very powerful PC--you are trying to run multiple PCs at the same time, after all.
+To support this, CPU manufacturers have added hardware-assisted virtualization. Intel calls their version Intel Virtualization Technology (Intel VT for short), and AMD calls theirs AMD Virtualization (AMD-V) technology. This technology helps the virtual machines use your hardware more efficiently and is controlled by the BIOS. This feature is disabled by default in BIOS, so if your virtual machine requires hardware-assisted virtualiation, you'll need to enable it here.
+NOTE
+In future topic "Virtualization" will covers machines in gory detail. Stay tuned!
+-- 323 --
