@@ -103,5 +103,28 @@ NOTE
 People serious about tweaking UEFI settings for maximum performance (overclocking) or minimum energy use (underclocking) can use a feature in some system setup utilities to save customized settings. Various utilities call them presets or profiles--essentially it's a "save these settings as" option. If something isn't quite right with the changes, go back into setup, make some changes, and try again. If you're fiddling for the day and want to play with a stable machine, pick the profile you created that is a stable machine. See "Care and Feeding of BIOS/UEFI and CMOS" later in this chapter for the ultimate undo features.
 Option ROM and Device Drivers
 Every piece of hardware in your computer needs some kind of programming that tells the CPU how to talk to that device. When IBM invented the PC decades ago, they couldn't possibly have included all of the necessary BIOS routines for every conceivable piece of hardware on the system ROM chip. How could they? Most of the devices in use today didn't exist on the first PCs. When programmers wrote the first BIOS, for example, network cards, mice, and sound cards did not exist. Early PC designers at IBM understood that they could not anticipate every new type of hardware, so they gave us a few ways to add programming other than on the BIOS. I call this BYOB--Bring Your Own BIOS. You can BYOB in two ways: option ROM and device drivers. Let's look at both.
+Option ROM
+The first way to BYOB is to put the BIOS on the hardware device itself. A serial ATA RAID hard drive controller is basically just a card that lets you add more hard drives to a PC. The chip in the center of it with the wires coming out of the sides is a flash ROM that stores BIOS for the card. The system BIOS does not have a clue about how to talk to this card, but that's okay, because this card brings its own BIOS on what's called an option ROM chip.
+More BIOS that come on option ROMs tell you that the exist by displaying information when you boot the system. Shown below is a typical example of an option ROM advertising itself.
+Some detail shown from an option ROM advertising itself:
+- System Memory Size: 4.0 GB, System Memory Speed: 800 MHz, Voltage: 1.5V
+- Broadcom NetXtreme II Ethernet Boot Agent v5.2.7
+- Copyright (C) 2000-2009 Broadcom Corporation
+- All rights reserved.
+- Press Ctrl-S to Configure Device (MAC Address - 0024E867D111)
+- Adaptec 1225SA SATA HostRAID BIOS V6.0-0 B2328
+- (c) 1998-2007 Adaptec, Inc. All Rights Reserved.
+- <<< Press <Ctrl><A> for Adaptec RAID Configuration Utility! >>>
+- Controller #00: Adaptec 1225SA at PCI Bus:03, Dev:00, Func: 00
+- SerialNumber = 0KX0B0040013
+- Loading Confuguration...
+- 00:00 WDC WD20EADS-00R6B0 01.00A01, 1.81 TB Healthy, 3.0 Gb/s
+- SATA JBOD- PORT-0, WDC WD20EADS-00R, 1.81 TB, Legacy
+- 1 JBOD Device(s) Found.
 
--- 328 --
+In the early days of the PC, you could find all sorts of devices with BIOS on option ROMs. Today, option ROMs have mostly been replaced by more flexible software methods (more on device driver sofware in the next section), with one major exception: video cards. Every video card made today contains its own BIOS. Option ROM work well but are hard to upgrade. For this reason, most hardware relies on software BYOB.
+Device Drivers
+A device driver is a file stored on the PC's hard drive that contains all of the commands necessary to talk to whatever device it was written to support. All operating systems employ a method of loading these device drivers into RAM every time the system boots. They know which device drivers to install by reading a file (or files) that lists which device drivers the system needs to load at boot time. All operating systems are designed to look at this list early on in the boot process and copy the listed files into RAM, thereby giving the CPU (and the OS) the capability to communicate with the hardware supported by the device driver.
+Device drivers come with the device when you buy it. When you buy
+
+-- 331 --
