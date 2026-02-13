@@ -183,7 +183,22 @@ BIOS and CMOS are areas in your PC that you don't go to very often. BIOS itself 
 If you mess with the CMOS setup utility, remember to make only as many changes at one time as you can remember. Document the original settings and the changes on a piece of paper or take a photo so you can put things back if necessary. Don't make changes unless you know what they mean! It's easy to screw up a computer fairly seriously by playing with CMOS settings you don't understand.
 Default/Optimized Settings
 Every CMOS setup utility has a couple of reset options, commonly called Load Default Settings and OS Optimized Defaults. These options keep you from having to memorize all of those weird settings you'll never touch. Default of Fail-Safe sets everything to very simple settings--you might occasionally use this setting when very low-level problems such as freeze-ups occur and you've checked more obvious areas first. Optimized sets the CMOS to the best possible speed/stability for the system. You would this option after you've tampered with the CMOS too much and need to put it back like it was!
+Options for resetting CMOS (at the "<="), as seen from some available configuration options from the Exit tab of Text-Based UEFI on Lenovo IdeaPad Y410P:
+(InsydeH20 Setup Utility, Rev. 3.7) [selected tab: "Exit"]
+> Exit Saving Changes
+    - hint (labeled as "Item Specific Help"):
+        - Exit Setup and save your changes.
+- Exit Discarding Changes
+- Discard Changes
+- Save Changes
+- Load Default Settings <=
+- OS Optimized Defaults, current value: "[Win8 64bit]" <=
 
-
+Clearing CMOS RTC RAM
+You read about the process for clearing system settings, but the process is worth repeating here. When you mess up a setting (by overclocking too much or disabling something that should have remained enabled--or vice versa) that renders the computer dead, you can reset the CMOS RTC RAM back to factory defaults and start over.
+Almost every motherboard has a dedicated set of wires called CLRTC or something similar.
+NOTE
+Many techs use older language to describe the reset CMOS RTC RAM, simply CMOS clear, describing both the process and the motherboard option.
+Turn off and unplug the computer, then open the case to access the motherboard. Find the CMOS RTC clear wires. Move the shunt (the little plastic and metal jumper thing) from wires 1 and 2 to wires 2 and 3. Wait for 10 seconds and then move the shunt back to the default position. Plug in and boot the system.
 
 -- 334 --
