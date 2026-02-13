@@ -200,5 +200,3 @@ Almost every motherboard has a dedicated set of wires called CLRTC or something 
 NOTE
 Many techs use older language to describe the reset CMOS RTC RAM, simply CMOS clear, describing both the process and the motherboard option.
 Turn off and unplug the computer, then open the case to access the motherboard. Find the CMOS RTC clear wires. Move the shunt (the little plastic and metal jumper thing) from wires 1 and 2 to wires 2 and 3. Wait for 10 seconds and then move the shunt back to the default position. Plug in and boot the system.
-
--- 334 --
