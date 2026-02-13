@@ -125,6 +125,29 @@ Some detail shown from an option ROM advertising itself:
 In the early days of the PC, you could find all sorts of devices with BIOS on option ROMs. Today, option ROMs have mostly been replaced by more flexible software methods (more on device driver sofware in the next section), with one major exception: video cards. Every video card made today contains its own BIOS. Option ROM work well but are hard to upgrade. For this reason, most hardware relies on software BYOB.
 Device Drivers
 A device driver is a file stored on the PC's hard drive that contains all of the commands necessary to talk to whatever device it was written to support. All operating systems employ a method of loading these device drivers into RAM every time the system boots. They know which device drivers to install by reading a file (or files) that lists which device drivers the system needs to load at boot time. All operating systems are designed to look at this list early on in the boot process and copy the listed files into RAM, thereby giving the CPU (and the OS) the capability to communicate with the hardware supported by the device driver.
-Device drivers come with the device when you buy it. When you buy
+Device drivers come with the device when you buy it. When you buy almost any device for your computer, that new sound card or monitor or whatever usually comes with some kind of media, often an optical disc, that holds all of the necessary device drivers (and usually a bunch of extra goodies).
+In manay cases you may not want to use installation media and just let the OS handle things. All operating systems use online tools to detect and automatically install device drivers. You might want to add or remove device drivers manually at times. Windows stores drivers (and a lot more) in a database called the Registry, which we'll talk about in detail in future topic "Windows Under the Hood". Techs rarely deal directly with the registry, but rather instead indirectly through the Device Manager utility.
+BIOS, BIOS Everywhere!
+As you should now understand, every piece of hardware on a system must have an accompanying program that provides the CPU with the code necessary to communicate with that particular device. This code may reside on the system ROM on the motherboard, on ROM on a card, or in a device driver files on the hard drive loaded into RAM at boot. BIOS is everywhere on your system, and you need to deal with it occasionally.
+Power-On Self Test (POST)
+BIOS isn't the only program on system ROM. When the computer is turned on or reset, it initiates a special program, also stored on the system ROM chip, called the power-on self test (POST). The POST program checks out the system every time the computer boots. To perform this check, the POST sends out a command that says to all of the devices, "Check yourselves out!". All of the standard devices in the computer then run their own built-in diagnostic--the POST doesn't specify what they must check. The quality of the diagnostic is up to the people who made that particular device.
+Let's consider the POST for a moment. Suppose some device--let's say it's the keyboard controller chip--runs its diagnostic and determines that it is not working properly. What can the POST do about it? Only one thing really: tell the human in front of the PC! So how does the computer tell the human? PCs convey POST information to you in two ways: beep codes--if anything wrong. By using beep codes before and during the video test, the computer could communicate with you. (If a POST error occurs before the video is available, obviously the error must manifest itself as beeps, because nothing can display on the screen.) The meaning of beep code you'd hear varied among different BIOS manufacturers. You could find the beep codes for a specific motherboard in its motherboard manual.
+NOTE
+CompTIA refers to beep codes as POST code beeps.
+Most modern PCs have only two beep codes: one for bad or missing video (one long beep followed by two or three short beeps), and one for bad or missing RAM (a single beep that repeats indefinitely).
+CAUTION
+You'll find lots of online documentation about beep codes, but it's usually badly outdated.
+You'll hear three other beeps sequences on most PCs (although they're not officially beep codes). At the end of a successful POST, the PC produces one or two short beeps, simply to inform you that all is well. Most systems make a rather strange noise when the RAM is missing or very seriously damaged. Unlike traditional beep codes, this code repeats until you shut off the system. Finally, your speaker might make beeps for reasons that aren't POST or boot related. One or the more common is a series of short beeps after the system's been running for a while. That's the CPU alarm telling you the CPU is approaching its high heat limit.
+Text Errors
+After the video has tested okay, any POST errors display on the screen as text errors. If you get a text error, the problem is usually, but not always, self-explanatory (for example, simply saying "Keyboard failure"). Text erorors are far more useful than beep codes, because you can simply read the screen to determine the bad device.
 
--- 331 --
+POST test error messages at the '<=':
+"F10 = System Services"
+"F11 = BIOS Boot Manager"
+"F12 = PXE Boot"
+"Keyboard Failure" <=
+"One 1.86 GHz Dual-core Processor, Bus Speed:4.80 GT/s, L2/L3 Cache: 512 KB/4 MB"
+"System running at 1.86 GHz"
+"System Memory Size: 4.0 GB, System Memory Speed: 800 MHz, Voltage: 1.5V"
+
+-- 334 --
