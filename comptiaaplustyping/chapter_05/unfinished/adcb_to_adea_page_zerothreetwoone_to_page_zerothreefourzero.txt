@@ -149,5 +149,41 @@ POST test error messages at the '<=':
 "One 1.86 GHz Dual-core Processor, Bus Speed:4.80 GT/s, L2/L3 Cache: 512 KB/4 MB"
 "System running at 1.86 GHz"
 "System Memory Size: 4.0 GB, System Memory Speed: 800 MHz, Voltage: 1.5V"
+POST cards
+Beep codes, numeric codes, and text error codes, although helpful, can sometimes be misleading. Worse than that, an inoperative device can somtimes disrupt the POST, forcing the machine into an endless loop. This causes the PC to act dead--no beeps and nothing on the screen. In this case, you need a device, called a POST card, to monitor the POST and identify which piece of hardware is causing the trouble.
+POST cards are simple cards that snap into expansion slots on your system. A small, two-character light-emitting diode (LED) readout on the card indicates which device the POST is currently testing.
+POST cards used to be essential tools for techs, but today I use them only when I have a "dead" PC to determine at which level it's dead. If the POST card shows no reading, I know the problem is before the POST and must be related to the power, the CPU, the RAM, or the motherboard. If the board posts, then I know to look at more issues, such as the drives and so on.
+The Boot Process
+All PCs need a process to begin their operations. Once your feed power to the PC, the tight interrelation of hardware, firmware, and software enables the PC to start itself, to "pull itself up by the bootstraps" or boot itself.
+When you first power on the PC, the power supply circuitry tests for proper voltage and then sends a signal down a special wire called ther power good wire to awaken the CPU. The moment the power good wire wakes it up, every Intel and clone CPU immediately sends a built-in memory address via its address bus. This special address is the same on every Intel and clone CPU, from the oldest 8086 to the most recent microprocessor. This address is the first line of the POST program on the system ROM! That's how the system starts the POST. After the POST has finished, there must be a way for the computer to find the programs on the hard drive to start the operating system. What happens next differs between the old BIOS way and the UEFI way.
+In the older BIOS environment, the POST passes control to the last BIOS function: the bootstrap loader. The bootstrap loader is little more than a few dozen lines of BIOS code tacked to the end of the POST program. Its job is to find the operating system. The bootstrap loader reads CMOS information to tell it where to look first for an operating system. Your PC's CMOS setup utility has an option that you configure to tell the bootstrap loader which devices to check for an operating system and in which order--that's the boot sequence.
+detail that can be visible in CMOS boot sequence:
+- "> Hard Disk Boot Priority [Press Enter]"
+- "First Boot Device [CDROM]"
+- "Second Boot Device [Hard Disk]"
+- "Third Boot Device [CDROM]"
+
+Almost all storage devices--hard disk drives, solid-state drives, CDs, DVDs, and USB thub drives--can be configured to boot an operating system by setting aside a specific location called the boot sector. If the device is bootable, its boot sector contains special programming designed to tell the system where to locate the operating system. Any device with a functional operating system is called a bootable disk or a system disk. If the bootstrap loader locates a good boot sector, it passes control to the operating system and removes itself from memory. If it doesn't, it goes to the next device in the boot sequence you set in the CMOS setup utility. The boot sequence is an important tool for techs because you can set it to load in special bootable devices so you can run utilities to maintain PCs without using the primary operating system.
+In UEFI systems, the POST hands control of the boot process to the Boot Manager, which checks the boot configuration, and then loads the operating system boot loader directly. There's no need for scannning for a boot sector or any of that. UEFI firmware stores the boot manager and boot configuration.
+detail that can be visible in UEFI Boot Mode with Boot Manager options displayed:
+- "Boot Option Priorities"
+    - "Boot Option #1: 'UEFI: Sand...'"
+    - "Boot Option #2: 'SATA  PM...'"
+- "Boot Override"
+    - "> SATA  PM: ST9320421ASG"
+    - "> SanDisk U3 Titanium 2.18"
+    - "> UEFI: SanDiskU3 Titanium 2.18"
+- "> Hard Drive BBS Priorities"
+- "(Version 2.00.1201. Copyright (C) 2011 American Megatren...)"
+NOTE
+If you put an old-style BIOS bootable disk in a UEFI system, the system will most likely drop into BIOS compatibility mode and boot just like the old days.
+Some BIOS include a feature that enables a PC to use a preboot execution environment (PXE). A PXE enables you to boot a PC without any local storage by retrieving an OS from a server over a network. You'll see more on PXE when we talk about installing Windows in future topic, "Building a PC".
+Care and Feeding of BIOS/UEFI and CMOS
+BIOS and CMOS are areas in your PC that you don't go to very often. BIOS itself is invisible. The only real clue you have that it even exists is the POST. The CMOS setup utility, on the other hand, is very visible if you start it. Most CMOS setup utilities today work acceptably well without ever being touched. You're an aspiring tech, however, and all self-respecting techs start up the CMOS setup utility and make changes. That's when most CMOS setup utility problems take place.
+If you mess with the CMOS setup utility, remember to make only as many changes at one time as you can remember. Document the original settings and the changes on a piece of paper or take a photo so you can put things back if necessary. Don't make changes unless you know what they mean! It's easy to screw up a computer fairly seriously by playing with CMOS settings you don't understand.
+Default/Optimized Settings
+Every CMOS setup utility has a couple of reset options, commonly called Load Default Settings and OS Optimized Defaults. These options keep you from having to memorize all of those weird settings you'll never touch. Default of Fail-Safe sets everything to very simple settings--you might occasionally use this setting when very low-level problems such as freeze-ups occur and you've checked more obvious areas first. Optimized sets the CMOS to the best possible speed/stability for the system. You would this option after you've tampered with the CMOS too much and need to put it back like it was!
+
+
 
 -- 334 --
