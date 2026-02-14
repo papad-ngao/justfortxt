@@ -1,1 +1,23 @@
-.
+NOTE
+Manufacturers of enthusiast boards designed for easy overclocking expermientation know you're going to screw up during the overclocking process. You'll often find a dedicated clear CMOS button hardwired to the motherboard. Now that's service!
+If that doesn't work or if you get one of the truly odd motherboards without CLRTC jumpbers, power down the system and unplug. Pry out the little coin battery and wait for several seconds. Reinstall and reboot.
+Losing CMOS RTC Settings
+As mentioned before, your CMOS RAM needs a continuous trickle charge to keep the internal clock running and remember its settings. Motherboards use some type of battery, usually a 3-volt Lithium coin battery, to give the CMOS RAM the charge it needs when the computer is turned off. This is called the CMOS battery. Typical systems use a CR2032 battery.
+If some mishap suddenly erases the information on the CMOS RAM, the computer might not boot or you'll get nasty-looking errors at boot. Any PC will boot to factory defaults if the CMOS clears, so the chances of not booting are slim--but you'll still get errors at boot. Here are a few examples of errors that point to a lost CMOS information scenario:
+- CMOS configuration mismatch
+- CMOS date/time not set
+- BIOS time and settings reset
+- No boot device available
+- CMOS battery state low
+Here are some of the more common reasons for losing CMOS data:
+- Pulling and inserting cards
+- Touching the motherboard
+- Dropping something on the motherboard
+- Dirt on the motherboard
+- Faulty power supplies
+- Electrical surges
+
+If you run into any of these scenarios, or if the clock in Windows resets itself to January 1st every time you reboot the system, the battery on the motherboard is losing its charge and needs to be replaced. To replace the battery, use a screwdriver to pry the battery's catch gently back. The batter should pop up for easy removal. Before you install the new battery, double-check that it has the same voltage and amperage as the old battery. To retain your CMOS settings while replacing the battery, simply leave your PC plugged into an AC outlet. The 5-volt soft power on all modern motherboards provides enough electricity to kepe the CMOS charged and the data secure. Of course, I know you're going to be extremely careful about ESD while prying up the battery from a live system!
+Flashing the ROM
+Flash ROM chips can be reprogrammed to update their contents. With flash ROM, when you need to update your system BIOS to add support for a new technology, you can simply run a small command-line program, combined with an update file, and voilà, you have a new, updated BIOS! This is called a firmware update. Different BIOS makers use slightly different processes for flashing BIOS, but, in general, you insert a removable disk of some sort (usually a USB thumb drive) containing an updated BIOS file and use the updating  utility in CMOS setup.
+-- 344 --
