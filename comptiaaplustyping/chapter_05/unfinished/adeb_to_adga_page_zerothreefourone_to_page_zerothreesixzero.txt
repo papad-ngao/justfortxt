@@ -28,41 +28,64 @@ EXAM TIP
 While techs usually talk about "flashing the BIOS", the CompTIA A+ exams refer to this process also as "firmware updates".
 Chapter Review
 Questions
-/ 1. What does BIOS provide for the computer? (Choose the best answer)
+1. What does BIOS provide for the computer? (Choose the best answer)
 A. BIOS provides the physical interface for various devices such as USB and FireWire ports.
-[B.] BIOS provides the programming that enables the CPU to communicate with other hardware.
+B. BIOS provides the programming that enables the CPU to communicate with other hardware.
 C. BIOS provides memory space for applications to load into and from the hard drive.
 D. BIOS provides memory space for applications to load into and from the main system RAM.
-/ 2. What is the correct boot sequence for an older BIOS-based PC?
+2. What is the correct boot sequence for an older BIOS-based PC?
 A. CPU, POST, power good, boot loader, operating system
 B. POST, power good, CPU, boot loader, operating system
 C. Power good, boot loader, CPU, POST, operating system
-[D.] Power good, CPU, POST, boot loader, operating system
-/ 3. Jill decided to add a second hard drive to her computer. She thinks she has it physically installed correctly, but it doesn't show up in Windows. Which of the following options will most likely lead Jill where she needs to go to resolve the issue?
+D. Power good, CPU, POST, boot loader, operating system
+3. Jill decided to add a second hard drive to her computer. She thinks she has it physically installed correctly, but it doesn't show up in Windows. Which of the following options will most likely lead Jill where she needs to go to resolve the issue?
 A. Reboot the computer and press the F key on the keyboard twice. This signals that the computer has two hard disk drives.
-[B.] Reboot the computer and watch for instructions to enter the CMOS setup utility (for example, a message may say to press the DELETE key). Do what it says to go into CMOS setup.
+B. Reboot the computer and watch for instructions to enter the CMOS setup utility (for example, a message may say to press the DELETE key). Do what it says to go into CMOS setup.
 C. In Windows, press the DELETE key twice to enter the CMOS setup utility.
 D. In Windows, go to Start|Run and type hard drive. Click OK to open the Hard Drive Setup Wizard.
-/ 4. Henry bought a new card for capturing television on his computer. When he finished going through the packaging, though, he found no driver disc, only an application disc for setting up the TV capture software. After installing the card and software, it all works flawlessly. What's the most likely explanation?
+4. Henry bought a new card for capturing television on his computer. When he finished going through the packaging, though, he found no driver disc, only an application disc for setting up the TV capture software. After installing the card and software, it all works flawlessly. What's the most likely explanation?
 A. The device doesn't need BIOS, so there's no need for a driver disc.
-[B.] The device has an option ROM that loads BIOS, so there's no need for a driver disc.
+B. The device has an option ROM that loads BIOS, so there's no need for a driver disc.
 C. Windows supports TV capture cards out of the box, so there's no need for a driver disc.
 D. The manufacturers made a mistake and didn't include everything needed to set up the device.
-X A. 5. Which of the following most accurately describes the relationship between BIOS and hardware?
+5. Which of the following most accurately describes the relationship between BIOS and hardware?
 A. All hardware needs BIOS.
 B. All hardware that attaches to the motherboard via ribbon cables needs BIOS.
-[C.] All hardware built into the motherboard needs BIOS.
+C. All hardware built into the motherboard needs BIOS.
 D. Some hardware devices need BIOS.
-X A. 6. After a sudden power outage, Samson's PC rebooted, but nothing appeared on the screen. The PC just beeps at him, over and over and over. What's most likely the problem?
+6. After a sudden power outage, Samson's PC rebooted, but nothing appeared on the screen. The PC just beeps at him, over and over and over. What's most likely the problem?
 A. The power outage toasted his RAM.
-[B.] The power outage toasted his video card.
+B. The power outage toasted his video card.
 C. The power outage toasted his hard drive.
 D. The power outage toasted his CPU.
-
-7. C. /
-8. D.
-9. A. /
-10. D. X C.
-
-
--- 347 --
+7. Davos finds that a disgruntled former employee decide to sabotage her computer when she left by putting a password in CMOS that stops the computer from booting. What can Davos do to solve this problem?
+A. Davos should boot the computer while holding the left SHIFT key. This will clear the CMOS informaion.
+B. Davos should try various combinations of the former employee's name. The vast majority of people use their name or initials for CMOS passwords.
+C. Davos should find the CLRTC jumper on the motherboard. Then he can boot the computer with a shunt on the jumper to clear the CMOS information.
+D. Davos should find a replacement motherboard. Unless he knows the CMOS password, there's nothing he can do.
+8. Richard over in the sales department went wild in CMOS and made a bunch of changes that he thought would optimize his PC. Now most of his PC doesn't work. The computer powers up, but he can only get to CMOS, not into Windows. Which of the following tech call answers would most likely get him up and running again?
+A. Reboot the computer about three times. That'll clear the CMOS and get you up and running.
+B. Open up the computer and find the CLRTC jumper. Remove a shunt from somewhere on the motherboard and put it on the CLRTC jumper. Reboot and then put the shunt back where you got it. Reboot, and you should be up and running in no time.
+C. Boot into the CMOS setup program and then find the option to load a plug-and-play operating system. Make sure it's set to On. Save and exit CMOS; boot normally into Windows. You should be up and running in no time.
+D. Boot into the CMOS setup program and then find the option to load OS Optimized Defaults. Save and exit CMOS; boot normally into Windows. You should be up and running in no time.
+9. Jill boots an older Pentium system that has been the cause of several user complaints at the office. The system powers up and starts to run through POST, but then stops. The screen displays a "CMOS configuration mismatch" error. Of the following list, what is the most likely cause of this error?
+A. Dying CMOS battery
+B. Bad CPU
+C. Bad RAM
+D. Corrupt system BIOS
+10. Where does Windows store device drivers?
+A. Computer
+B. Hardware
+C. Registry
+D. Drivers and Settings
+Answers
+1. B. BIOS provides the programming that enables CPU to communicate with other hardware.
+2. D. Here's the correct boot sequence for a BIOS-based PC: power good, CPU, POST, boot loader, operating system.
+3. B. Jill should reboot the computer and watch for instructions to enter the CMOS setup utility (for example, a message may say to press the DELETE key). She should do what it says to go into CMOS setup.
+4. B. Most likely the device has an option ROM, because it works.
+5. A. All hardware needs BIOS!
+6. A. The long repeating beep and a dead PC most likely indicate a problem with RAM.
+7. C. Davos should find the CLRTC jumper on the motherboard and then boot the computer with a shunt on the jumper to clear the CMOS information.
+8. D. Please don't hand Richard a screwdriver! Having him load Optmizied Default settings will most likely do the trick.
+9. A. The CMOS battery is likely dying.
+10. C. Windows stores device drivers in the Registry.
