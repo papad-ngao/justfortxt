@@ -1,0 +1,68 @@
+NOTE
+Manufacturers of enthusiast boards designed for easy overclocking expermientation know you're going to screw up during the overclocking process. You'll often find a dedicated clear CMOS button hardwired to the motherboard. Now that's service!
+If that doesn't work or if you get one of the truly odd motherboards without CLRTC jumpbers, power down the system and unplug. Pry out the little coin battery and wait for several seconds. Reinstall and reboot.
+Losing CMOS RTC Settings
+As mentioned before, your CMOS RAM needs a continuous trickle charge to keep the internal clock running and remember its settings. Motherboards use some type of battery, usually a 3-volt Lithium coin battery, to give the CMOS RAM the charge it needs when the computer is turned off. This is called the CMOS battery. Typical systems use a CR2032 battery.
+If some mishap suddenly erases the information on the CMOS RAM, the computer might not boot or you'll get nasty-looking errors at boot. Any PC will boot to factory defaults if the CMOS clears, so the chances of not booting are slim--but you'll still get errors at boot. Here are a few examples of errors that point to a lost CMOS information scenario:
+- CMOS configuration mismatch
+- CMOS date/time not set
+- BIOS time and settings reset
+- No boot device available
+- CMOS battery state low
+Here are some of the more common reasons for losing CMOS data:
+- Pulling and inserting cards
+- Touching the motherboard
+- Dropping something on the motherboard
+- Dirt on the motherboard
+- Faulty power supplies
+- Electrical surges
+
+If you run into any of these scenarios, or if the clock in Windows resets itself to January 1st every time you reboot the system, the battery on the motherboard is losing its charge and needs to be replaced. To replace the battery, use a screwdriver to pry the battery's catch gently back. The batter should pop up for easy removal. Before you install the new battery, double-check that it has the same voltage and amperage as the old battery. To retain your CMOS settings while replacing the battery, simply leave your PC plugged into an AC outlet. The 5-volt soft power on all modern motherboards provides enough electricity to kepe the CMOS charged and the data secure. Of course, I know you're going to be extremely careful about ESD while prying up the battery from a live system!
+Flashing the ROM
+Flash ROM chips can be reprogrammed to update their contents. With flash ROM, when you need to update your system BIOS to add support for a new technology, you can simply run a small command-line program, combined with an update file, and voilà, you have a new, updated BIOS! This is called a firmware update. Different BIOS makers use slightly different processes for flashing BIOS, but, in general, you insert a removable disk of some sort (usually a USB thumb drive) containing an updated BIOS file and use the updating  utility in CMOS setup.
+Some motherboard makers provide Windows-based flash ROM update utilities that check the Internet for updates and download them for you to install. Most of these utilities also enable you to back up your current BIOS so you can return to it if the updated version causes trouble. Without a good backup, you could end up throwing away your motherboard if a flash BIOS update goes wrong, so you should always make one.
+Finally, a lot of motherboards these days have system setup utilities that can connect directly to the Internet and access updates that way.
+NOTE A failed BIOS/UEFI update--where something goes wrong during the process--can brick a computeror device. The failure turns a computing device into a brick, useless for anything but a paperweight.
+Just a word of caution to complete the BIOS update section. Don't update your BIOS unless you have some compelling reason to do so. As the old saying goes, "If it ain't broke, don't fix it!"
+EXAM TIP
+While techs usually talk about "flashing the BIOS", the CompTIA A+ exams refer to this process also as "firmware updates".
+Chapter Review
+Questions
+/ 1. What does BIOS provide for the computer? (Choose the best answer)
+A. BIOS provides the physical interface for various devices such as USB and FireWire ports.
+[B.] BIOS provides the programming that enables the CPU to communicate with other hardware.
+C. BIOS provides memory space for applications to load into and from the hard drive.
+D. BIOS provides memory space for applications to load into and from the main system RAM.
+/ 2. What is the correct boot sequence for an older BIOS-based PC?
+A. CPU, POST, power good, boot loader, operating system
+B. POST, power good, CPU, boot loader, operating system
+C. Power good, boot loader, CPU, POST, operating system
+[D.] Power good, CPU, POST, boot loader, operating system
+/ 3. Jill decided to add a second hard drive to her computer. She thinks she has it physically installed correctly, but it doesn't show up in Windows. Which of the following options will most likely lead Jill where she needs to go to resolve the issue?
+A. Reboot the computer and press the F key on the keyboard twice. This signals that the computer has two hard disk drives.
+[B.] Reboot the computer and watch for instructions to enter the CMOS setup utility (for example, a message may say to press the DELETE key). Do what it says to go into CMOS setup.
+C. In Windows, press the DELETE key twice to enter the CMOS setup utility.
+D. In Windows, go to Start|Run and type hard drive. Click OK to open the Hard Drive Setup Wizard.
+/ 4. Henry bought a new card for capturing television on his computer. When he finished going through the packaging, though, he found no driver disc, only an application disc for setting up the TV capture software. After installing the card and software, it all works flawlessly. What's the most likely explanation?
+A. The device doesn't need BIOS, so there's no need for a driver disc.
+[B.] The device has an option ROM that loads BIOS, so there's no need for a driver disc.
+C. Windows supports TV capture cards out of the box, so there's no need for a driver disc.
+D. The manufacturers made a mistake and didn't include everything needed to set up the device.
+X A. 5. Which of the following most accurately describes the relationship between BIOS and hardware?
+A. All hardware needs BIOS.
+B. All hardware that attaches to the motherboard via ribbon cables needs BIOS.
+[C.] All hardware built into the motherboard needs BIOS.
+D. Some hardware devices need BIOS.
+X A. 6. After a sudden power outage, Samson's PC rebooted, but nothing appeared on the screen. The PC just beeps at him, over and over and over. What's most likely the problem?
+A. The power outage toasted his RAM.
+[B.] The power outage toasted his video card.
+C. The power outage toasted his hard drive.
+D. The power outage toasted his CPU.
+
+7. C. /
+8. D.
+9. A. /
+10. D. X C.
+
+
+-- 347 --
