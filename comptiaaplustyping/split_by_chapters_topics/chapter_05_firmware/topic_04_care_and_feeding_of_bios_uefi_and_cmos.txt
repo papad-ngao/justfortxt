@@ -1,0 +1,50 @@
+Care and Feeding of BIOS/UEFI and CMOS
+BIOS and CMOS are areas in your PC that you don't go to very often. BIOS itself is invisible. The only real clue you have that it even exists is the POST. The CMOS setup utility, on the other hand, is very visible if you start it. Most CMOS setup utilities today work acceptably well without ever being touched. You're an aspiring tech, however, and all self-respecting techs start up the CMOS setup utility and make changes. That's when most CMOS setup utility problems take place.
+If you mess with the CMOS setup utility, remember to make only as many changes at one time as you can remember. Document the original settings and the changes on a piece of paper or take a photo so you can put things back if necessary. Don't make changes unless you know what they mean! It's easy to screw up a computer fairly seriously by playing with CMOS settings you don't understand.
+Default/Optimized Settings
+Every CMOS setup utility has a couple of reset options, commonly called Load Default Settings and OS Optimized Defaults. These options keep you from having to memorize all of those weird settings you'll never touch. Default of Fail-Safe sets everything to very simple settings--you might occasionally use this setting when very low-level problems such as freeze-ups occur and you've checked more obvious areas first. Optimized sets the CMOS to the best possible speed/stability for the system. You would this option after you've tampered with the CMOS too much and need to put it back like it was!
+Options for resetting CMOS (at the "<="), as seen from some available configuration options from the Exit tab of Text-Based UEFI on Lenovo IdeaPad Y410P:
+(InsydeH20 Setup Utility, Rev. 3.7) [selected tab: "Exit"]
+> Exit Saving Changes
+    - hint (labeled as "Item Specific Help"):
+        - Exit Setup and save your changes.
+- Exit Discarding Changes
+- Discard Changes
+- Save Changes
+- Load Default Settings <=
+- OS Optimized Defaults, current value: "[Win8 64bit]" <=
+
+Clearing CMOS RTC RAM
+You read about the process for clearing system settings, but the process is worth repeating here. When you mess up a setting (by overclocking too much or disabling something that should have remained enabled--or vice versa) that renders the computer dead, you can reset the CMOS RTC RAM back to factory defaults and start over.
+Almost every motherboard has a dedicated set of wires called CLRTC or something similar.
+NOTE
+Many techs use older language to describe the reset CMOS RTC RAM, simply CMOS clear, describing both the process and the motherboard option.
+Turn off and unplug the computer, then open the case to access the motherboard. Find the CMOS RTC clear wires. Move the shunt (the little plastic and metal jumper thing) from wires 1 and 2 to wires 2 and 3. Wait for 10 seconds and then move the shunt back to the default position. Plug in and boot the system.
+NOTE
+Manufacturers of enthusiast boards designed for easy overclocking expermientation know you're going to screw up during the overclocking process. You'll often find a dedicated clear CMOS button hardwired to the motherboard. Now that's service!
+If that doesn't work or if you get one of the truly odd motherboards without CLRTC jumpbers, power down the system and unplug. Pry out the little coin battery and wait for several seconds. Reinstall and reboot.
+Losing CMOS RTC Settings
+As mentioned before, your CMOS RAM needs a continuous trickle charge to keep the internal clock running and remember its settings. Motherboards use some type of battery, usually a 3-volt Lithium coin battery, to give the CMOS RAM the charge it needs when the computer is turned off. This is called the CMOS battery. Typical systems use a CR2032 battery.
+If some mishap suddenly erases the information on the CMOS RAM, the computer might not boot or you'll get nasty-looking errors at boot. Any PC will boot to factory defaults if the CMOS clears, so the chances of not booting are slim--but you'll still get errors at boot. Here are a few examples of errors that point to a lost CMOS information scenario:
+- CMOS configuration mismatch
+- CMOS date/time not set
+- BIOS time and settings reset
+- No boot device available
+- CMOS battery state low
+Here are some of the more common reasons for losing CMOS data:
+- Pulling and inserting cards
+- Touching the motherboard
+- Dropping something on the motherboard
+- Dirt on the motherboard
+- Faulty power supplies
+- Electrical surges
+
+If you run into any of these scenarios, or if the clock in Windows resets itself to January 1st every time you reboot the system, the battery on the motherboard is losing its charge and needs to be replaced. To replace the battery, use a screwdriver to pry the battery's catch gently back. The batter should pop up for easy removal. Before you install the new battery, double-check that it has the same voltage and amperage as the old battery. To retain your CMOS settings while replacing the battery, simply leave your PC plugged into an AC outlet. The 5-volt soft power on all modern motherboards provides enough electricity to kepe the CMOS charged and the data secure. Of course, I know you're going to be extremely careful about ESD while prying up the battery from a live system!
+Flashing the ROM
+Flash ROM chips can be reprogrammed to update their contents. With flash ROM, when you need to update your system BIOS to add support for a new technology, you can simply run a small command-line program, combined with an update file, and voilà, you have a new, updated BIOS! This is called a firmware update. Different BIOS makers use slightly different processes for flashing BIOS, but, in general, you insert a removable disk of some sort (usually a USB thumb drive) containing an updated BIOS file and use the updating  utility in CMOS setup.
+Some motherboard makers provide Windows-based flash ROM update utilities that check the Internet for updates and download them for you to install. Most of these utilities also enable you to back up your current BIOS so you can return to it if the updated version causes trouble. Without a good backup, you could end up throwing away your motherboard if a flash BIOS update goes wrong, so you should always make one.
+Finally, a lot of motherboards these days have system setup utilities that can connect directly to the Internet and access updates that way.
+NOTE A failed BIOS/UEFI update--where something goes wrong during the process--can brick a computeror device. The failure turns a computing device into a brick, useless for anything but a paperweight.
+Just a word of caution to complete the BIOS update section. Don't update your BIOS unless you have some compelling reason to do so. As the old saying goes, "If it ain't broke, don't fix it!"
+EXAM TIP
+While techs usually talk about "flashing the BIOS", the CompTIA A+ exams refer to this process also as "firmware updates".
