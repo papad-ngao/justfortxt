@@ -1,4 +1,4 @@
-CPUS
+CPUs
 In this chapter, you will learn how to
 - Identify the core components of a CPU
 - Describe the relationship of CPUs with memory
