@@ -1,0 +1,84 @@
+Working with RAM
+Whenever people come up to me and ask what single hardware upgrade they can do to improve their system performance, I always tell them the same thing--add more RAM. Adding more RAM can improve overall system performance, processing speed, and instability--if you get it right. Botching the job can cause dramatic system instability, such as frequent, random crashes and reboots. Every tech needs to know how to install and upgrade system RAM of all types.
+To get the desired results from a RAM upgrade, you must first determine if insufficient RAM is the cause of system problems. Second, you need to pick the proper RAM for the system. Finally, you must use good installation  practices. Always store RAM sticks in anti-static packaging whenever they're not in use, and use strict ESD handling procedures. Like many other pieces of the PC, RAM is very sensitive to ESD and other technician abuse.
+Do You Need More RAM?
+Two symptoms point to the need for more RAM in a PC: general system sluggishness and excessive hard drive accessing. If programs take forever to load and running programs seem to stall and move more slowly than you would like, the problem could stem from insufficient RAM.
+A friend with an older Windows system complained that her PC seemed snappy when she first got it but now takes a long time eto do the things she wants to do with it, such as photograph retouching in Adobe Photoshop. Over the years, new applications and updates to her existing operating system and applications piled up until her system, with only 2 GB of RAM, was woefully insufficient for her tasks--she kept maxing out the RAM and thus the system slowed to a crawl. I replaced her single 2-GB stick with a pair of 4-GB sticks and suddenly she had the speedy workstation she desired.
+Excessive hard drive activity when you move between programs points to a need for more RAM. Every computer has the capability to make a portion of your hard drive look like RAM in case you run out of real RAM.
+Virtual Memory
+Computers use a portion of the hard drive (or solid-state drive) as an extension of system RAM called virtual memory. The operating system uses part of the available drive space to save a page file or swap file. When a computer starts running out of real RAM because you've loaded too many programs, the system swaps less-used programs from RAM to the page file, opening more space for programs currently active. All versions of Windows, MacOS, and Linux use virtual memory. Let's use a typical Windows PC as an example of how paging works.
+EXAM TIP
+The default and recommended page-file size in Windows is 1.5 times the amount of installed RAM on your computer.
+Let's assume you have a PC with 4 GB of RAM. As programs load, they take up RAM, and as more and more programs are loaded (let's say it's program A, B, and C), more RAM is used.
+At a certain point, you won't have enough RAM to run any more programs. Sure, you could close one or more programs to make room for yet another one, but you can't keep all of the programs running simultaneously. This is where virtual memory comes into play. (assuming you already have program A, B, and C running, and with 4 GB of RAM, there would be not enough RAM to also run program D if their combined RAM usage exceeds 4 GB)
+Windows' virtual memory starts by creating a page file that resides somewhere on your hard drive. The page file works like a temporary storage box. Windows removes running programs temporarily from RAM into the page file so other programs can load and run. If you have enough RAM to run all your programs, Windows does not need to use the page file--Windows brings the page file into play only when insufficient RAM is available to run all open programs.
+NOTE
+Virtual memory is a fully automated process and does not require any user intervention. This is true of virtual memory in Windows, MacOS, and Linux.
+To load, Program D needs a certain amount of free RAM. Clearly, this requires unloading some other program (or programs) from RAM without actually closing any programs. Windows looks at all running programs--in this case A, B, and C--and decides which program is the least used. That program is then cut out of or swapped from RAM and copied into the page file. In this case, Assuming Windows has chosen Program B because it is the least used. Unloading Program B from RAM provides enough RAM to load Program D.
+It is important to understand that none of this activity is visible on the screen. Program B's window is still visible, along with those of all the other running programs. Nothing tells the user that Program B is no longer in RAM.
+So what happens if you click on Program B's window to bring it to the front? The program can't actually run from the page file; it must be loaded back into RAM. First, Windows decides which program must be removed from RAM, and this time Windows chooses Program C. Then it loads Program B into RAM. (assuming Program C uses the second least amount of RAM)
+Swapping programs to and from the page file and RAM takes time. Although no visual clues suggest that swap is taking place, the machine slows down quite noticeably as Windows performs the swaps. Page files are a crucial aspect of Windows operation.
+Windows handles page files automatically, but occasionally you'll run into problems and need to change the size of the page or delete it and let Windows re-create it automatically. The page file or delete it and let Windows re-create it automatically. The page file is pagefile.sys. You can often find it in the root directory of the C: drive, but again, that can be changed. Wherever it is, the page file is a hidden system file, which means in practice that you'll have to play with your folder-viewing options to see it.
+If Windows needs to access the page file too frequently, you will notice the hard drive access LED going crazy as Windows rushes to move programs between RAM and the page file in a process called disk thrashing. Windows uses the page file all the time, but excessive disk thrashing suggests that you need more RAM.
+System RAM Recommendations.
+Microsoft sets very low the minimum RAM requirements listed for the various Windows operating systems to get the maximum number of users to upgrade or convert, and that's fine. Microsoft recommends a minimum system requirements of 1 GB of RAM for 32-bit versions of Windows and 2 GB of RAM for 64-bit versions. This applies to any versions of Windows. I think that results in dreadfully sluggish computers. Here are my recommendations:
+- 32-bit Windows: 2 GB to get by; 4 GB for best results
+- 64-bit Windows: 4 GB to get by; 8 GB for a solid machine; 16+ GB for any machine doing serious, processor-intensive work.
+The latest versions of MacOS require a minimum of 2 GB of RAM. Like Windows, however, the 64-bit-only OS does much better with a lot more RAM. I would go with 4 GB at a minimum, 8 GB for good performance, and more for peak performance.
+NOTE
+Beware sealed systems! Almost all smartphones and tablets are sealed. Today many desktop and laptop systems--in the past easily upgraded by a good tech--are sealed, making upgrades impossible. if you get a sealed systems, don't scrimp on the RAM at the time of purchase!
+Linux RAM requirements and recommendations depend entirely on which distribution (distro) is being used. The mainstream distros, like Ubuntu, have requirements similar to Windows and MacOS. But many distros get by on very minimal system requirements.
+Determining Current RAM Capacity
+Before you go get RAM, you obviously need to know how much RAM you currently have in your PC. Windows displays this amount in the System Control Panel applet. You can also access the screen with the WINDOWS-PAUSE/BREAK keystroke combination on standard keyboards.
+Windows also includes the handy Performance tab in the Task Manager. The Performance tab includes a lot of information about the amount of RAM being used by your PC. Access the Task Manager by pressing CTRL-SHIFT-ESC and selecting the Performance tab.
+ReadyBoost
+Traditional (spinning) hard drives for virtual memory offer slow performance. High-speed flash drives offer much better virtual memory performance. Windows offers a feature called ReadyBoost that enables you to use flash media devices--removable USB thumb drives or memory cards--as super-fast, dedicated virtual memory. The performance gain over using only a traditional hard drive for virtual memory can be significant with ReadyBoost because read/write access times on flash memory blow away hard drive/write access times.
+Plug a ReadyBoost-approved device into a USB port or built-in flash memory card reader slot. Right-click the device in Computer and select Properties. Click the ReadyBoost tab and select the radio button next to either Dedicate this device to ReadyBoost or Use this device. Click Apply to enhance your system's performance.
+NOTE
+ReadyBoost isn't for every system. A modern system running SSDs won't see much benefit with ReadyBoost. Also, adding more RAM will always give a system a far better boost in performance than messing with ReadyBoost. Add RAM and blow off ReadyBoost. Just remember ReadyBoost for the exams.
+Getting the Right RAM
+To do the perfect RAM upgrade, determine the optimum capacity of RAM to install and then get the right RAM for the motherboard. Your first two stops toward these goals are the inside of the case and your motherboard manual.
+Open the case to see how many sticks of RAM you have installed currently and how many free slots you have open.
+Check the motherboard book or RAM manufacturer's Web site to determine the total capacity of RAM the system can handle and what specific technology works with your system.
+You can't put DDR4 into a system that can only handle DDR3 SDRAM, after all, and it won't do you much good to install a pair of 4-GB DIMMs when your system tops out at 4 GB. Details below show the RAM limits for an ASUS-brand motherboard.
+Details from the motherboard book showing how much RAM the motherboard will handle:
+ROG RAMPAGE VI EXTREME specifications summary
+=> "...Memory: 8 x DIMM, max. 128GB, DDR4 4200+(O.C)* / 4200+(O.C)* / 4000(O.C)* / 3866(O.C)* / 3600(O.C)* / 3333(O.C)* / 3300(O.C)* / 3200(O.C)* / 3000+(O.C)* / 2800(O.C)* / 2666(O.C)* / 2400(O.C)* / 2133 MHz, non-ECC, un-buffered memory; Quad channel memory architecture..."
+NOTE
+The freeware CPU-Z program tells you the total number of slots on your motherboard, the number of slots used, and the exact type of RAM in each slot--very handy. CPU-Z not only determines the latency of your RAM but also lists the latency at a variety of motherboard speeds. And you can download CPU-Z from www.cpuid.com.
+Mix and Match at your Peril
+All motherboards can handle different capacities of RAM. If you have three slots, you may put a 2-GB stick in one and a 4-GB stick in the other with a high chance of success. To ensure maximum stability in a system, however, shoot for as close as you can get to uniformity of RAM. Choose RAM sticks that match in technology, capacity, speed, and latency (CL).
+Mixing Speeds
+With so many different DRAM speeds available, you may often find yourself tempted to mix speeds of DRAM in the same system. Although you may get away with mixing speeds on a system, the safest, easiest rule to follow is to use the speed of DRAM specified in the motherboard book, and make sure that every piece of DRAM runs at that speed. In a worst-case scenario, mixing DRAM speeds can cause the system to lock up every few seconds or every few minutes. You might also get some data corruption. Mixing speeds sometimes works fine, but don't do your tax return on a machine with mixed DRAM speeds until the system has proven to be stable enough for a few days. The important thing to note is that you won't break anything, other than possibly data, by experimenting.
+Okay, I have mentioned enough disclaimers. Modern motherboards provide some flexibility regarding RAM speeds and mixing. First, you can use RAM that is faster than the motherboard specifies. For example, if the system needs PC-19200 DDR4, you may put in PC-25600 DDR4 and it should work fine. Faster DRAM is not going to make the system run any faster, however, so don't look for any system improvement.
+Second, you can sometimes get away with putting one speed of DRAM in one bank and another speed in another bank, as long as all the speeds are as fast or faster than the speed specified by the motherboard. Don't bother trying to put different-speed DRAM sticks in the same bank with a motherboard that uses dual-channel DDR.
+Installing DIMMs
+Installing DRAM is so easy that it's one of the very few jobs I recommend to non-techie folks. First, attach an anti-static wrist strap or touch some bare metal on the power supply to ground yourself and avoid ESD. Then swing the side tabs on the RAM slots down from the upright position. Pick up a stick of RAM--don't touch those contacts--and line up the notch or notches with a raised portion(s) of the DIMM socket. A good hard push down is usually all you need to ensure a solid connection. Make sure that the DIMM snaps into position to show it is completely seated. Also, notice that the one or two side tabs move in to reflect a tight connection.
+Your motherboard should detect and automatically set up any DIMM you install, assuming you have the right RAM for the system, using a technology called serial presence detect (SPD). RAM makers add a handy chip to modern sticks called the SPD chip. The SPD chip stores all the information about your DRAM, including size, speed, ECC or non-ECC, registered and unregistered, and other more technical bits of information.
+When a PC boots, it queries the SPD chip so that that MCC knows how much RAM is on the stick, how fast it runs, and other information. Any program can query the SPD chip, including the popular CPU-Z program that can show RAM information from the SPD chip.
+An example of RAM information shown in CPU-Z:
+[tab "SPD"]
+Memory Slot Selection:
+- Slot #2: DDR4
+- Modular Size: 8192 MBytes
+- Max Bandwidth: DDR4-2132 (1066 MHz)
+- Manufacturer: Patriot Memory
+- Ranks: Single
+- Part Number: 3200 C16 Series
+- SPD Ext.: XMP 2.0
+Timings Table:
+| | JEDEC #5 | JEDEC #6 | JEDEC #7 | XMP-3200 |
+| --- | -------- | -------- | -------- | -------- |
+| Frequency | 1037 MHz | 1066 MHz | 1066 MHz | 1600 MHz |
+| CAS# Latency | 14.0 | 15.0 | 16.0 | 16.0 |
+| RAS# to CAS# | 14 | 15 | 15 | 16 |
+| RAS# Precharge | 14 | 15 | 15 | 16 |
+| tRAS | 35 | 36 | 36 | 36 |
+| tRC | 49 | 50 | 50 | 64 |
+| Command Rate | | | |
+| Voltage | 1.20 V | 1.20 V | 1.20 V | 1.350 V |
+All new systems count on SPD to set the RAM timings properly for your system when it boots. If you add a RAM stick with a bad SPD chip, you'll get a POST error message and the system will not boot. You can't fix a broken SPD chip; you just buy a new stick of RAM.
+Installing SO-DIMMs in Laptops
+It wasn't that long ago that adding RAM to a laptop was either impossible or required you to send the system back to the manufacturer. Long ago, laptop makers used expensive, proprietary, custom-made RAM packages that were hard to handle. Wide acceptance of SO-DIMMs solved these problems for a time--until ultra-thin laptops started turning up with soldered-on RAM. most larger laptops still provide relatively convenient access to their SO-DIMMs, making it easy to add or replace RAM.
+Access to RAM usually requires removing a panel or lifting up the keyboard--the procedure varies among laptop manufacturers. In a typical laptop RAM access panel, you can side the panel off to reveal the SO-DIMMs. Slide the pins into position and snap the SO-DIMM down into the retaining clips.
+Before doing any work on a laptop, turn the system off, disconnect it from the AC wall socket, and remove all batteries. Use an anti-static wrist strap because laptops are fare more susceptible to ESD than desktop PCs.

@@ -1,0 +1,116 @@
+Types of RAM
+Development of newer, wider, and faster CPUs and MCCs motivates DRAM manufacturers to invent new DRAM technologies that deliver enough data at a single pop to optimize the flow of data into and out of the CPU.
+SDRAM
+Most modern systems use some form of synchronous DRAM (SDRAM). SDRAM is still DRAM, but is synchronous--tied to the system clock, just like the CPU and MCC, so the MCC knows when data is ready to be grabbed from SDRAM. This results in little wasted time.
+SDRAM made is debut in 1996 on stick called a dual inline memory module (DIMM). The early SDRAM DIMMs came in a wide variety of pin sizes. The most common pin sizes found on desktops were the 168-pin variety. Laptop DIMMs came in 68-pin, 144-pin, or 172-pin micro-DIMM packages; and the 72-pin, 144-pin, or 200-pin small outline DIMM (SO-DIMM) form factors. With the exception of the 32-bit 72-pin SO-DIMM, all these DIMM varieties delivered 64-bit-wide data to match the 64-bit data bus of every CPU since the original Pentium.
+EXAM TIP
+Some manufacturers (and CompTIA) drop the hyphen: SODIMM. You might see the RAM package spelled as SO-DIMM, SODIMM, or even SoDIMM.
+To take advantage of SDRAM, you needed a PC designed to use SDRAM. If you had a system with slots for 168-pin DIMMs, for example, your system used SDRAM. A DIMM in any one of the DIMM slots could fill the 64-bit bus, so each slot was called a bank. You could install one, two, or more sticks and the system would work. Note that on laptops that used the 72-pin SO-DIMM, you needed to install two sticks of RAM to make a full bank, because each stick only provided half the bus width.
+SDRAM was tied to the system clock, so its clock matched the frontside bus. Five clock speeds were commonly used on the early SDRAM systems: 66, 75, 83, 100, and 133 MHz. The RAM speed had to match or exceed the system speed, or the  computer would be unstable or wouldn't work at all. These speeds were prefixed with a "PC" in the front, based on a standard forwarded by Intel, so SDRAM speeds were PC66 through PC133. For a Penium III computer with a 100-MHz frontside bus, you needed to buy SDRAM DIMMs rated to handle it, such as PC100 or PC133.
+RDRAM
+When Intel was developing the Penium 4, they knew that regular SDRAM just wasn't going to be fast enough to handle the quad-pumped 400-MHz frontside bus. Intel announced plans to replace SDRAM with a very fast, new type of RAM developed by Rambus, Inc. called Rambus DRAM, or simply RDRAM. Hailed by Intel as the next great leap in DRAM technology, RDRAM could handle speeds up to 800 MHz, which gave Intel plenty of room to improve the Pentium 4.
+RDRAM was greatly anticipated by the industry for years, but industry support for RDRAM proved less than enthusiastic due to significant delays in development and a price many times that of SDRAM. Despite the grudging support, almost all major PC makers sold systems that used RDRAM--for a while. From a tech's standpoint, RDRAM shared almost all of the characterstics of SDRAM. A stick of RDRAM was called RIMM. In this case, however, the letters didn't actually stand for anything; they just rhymed: SIMMs, DIMMs, and RIMMs, get it?
+NOTE The 400-MHz frontside bus speed wasn't achieved by making the system clock faster--it was done by making CPUs and MCCs capable of sencind 64 bits of data two or four times for every clock cycle, effectively doubling or quadrupling the system bus speed.
+*1001*
+DDR SDRAM
+AMD and many major system and memory makers threw their support behind an alternative to RDRAM, double data rate SDRAM (DDR SDRAM). DDR SDRAM basically copied Rambus, doubling the throughput of SDRAM by making two processes for every clock cycle. This synchronized (pardon the pun) nicely with the Athlon and later AMD processor's double-pumped frontside bus. DDR SDRAM could not run as fast as RDRAM--although relatively low frontside bus speeds made that a moot point--but only slightly more than regular SDRAM.
+DDR SDRAM for desktops comes in 184-pin DIMMs. These DIMMs match the 168-pin in physical size but not in pin compatibility. The slots for the two types of RAM appear similar as well but have different guide notches, so you can't insert either type of RAM into the other's slot. DDR SDRAM for laptops comes in either 200-pin SO-DIMMs or 172-in micro-DIMMs.
+NOTE
+Most techs drop some or all of the SDRAM part of DDR SDRAM when engaged in normal geek-speak. You'll hear the memory referred to as DDR, DDR RAM, and the weird hybrid, DDRAM.
+DDR sticks use a rather interesting naming convention based on the number of bytes per second of data throughput the RAM can handle. To determine the bytes per second, take the MHz speed and multiply by 8 bytes (the width of all DDR SDRAM sticks). So 400 MHz multiplied by 8 is 3200 megabytes per second (MBps). Put the abbreviation "PC" in  the front to make the new term: PC3200. Many techs also use the naming convention used for the individual DDR chips; for example, DDR400 refers to a 400-MHz DDR SDRAM chip running on a 200-MHz clock.
+Even though the term DDRxxx is really just for individual DDR chips and the term PCxxx is for DDR sticks, this tradition of two names for every speed of RAM is a bit of challenge because you'll often hear both terms used interchangeably. Table below shows all the speeds for DDR--not all of these are commonly used.
+DDR speeds table:
+| Clock Speed | DDR Speed Rating | PC Speed Rating |
+| ----------- | ---------------- | --------------- |
+| 100 MHz | DDR-200 | PC-1600 |
+| 133 MHz | DDR-266 | PC-2100 |
+| 166 MHz | DDR-333 | PC-2700 |
+| 200 MHz | DDR-400 | PC-3200 |
+| 217 MHz | DDR-433 | PC-3500 |
+| 233 MHz | DDR-466 | PC-3700 |
+| 250 MHz | DDR-500 | PC-4000 |
+| 275 MHz | DDR-550 | PC-4400 |
+| 300 MHz | DDR-600 | PC-4800 |
+Following  the lead of AMD and other manufacturers, the PC industry adopted DDR SDRAM as the standard system RAM. In the summer of 2003, Intel relented and stopped producing motherboards and memory controllers that required RDRAM.
+One thing is sure about PC technologies: any good idea that can be copied will be copied. One of Rambus' best concepts was the dual-channel architecture--using two sticks of RDRAM together to increase throughput.
+Manufacturers have released motherboards with MCCs that support dual-channel architecture using DDR SDRAM. Dual-channel DDR motherboards use regular DDR sticks, although manufacturers often sell RAM in matched pairs, branding them as dual-channel RAM.
+Dual-channel DDR requires two identical sticks of DDR and they must snap into two paired slots. Many motherboards offer four slots.
+DDR2
+DDRs is DDR RAM with some improvements in its electrical characteristics, enabling it to run even faster than DDR while using less power. The big speed increase from DDR2 comes by clock doubling the input/output circuits on the chips. This does not speed up the core RAM--the part that holds the data--but speeding up the input/output and adding special buffers (sort of like a cache) makes DDR2 run much faster than regular DDR. DDR2 uses a 240-pin DIMM that's not compatible with DDR. Likewise, the DDR2 200-pin SO-DIMM is incompatible with the DDR SO-DIMM.
+You'll find motherboards running both single-channel and dual-channel DDR2.
+NOTE DDR2 RAM sticks will not fit into DDR sockets, nor are they electronically compatible.
+Table below shows some of the common DDR2 speeds.
+DDR2 speeds table:
+| Core RAM Clock Speed | DDR I/O Speed | DDR2 Speed Rating | PC Speed Rating |
+| -------------------- | ------------- | ----------------- | --------------- |
+| 100 MHz | 200 MHz | DDR2-400 | PC2-3200 |
+| 133 MHz | 266 MHz | DDR2-533 | PC2-4200 |
+| 166 MHz | 333 MHz | DDR2-667 | PC2-5300 |
+| 200 MHz | 400 MHz | DDR2-800 | PC2-6400 |
+| 266 MHz | 533 MHz | DDR2-1066 | PC2-8500 |
+DDR3
+DDR3 boasts higher speeds, more efficient architecture, and around 30 percent lower power consumption than DDR2 RAM. Just like its predecessor, DDR3 uses a 240-pin DIMM, albeit one that is slotted differently to make it difficult for users to install the wrong RAM in their system without using a hammer.
+EXAM TIP
+The 220-1001 exam loves to test you on pin counts with RAM! It will challenge your knowledge of the various RAM types, including DDR2, DDR3, and DDR4. Make sure you know their individual characteristics and differences. DDR3 DIMMs have 240 pins, for example, and DDR3 SO-DIMMs have 204 pins.
+DDR3 doubles the buffer of DDR2 from 4 bits to 8 bits, giving it a huge boost in bandwidth over older RAM. Not only that, but some DDR3 (and later) modules also include a feature called XMP, or Extreme Memory Profile, that enables power users to overclock their RAM easily, boosting their already fast memory. DDR3 modules also use higher-density memory chips, up to 16-GB DDR3 modules. AMD's version of XMP is called AMP for AMD Memory Profile.
+Note
+Do not confuse DDRx with GDDRx; the latter is a type of memory used solely in video cards (e.g., GDDR5). in future topic "Display Technologies" includes the scoop on video-specific types of memory.
+Some motherboards that support DDR3 also support features called triple-channel architecture or quad-channel architecture, which work a lot like dual-channel, but with three or four sticks of RAM instead of two. More recently, Intel and AMD systems have switched back to dual-channel, although there's plenty of systems out there using triple- or quad-channel memory.
+EXAM TIP
+Be sure you are familiar with single-, dual-, triple, and quad- channel memory architectures.
+Table below shows common DDR3 speeds. Note how DDR3 I/O speeds are quadruple the clock speeds, whereas DDR2 I/O speeds are only double the clock. This speed increase is due to the increased buffer size, which enables DDR3 to grab twice as much data every clock cycle as DDR2 can.
+DDR3 speeds table:
+| Core RAM Clock Speed | DDR I/O Speed | DDR3 Speed Rating | PC Speed Rating |
+| -------------------- | ------------- | ----------------- | --------------- |
+| 100 MHz | 400 MHz | DDR3-800 | PC3-6400 |
+| 133 MHz | 533 MHz | DDR3-1066 | PC3-8500 |
+| 166 MHz | 667 MHz | DDR3-1333 | PC3-10667 |
+| 200 MHz | 800 MHz | DDR3-1600 | PC3-12800 |
+| 233 MHz | 933 MHz | DDR3-1866 | PC3-14900 |
+| 266 MHz | 1066 MHz | DDR3-2133 | PC3-17000 |
+| 300 MHz | 1200 MHz | DDR3-2400 | PC3-19200 |
+DDR3L/DDR3U
+Memory manufacturers offer a low-voltage version of DDR3, most commonly labeled DDR3L, that provides substantial cost savings when used in massive RAM applications. (Think big data centers, like the ones that power Google). DDR3L runs at 1.35 volts (V), compare to the 1.5 V or 1.65 V of regular DDR3, providing cost savings up to 15 percent--that adds up fast! The ultra-low-voltage version of DDR3, DDR3U, runs at a miserly 1.25 V.
+Lower voltage means less heat generated. In a server farm or data center, that can reduce the air conditioning bill by a lot. That's a good thing.
+The DIMM is slot-compatible with DDR3, although not necessarily a drama-free replacement on older motherboards. A motherboard pushing 1.5 V to the RAM slots and RAM only capable of running at 1.35 V would not results in happiness.
+For best results, check the manual that came with the motherboard in question or check the manufacturer's Web site for support. Also, many RAM manufacturers produce RAM modules capable of running at 1.35 V or 1.5 V; those will work in any motherboard that supports DDR3. Some modules can handle the full gamut, from 1.25 V to 1.65 V.
+DDR4
+DDR4 arrived on the scene in late 2014 with much fanfare and slow adoption, although it's the mainstream memory now. DDR4 offers higher density and lower voltages than DDR3, and can handle faster data transfer rates. In theory, manufacturers could create DDR4 DIMMs up to 512 GB. DIMMs running DDR4 top out at 64 GB, compare to the 16 GB max of DDR3, but run at only 1.2 V. (There's a performance versions that runs at 1.35 V and a low-voltage version at 1.05 V too).
+NOTE
+By the time you read this, the 64-GB limit on DDR4 might have been eclipsed. Check www.newegg.com for the latest.
+DDR4 uses a 288-pin DIMM, so they are not backwardly compatible with DDR3 slots. DDR4 SO-DIMMs have 260 pins that are not compatible with DDR3 204-pin SO-DIMM slots. Some motherboard manufacturers have released boards that offer for both DDR3 and DDR4, by providing both slot types.
+With DDR4, most techs have switched from bit rate to mega-transfers per second (MT/s), a way to describe the number of data transfer operations happening at any given second. For DDR4, the number is pretty huge. Table below shows some DDR4 speeds and labels.
+Standard DDR4 varieties table:
+| Clock Speed | Bandwidth | DDR4 Speed Rating | PC Speed Rating |
+| ----------- | --------- | ---------------- | --------------- |
+| 200 MHz | 1600 MT/s | DDR4-1600 | PC4-12800 |
+| 266 MHz | 2133 MT/s | DDR4-2133 | PC4-17000 |
+| 300 MHz | 2400 MT/s | DDR4-2400 | PC4-19200 |
+| 400 MHz | 3200 MT/s | DDR4-3200 | PC4-25600 |
+...Skipping a whole bunch here in the middle...
+| 563 MHz | 4500 MT/s | DDR4-4500 | PC4-36000 |
+| 575 MHz | 4600 MT/s | DDR4-4600 | PC4-36800 |
+| 588 MHz | 4700 MT/s | DDR4-4700 | PC4-37600 |
+EXAM TIP
+The CompTIA A+ 1001 exam covers DDR2, DDR3, and DDR4. You won't find DDR, DDR3L, or DDR3U on the exam.
+RAM variations
+Within each class of RAM, you'll find variations in packaging, speed, quality, and the capability to handle data with more or fewer errors. Higher-end systems often need higher-end RAM, so knowing these variations is of crucial importance to techs.
+Double-Sided DIMMs
+Every type of RAM stick comes in one of two types: single-sided RAM and double-sided RAM. As their name implies, single-sided sticks have chips on only one side of the stick. Double-sided sticks have chips on both sides. Double-sided sticks are basically two sticks of RAM soldered onto one board. There's nothing wrong with double-sided RAM sticks other than the fact that some motherboards either can't use them or can only use them in certain ways--for example, only if you use a single stick and it goes into a certain slot.
+Latency Different RAM responds to electrical signals at varying rates. When the memory controller starts to grab a line of memory, for example, a slight delay occurs; think of it as the RAM getting off the couch. After the RAM sends out the requested memory controller can ask for another line--the RAM sat back down. The delay in RAM's response time is called latency, but shorthand like CL17 or CL19 uses initials for the technical name; column array strobe (CAS) latency.
+If both have the same speed rating, RAM with a lower latency--such as CL17--is slightly faster than RAM with higher latency--such as CL19--because it responds more quickly. The CL refers to clock cycle delays. The 17 means that the memory delays 17 clock cycles before delivering the requested data; the 19 means a 19-cycle delay. Because it's measured in clock cycles, CL is relative to the clock speed of the RAM--a 19-cycle delay takes up more real-world time at a lower clock speed than it will at a higher clock speed.
+Back when DDR2 and DDR3 were the latest and greatest, these latency numbers were a big deal. Gamers and other PC enthusiasts paid a handsome premium for lower-latency RAM. When DDR4 debuted, its relatively high CL numbers made enthusiasts question the memory companies, afraid it would be too slow. In real-world tests, DDR4's higher clock speeds result in latencies in line with the older DDR3. It's still worth looking t latency when you go memory shopping. but it's a lot less important than it used to be.
+NOTE
+Latency numbers reflect how many clicks of the system clock it takes before the RAM responds. If you speed up the system clock--say, from from 200 MHz to 266 MHz--the same stick of RAM might take an extra click before it can respond. When you take RAM out of an older system and put it into a newer one, you might get a seemingly dead PC, even though the RAM fits in the DIMM slot. Many motherboards enable you to adjust the RAM timings manually. If your does so, try raising the latency to give the slower RAM time to respond. You can learn more about "Firmware" to better understand how you can make these adjustments (and how to recover if you make a mistake).
+From a tech's standpoint, you need to get the proper RAM for the system you're working on. If you put a high-latency stick in a motherboard set up for a low-latency stick, you'll get an unstable or completely dead PC. Check the motherboard manual or RAM manufacturer's Web site and get the quickest RAM the motherboard can handle, and you should be fine.
+Parity and ECC
+Given the high speeds and phenomenal amount of data moved by the typical DRAM chip, a RAM chip might occasionally give bad data to the memory controller. This doesn't necessarily mean that the RAM has gone bad. It could be a hiccup caused by some unknown event that makes s good DRAM chip say a bit is a zero when it's really a one. In most cases you won't even notice when such a rare event happens. In some environments, however, even these rare events are intolerable. A bank server handling thousands of online transaction per second, for example, can't risk even the smallest error. These important computers need a more robust, fault-resistant RAM.
+The first type of error-detecting RAM was known as parity RAM. Compared with non-parity RAM, parity RAM stored an extra bit of data (called the parity bit) that the MCC used to verify whether the data was correct. Parity wasn't perfect. It wouldn't always detect an error, and if the MCC did find an error, it couldn't correct the error. For years, parity was the only available way to tell if the RAM made a mistake.
+Today's PCs that need to watch for RAM errors use a special type of RAM called error correction code RAM (ECC RAM). ECC is a major advance in error checking on DRAM. ECC detects and corrects any time a single bit is flipped, on-the-fly. It can detect but not correct a double-bit error. The checking and fixing come at a price, however, as ECC RAM is always slower than non-ECC RAM.
+ECC DRAM comes in every DIMM package type and can lead to some odd-sounding numbers. You can find DDR2, DDR3, or DDR4 RAM sticks, for example, that come in 240-pin, 72-bit versions. Similarly, you'll see 200-pin, 72-bit SO-DIMM format. The extra 8 bits beyond the 64-bit data stream are for the ECC.
+You might be tempted to say "Gee, maybe I want to try this ECC RAM." Well, don't! To take advantage of ECC RAM, you need a motherboard designed to support ECC. Only expensive motherboards for high-end systems use ECC. The special-use-only nature of ECC makes it fairly rare in desktop systems. Plenty of techs with years of experience have never even seen ECC RAM.
+NOTE
+Some memory manufacturers call the technology error checking and correction (ECC). Don't thrown off if you see that phrase--it's the same thing, just a different marketing slant for error correction code.
+Registered and Buffered Memory
+When shopping for memory, especially for ECC memory, you are bound to come across the terms registered RAM or buffered RAM. Either term refers to a small register installed on some memory modules to act as a buffer between the DIMM and the memory controller. This little extra bit of circuitry helps compensate for electrical problems that crop up in systems with lots of memory modules, such as servers.
+The key thing to remember is that a motherboard will use either buffered or unbuffered RAM (that's typical consumer RAM), not both. If you insert the wrong module in a system you are upgrading, the worst that will happen is a blank screen and a lot of head scratching.
