@@ -1,0 +1,92 @@
+CPUs
+In this chapter, you will learn how to
+- Identify the core components of a CPU
+- Describe the relationship of CPUs with memory
+- Explain the varieties of modern CPUs
+- Select and install a CPU
+- Troubleshoot CPUs
+The central processing unit (CPU), also called the microprocessors, is a single silicon-based electronic chip that makes your computer...well, a computer. Desktop computers, laptops, smartphones, even tiny computers in a smartwatch or a washing machine have a CPU. A CPU invariably hides on the motherboard below a heat sink and often a fan assembly as well. CPU makers name their microprocessors in a fashion similar to the automobile industry: CPUs get a make and a model, such as Intel Core i9, Qualcomm Snapdragon 835, or AMD Ryzen 7. But what's happening inside the CPU to make it able to do the amazing things asked of it every time you step up to the keyboard?
+This chapter delves into microprocessors in detail. We'll first discuss how processors work and the components that enable them to interact with the rest of the computer. The second section describes how CPUs work with memory. The third section takes you on a tour of modern CPUs. The fourth section gets into practical work, selecting and installing CPUs. The final section covers troubleshooting CPUs in detail.
+EXAM TIP
+CompTIA only uses the term CPU, not microprocessor, Expect to see CPU on the 1001 exam.
+*Historical/Conceptual*
+CPU Core Components
+Although the computer might seem to act quite intelligently, comparing the CPU to a human brain hugely overstates its capabilities. A CPU functions more like a very powerful calculator than like a brain--but, oh, what a calculator! Today's CPUs add, subtract, multiply, divide, and move billions of numbers per second. Processing that much information so quickly makes any CPU look intelligent. It's simply the speed of the CPU, rather than actual intelligence, that enables computers to perform feats such as accessing the Internet, playing visually stunning games, or editing photos.
+A good technician needs to understand some basic CPU functions to support computing devices, so let's start with an analysis of how the CPU works. If you wanted to teach someone how an automobile engine works, you would use a relatively simple example engine, right? The same principle applies here. Let's begin our study of the CPU with the granddaddy of all PC CPUs: the Intel 8088, invented in the late 1970s. This CPU defined the idea of the modern microprocessor and contains the same basic parts used in the most advanced CPUs today.
+The Man in the Box
+Begin by visualizing the CPU as a man in a box. This is one clever guy. He can perform virtually any mathematical function, manipulate data, and given answers very quickly.
+This guy is potentially very useful to us, but there's a catch--he lives in a tiny, closed box. Before he can work with us, we must come up with a way to exchange information with him.
+Imagine that we install a set of 16 light bulbs, 8 inside his box and 8 outside his box. Each of the 8 light bulbs inside the box connects to one of the 8 bulbs outside the box to form a pair. Each pair of light bulbs is always either on or off. You can control the 8 pairs of bulbs by using a set of 8 switches outside the box, and the Man in the box can also control them by using an identical set of 8 switches inside the box. This light-bulb communication device is called the external data bus (EDB).
+With external data bus, when either you or the main in the box flips a switch on, both light bulbs go on, and the switch on the other side is also flipped to the on position. If you or the Man in the Box turns a switch off, the light bulbs on both sides are turned off, along with the other switch for that pair.
+Can you see how this work? By creating on/off patterns with the light bulbs that represent different pieces of data or commands, you can send that information to the Man in the Box, and he can send information back in the same way--assuming that you agree ahead of time on what different patterns of lights mean. To accomplish this, you need some sort of codebook that assigns meanings to the many patterns of lights that the EDB might display. Keep this thought in mind while we push the analogy a bit more.
+Before going any further, make sure you're clear on the fact that this is an analogy, not reality. There really is an EDB, but you won't see any light bulbs or switches on the CPU. You can, however, see little wires sticking out of many CPUs. If you apply voltage to one of these wires, you in essence flip the switch. Get the idea? So, if that wire had voltage and if a tiny light bulb were attached to the wire, that light bulb would gold, would it not? By the same token, if the wire had no power,  the light bulb would not glow. That is why the switch-and-light-bulb analogy may help you picture these little wires constantly flashing on and off.
+Now that the EDB enables you to communicate with the Man in the Box, you need to see how it works by placing voltages on the wires. This brings up a naming problem. It's a hassle to say something like "on-off-on-off-on-on-off-off" when talking about which wires have voltage. Rather than saying that one of the EDB wires is on or off, use the number 1 to represent on and the number 0 to represent off. That way, instead of describing the state of the light as "on-off-on-off-on-on-off-off", I can instead describe them by writing "10101100".
+In computers, wires repeatedly turn on and off. As a result, we can use this "1 and 0" or binary system to describe the state of these wires at any given moment. (See, and you just thought computer geeks spoke in binary to confuse normal people. Ha!) There's much more to binary numbering in computing, but this is a great place to start.
+Registers
+The Man in the Box provides good insight into the workspace inside a CPU. The EDB gives you a way to communicate with the Man in the Box so you can give him work to do. But to do this work, he needs worktable; in fact, he needs at least four worktables. Each of these four worktables has 16 light bulbs. These light bulbs are not in pairs; they're just 16 light bulbs lined straight across the table. Each light bulb is controlled by a single switch, operated only by the Man in the Box. By creating on/off patterns like the ones on the EDB, the Man in the Box can use these four sets of light bulbs to work math problems. In a real computer, these worktables are called registers and store internal commands and data.
+Registers provide the Man in the Box with a workplace for the problems you give him. All CPUs contain a large number of registers, but for the moment let's concentrate on the four most common ones: the general-purpose registers. Intel named them AX, BX, CX, and DX.
+NOTE
+The 8088 was the first CPU to use the four AX-DX general-purpose registers, and they still exist in even the latest CPUs. (But they have a lot more light bulbs!) In 32-bit processors, the registers add an E for extended, so EAX, EBX, and so on. The 64-bit registers get an R (I don't know why), thus RAX, RBX, and so on.
+Great! We're just about ready to put the Man in the Box to work, but before you close the lid on the box, you must give the Man one more tool.
+Remember the codebook I mentioned earlier? Let's make one to enable us to communicate with him. Below show the codebook we'll use. We'll give one copy to him and make a second for us.
+8088 External Data Bus Codebook
+LIGHTS | MEANING
+10000000 | The next line is a number; put it in the AX register
+10001000 | The next line is a number; put it in the BX register
+10110000 | Add AX to BX and put the result in the AX
+11000000 | Put the value of AX on the External Data Bus
+00000000 | The number 0
+00000001 | The number 1
+00000010 | The number 2
+00000011 | The number 3
+00000100 | The number 4
+00000101 | The number 5
+In this codebook, for example, 10000111 means Move the number 7 into the AX register. These commands are called the microprocessor's machine language. The commands listed in the figure are not actual commands; as you've probably guessed, I've simplified dramatically. The Intel 8088 CPU actually used commands very similar to these, plus a few hundred others.
+Here are some examples of real machine language for the Intel 8088:
+10111010: The next line of code is a number. Put that number into the DX register.
+01000001: Add 1 to the number already in the CX register.
+00111100: Compare the value in the AX register with the next line of code.
+By placing machine language commands--called lines of code--onto the EDB one at a time, you can instruct the Man in the Box to do specific tasks. All of the machine language commands that the CPU understands make up the CPU's instruction set.
+So here is the CPU so far: the Man in the Box can communicate with the outside world via the EDB; he has four registers he can use to work on the problems you give him; and he has a codebook--the instruction set--so he can understand the different patterns (machine language commands) on the EDB.
+Clock
+Okay, so you're ready to put the Man in the Box to work. You can send the first command by lighting up wires on the EDB. How does he know when you've finished setting up the wires and it's time to act?
+Imagine there's a bell inside the box activated by a button on the outside of the box. Each time you press the button to sound the bell, the Man in the Box reads the next set of lights on the EDB. Of course, a real computer doesn't use a bell. The bell on a real CPU is a special wire called the clock wire (most diagrams label the clock wire CLK). A charge on the CLK wire tells the CPU that another piece of information is waiting to be processed.
+For the CPU to process a command placed on the EDB, a certain minimum voltage must be applied to the CLK wire. A single charge to the CLK wire is called a clock cycle. Actually, the CPU requires at least two clock cycles to act on a command, and usually more. In fact, a CPU may require hundreds of clock cycles to process some commands.
+The maximum number of clock cycles that a CPU can handle in a given period of time is referred to as its clock speed. The clock speed is the fastest speed at which a CPU can operate, determined by the CPU manufacturer. The Intel 8088 processor had a clock speed of 4.77 MHz (4.77 million cycles per second), extremely slow by modern standards, but still a pretty big number compared to using a pencil and paper. High-end CPUs today run at speeds in excess of 5 GHz (5 billion cycles per second!). You'll see these "hertz" terms a lot in this chapter, so here's what they mean:
+1 hertz (1 Hz) = 1 cycle per second
+1 megahertz (1 MHz) = 1 million cycles per second
+1 gigahertz (1 GHz) = 1 billion cycles per second
+A CPU's clock speed is its maximum speed, not the speed at which it must run. A CPU can run at any speed, as long as the speed does not exceed its clock speed. Many CPU models have the clock speed printed clearly. Other models might have a cryptic code.
+The system crystal determines the speed at which a CPU and the rest of the PC operate. The system crystal is usually a quartz oscillator, very similar to the one in a wristwatch, soldered to the motherboard.
+NOTE
+CPU makers sell the exact make and model of CPU at a number of different speeds. All of these CPUs come off of the same assembly lines, so why do they have different speeds? Every CPU comes with subtle differences--flaws, really--in the silicon that makes one CPU run faster than another.
+The speed difference comes from testing each CPU to see what speed it can handle.
+The quartz oscillator sends out an electric pulse at a certain speed, many millions of times per second. This signal goes first to a clock chip that adjusts the pulse, usually increasing the pulse sent by the crystal by some large multiple. (The folks who make motherboards could connect the crystal directly to the CPU's clock wire, but then if you wanted to replace your CPU with a CPU with different clock speed, you'd need to replace the crystal too.) As long as the computer is turned on, the quartz oscillator, through the clock chip, fires a charge on the CLK wire, in essence pushing the system along.
+Visualize the system crystal as a metronome for the CPU. The quartz oscillator repeatedly fires a charge on the CLK wire, setting the beat, if you will, for the CPU's activities. If the system crystal sets a beat slower than the CPU's clock speed, the CPU will work just fine, though at the slower speed of the system crystal. If the system crystal forces the CPU to run faster than its clock speed, it can overheat and stop working. Before you install a CPU into a system, you must make sure that the crystal and clock chip send out the correct clock pulse for that particular CPU. In the old days, this required very careful adjustments. With today's systems, the motherboard talks to the CPU. The CPU tells the motherboard the clock speed it needs, and the clock chip automatically adjusts for the CPU, making this process now invisible.
+NOTE
+Aggressive users sometimes intentionally overclock CPUs by telling the clock chip to multiply the pulse faster than the CPU's designed speed. They do this to make slower (cheaper) CUPs run faster and to get more performance in demanding programs. "Overclocking" section later in this chapter.
+Back to the External Data Bus
+One more reality check. We've been talking about tables with racks of light bulbs, but of course real CPU registers don't use light bulbs to represent on/1 and off/0. Registers are tiny storage areas on the CPU made up of microscopic semiconductor circuits that hold charges. It's just easier to imagine a light bulb lit up to represent a circuit holding a charge; when the light bulb is off, there is no charge.
+In an 8088 CPU, there's wires that comprise the external data bus and the single clock wire, and the registers are inside the CPU, so you wouldn't see them from outside.
+Now that you have learned what components are involved in the process, try the following simple exercise to see how the process works. In this example, you tell the CPU to add 2 + 3. To do this, you must send a series of commands to the CPU; the CPU will act on each command, eventually giving you an answer. Refer toe the code book to translate the instructions you're giving the Man in the Box into binary commands.
+the codebook:
+8088 External Data Bus Codebook
+LIGHTS | MEANING
+10000000 | The next line is a number; put it in the AX register
+10001000 | The next line is a number; put it in the BX register
+10110000 | Add AX to BX and put the result in the AX
+11000000 | Put the value of AX on the External Data Bus
+00000000 | The number 0
+00000001 | The number 1
+00000010 | The number 2
+00000011 | The number 3
+00000100 | The number 4
+00000101 | The number 5
+1. Place 10000000 on the external data bus (EDB).
+2. Place 00000010 on the EDB
+3. Place 10010000 on the EDB
+4. Place 00000011 on the EDB
+5. Place 10110000 on the EDB
+6. Place 11000000 on the EDB
+When you finish step 6, the value on the EDB will be 00000101, the decimal number 5 written in binary.
+Congrats! You just added 2 + 3 by using individual commands from the codebook. This sets of commands is known as a program, which is a series of commands sent to a CPU in a specific order for the CPU to perform work. Each discrete setting of the EDB is a line of code. This program, therefore, has six lines of code.
