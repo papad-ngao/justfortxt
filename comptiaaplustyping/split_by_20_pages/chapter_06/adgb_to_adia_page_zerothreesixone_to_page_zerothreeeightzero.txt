@@ -1,0 +1,18 @@
+EXAM TIP
+The CompTIA A+ 1001 objectives refer to microATX oddly as mATX. Don't be thrown off by the letter m. It just means micro here.
+In 1999, Intel created a variant of the microATX called the FlexATX. FlexATX motherboards have maximum dimensions of just 9 by 7.5 inches, which makes them the smallest motherboards in the ATX standard. FlexATX is pretty much gone now.
+ITX
+VIA Technologies started the process to create a small form factor (SFF) motherboard, the ITX. The ITX itself wasn't a success, but VIA in turn created smaller form factors that today populate the SFF market, specifically Mini-ITX.
+Mini-ITX is a miniscule 6.7 by 6.7 inches and compares head to head with the virtually identical micro ATX.
+One of the great benefits of these SFF motherboards is the tiny amount of power needed to support them. ITX power supplies are quite small compared to a typical power supply. Lower power usage produce less heat, thus enabling passive cooling on many SFF systems. The lack of fan noise makes them ideal for media center PCs.
+EXAM TIP
+CompTIA lists ITX as a motherboard form factor. Straigh ITX doesn't exist in the real world, but Mini-ITX is quite common. The CompTIA A+ 1001 objectives also refer to Mini-ITX as mITX.
+Proprietary Form Factors
+Several major PC makers in the past made motherboards that worked only with their cases. These proprietary motherboards enabled these companies to create systems that stood out from the generic ones and, not coincidently pushed you to get service and upgrades form their authorized dealers. Some of the features you'll see in proprietary systems are riser cards--part of a motherboard separate from the main one but connected by a cable of some sort--and unique power connections. Riser cards on some proprietary systems plug into a unique socket or slot on the motherboard. These are also called daughter boards. Proprietary motherboards used to be a common on full-sized systems; these days you'll see them in niche systems, like very small cubes and such.
+*Try This!* Motherboard varieties
+Motherboards come in a wide variety of form factors. Go to your local computer store and check out what is on display. Note the different features offered by ATX, microATX, and Mini-ITX motherboards.
+1. ATX is common, but does the store stock Mini-ITX or proprietary motherboards?
+2. Did the clerk use tech slang and call the motherboards "mobos"? (It's what most of us call them outside of formal textbooks, after all!)
+Chipset
+Every motherboard has a chipset, which is one or more discrete integrated circuit chips that support the CPU's interfacing to all the other devices on the motherboard. The chipset determines the type of processor the motherboard accepts, the type and capacity of RAM, and the sort of internal and external devices that the motherboard supports. Chipsets vary in features, performance, and stability, so they factor hugely in the purchase or recommendation of a particular motherboard. Good techs know their chipsets!
+Because the chipset facilitates communication between the CPU and other devices in the system, its component chips are relatively centrally located on the motherboard. "Firmware" chipsets were originall composed of two primary chips: the northbridge and the south bridge.
