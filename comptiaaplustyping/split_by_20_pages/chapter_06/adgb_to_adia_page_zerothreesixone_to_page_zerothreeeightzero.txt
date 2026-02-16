@@ -4,15 +4,44 @@ In 1999, Intel created a variant of the microATX called the FlexATX. FlexATX mot
 ITX
 VIA Technologies started the process to create a small form factor (SFF) motherboard, the ITX. The ITX itself wasn't a success, but VIA in turn created smaller form factors that today populate the SFF market, specifically Mini-ITX.
 Mini-ITX is a miniscule 6.7 by 6.7 inches and compares head to head with the virtually identical micro ATX.
-One of the great benefits of these SFF motherboards is the tiny amount of power needed to support them. ITX power supplies are quite small compared to a typical power supply. Lower power usage produce less heat, thus enabling passive cooling on many SFF systems. The lack of fan noise makes them ideal for media center PCs.
+One of the great benefits of these SFF motherboards is the tiny amount of power needed to support them. ITX power supplies are quite small compared to a typical power supply. Lower power usage produces less heat, thus enabling passive cooling on many SFF systems. The lack of fan noise makes them ideal for media center PCs.
 EXAM TIP
-CompTIA lists ITX as a motherboard form factor. Straigh ITX doesn't exist in the real world, but Mini-ITX is quite common. The CompTIA A+ 1001 objectives also refer to Mini-ITX as mITX.
+CompTIA lists ITX as a motherboard form factor. Straight ITX doesn't exist in the real world, but Mini-ITX is quite common. The CompTIA A+ 1001 objectives also refer to Mini-ITX as mITX.
 Proprietary Form Factors
-Several major PC makers in the past made motherboards that worked only with their cases. These proprietary motherboards enabled these companies to create systems that stood out from the generic ones and, not coincidently pushed you to get service and upgrades form their authorized dealers. Some of the features you'll see in proprietary systems are riser cards--part of a motherboard separate from the main one but connected by a cable of some sort--and unique power connections. Riser cards on some proprietary systems plug into a unique socket or slot on the motherboard. These are also called daughter boards. Proprietary motherboards used to be a common on full-sized systems; these days you'll see them in niche systems, like very small cubes and such.
+Several major PC makers in the past made motherboards that worked only with their cases. These proprietary motherboards enabled these companies to create systems that stood out from the generic ones and, not coincidentally pushed you to get service and upgrades from their authorized dealers. Some of the features you'll see in proprietary systems are riser cards--part of a motherboard separate from the main one but connected by a cable of some sort--and unique power connections. Riser cards on some proprietary systems plug into a unique socket or slot on the motherboard. These are also called daughter boards. Proprietary motherboards used to be common on full-sized systems; these days you'll see them in niche systems, like very small cubes and such.
 *Try This!* Motherboard varieties
 Motherboards come in a wide variety of form factors. Go to your local computer store and check out what is on display. Note the different features offered by ATX, microATX, and Mini-ITX motherboards.
 1. ATX is common, but does the store stock Mini-ITX or proprietary motherboards?
 2. Did the clerk use tech slang and call the motherboards "mobos"? (It's what most of us call them outside of formal textbooks, after all!)
 Chipset
 Every motherboard has a chipset, which is one or more discrete integrated circuit chips that support the CPU's interfacing to all the other devices on the motherboard. The chipset determines the type of processor the motherboard accepts, the type and capacity of RAM, and the sort of internal and external devices that the motherboard supports. Chipsets vary in features, performance, and stability, so they factor hugely in the purchase or recommendation of a particular motherboard. Good techs know their chipsets!
-Because the chipset facilitates communication between the CPU and other devices in the system, its component chips are relatively centrally located on the motherboard. "Firmware" chipsets were originall composed of two primary chips: the northbridge and the south bridge.
+Because the chipset facilitates communication between the CPU and other devices in the system, its component chips are relatively centrally located on the motherboard. "Firmware" chipsets were originally composed of two primary chips: the northbridge and the southbridge.
+The northbridge chip handled RAM, while the southbridge handled some expansion devices and mass storage drives, such as hard drives. Some motherboard manufacturers added (or still add) a third chip called the Super I/O chip to handle these chores, especially in dealing with legacy devices.
+Today, other chips have absorbed many of the functions of the classic chipset. The CPU handles the memory controller features the northbridge used to do. The primary expansion bus communication (see "Expansion Bus" later in this chapter) goes through the CPU as well, something the southbridge handled back in the day. Most techs refer to the remaining support chips on the motherboard as the chipset, although the terms northbridge and southbridge are dead.
+The system ROM chip provides part of the BIOS for the chipset, but only at a barebones, generic level. The chipset still needs support for the rest of the things it can do. So how do expansion devices get BIOS? From software drivers, of course, and the same holds true for modern chipsets. You have to load the proper drivers for the specific OS to support all of the features of today's chipsets. Without software drivers, you'll never create a stable, fully functional PC. Most motherboards ship with an optical disc with drivers, support programs, and extra-special goodies such as antivirus software.
+Different chipsets offer support for a lot of different hardware options, including type of memory slot (DDR3 or DDR4), number and version of USB ports, various mass storage devices, integrated network connections, video support, and so on. Details below list typical chipset chores for an Intel Z390 chipset.
+-- The Schematic of a chipset, as plain text --
+INTEL (R) Z390 CHIPSET BLOCK DIAGRAM:
+*** (A) Intel (R) Z390 Chipset *** <= (via DMI (Direct Media Interface) 3.0) => *** (B) 9th and 8th Gen Intel (R) Core (TM) Processors ***
+(A) - #1: Up to 24 x PCI Express* 3.0 (8 Gb/s each x1)
+(A) - #2: 6 x SATA 6 Gb/s Ports; SATA Port Disable (Up to 6 Gb/s)
+(A) - #3:
+    - Up to 6 x USB 3.1 Gen 2 Ports;
+    - Up to 10 x USB 3.1 Gen 1 Ports;
+    - 14 x USB 2.0 Ports;
+(A) - #4:
+    - [Intel (R) Integrated 10/100/1000 MAC] <= (via PCIe* x 1) (via SMBus) => [Intel (R) Ethernet Connection]
+(A) - #5 (via SPI (Serial Peripheral Interface)):
+    - [Intel (R) ME Firmware] ⇌ [Intel (R) Platform Trust Technology] ⇌ (Optional) [Intel (R) Extreme Tuning Utility Support]
+(A) - #6: Intel (R) Optane (TM) Memory Support
+(A) - #7: Intel (R) Smart Sound Technology
+(A) - #8: Intel (R) High Definition Audio
+(A) - #9: (Optional) Intel (R) Rapid Storage Technology with RAID
+(A) - #10: (Optional) Intel (R) Rapid Storage Technology for PCI Express* Storage
+(A) - #11: Intel (R) Wireless-AC 802.11ac and Bluetooth* 5 ⇌ (Optional) [Intel (R) Wireless-AC Adapter]
+(B) - #1:
+    - [1x16 lanes PCI Express* 3.0 Graphics or Intel SSD]
+    - OR [2x8 lanes PCI Express* 3.0 Graphics or Intel SSD]
+    - OR [1x8 and 2x4 lanes PCI Express* 3.0 Graphics or Intel SSD]
+(B) - #2: [Three Independent DP/HDMI Display support]
+(B) - #3: [DDR 2xDIMMs per Channel Up to 2666 MHz]
